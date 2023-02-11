@@ -308,15 +308,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form>
-                            <div class="row">
+
+
+
+                        <form id="adminFormController">
+                            <div class="row form-group">
+
                                 <div class="col-12">
-                                    <h5 class="form-title"><span>Student Information</span></h5>
+                                    <h5 class="form-title"><span>Admin Information</span></h5>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="admin_id">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -327,67 +331,50 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Student Id</label>
+                                        <label>Address</label>
                                         <input class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Student Id</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Date of Birth</label>
-                                        <div>
-                                            <input class="form-control" type="date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Class</label>
+                                        <label>Contact</label>
                                         <input class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Religion</label>
+                                        <label>Email</label>
                                         <input class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Joining Date</label>
-                                        <div>
-                                            <input class="form-control" type="date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Mobile Number</label>
+                                        <label>User Name</label>
                                         <input class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Admission Number</label>
+                                        <label>Password</label>
                                         <input class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Section</label>
+                                        <label>Confirm password</label>
                                         <input class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Student Image</label>
-                                        <input class="form-control" type="file">
+                                        <label>NIC</label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Admin Id</label>
+                                        <input class="form-control" type="text">
                                     </div>
                                 </div>
 
@@ -396,6 +383,8 @@
                                     <button class="btn btn-primary bg-warning" type="submit">Update</button>
                                     <button class="btn btn-primary bg-danger" type="submit">Delete</button>
                                 </div>
+
+
                             </div>
                         </form>
                     </div>
@@ -406,7 +395,7 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Projects table</h6>
+                        <h6>Admin table</h6>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -414,59 +403,43 @@
                                 <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Project
+                                        F_Name
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Budget
+                                        L_Name
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Status
+                                        Address
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        Completion
+                                        Contact
                                     </th>
-                                    <th></th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Email
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        UserName
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Password
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        ConfirmPwd
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        NIC
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        AdminID
+                                    </th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <!--=====================================================================================================   this is second table-->
                                 <tr>
-                                    <td>
-                                        <div class="d-flex px-2">
-                                            <div>
-                                                <img alt="spotify"
-                                                     class="avatar avatar-sm rounded-circle me-2"
-                                                     src="../assets/img/small-logos/logo-spotify.svg">
-                                            </div>
-                                            <div class="my-auto">
-                                                <h6 class="mb-0 text-sm">Spotify</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">$2,500</p>
-                                    </td>
-                                    <td>
-                                        <span class="text-xs font-weight-bold">working</span>
-                                    </td>
-                                    <td class="align-middle text-center">
-                                        <div class="d-flex align-items-center justify-content-center">
-                                            <span class="me-2 text-xs font-weight-bold">60%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div aria-valuemax="100" aria-valuemin="0"
-                                                         aria-valuenow="60" class="progress-bar bg-gradient-info"
-                                                         role="progressbar"
-                                                         style="width: 60%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="align-middle">
-                                        <button class="btn btn-link text-secondary mb-0">
-                                            <i class="fa fa-ellipsis-v text-xs"></i>
-                                        </button>
-                                    </td>
+
+
                                 </tr>
 
                                 </tbody>
