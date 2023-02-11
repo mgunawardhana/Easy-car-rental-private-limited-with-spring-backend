@@ -320,43 +320,43 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input class="form-control" type="text" name="admin_id">
+                                        <input class="form-control" type="text" name="firstName">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="lastName">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="address">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Contact</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="contact_no">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="email">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>User Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="user_name">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" >
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -379,9 +379,9 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <button class="btn btn-primary bg-success" type="submit">Save</button>
-                                    <button class="btn btn-primary bg-warning" type="submit">Update</button>
-                                    <button class="btn btn-primary bg-danger" type="submit">Delete</button>
+                                    <button class="btn btn-primary bg-success" type="button" id="saveAdmin">Save</button>
+                                    <button class="btn btn-primary bg-warning" type="button" id="updateAdmin">Update</button>
+                                    <button class="btn btn-primary bg-danger" type="button" id="deleteAdmin">Delete</button>
                                 </div>
 
 
@@ -573,6 +573,8 @@
 
 <!--JS File Attachments-->
 
+
+<script src="../js/jquery-3.6.1.min.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
 <script src="../assets/js/core/bootstrap.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
