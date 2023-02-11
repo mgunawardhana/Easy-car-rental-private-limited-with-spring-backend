@@ -1,4 +1,4 @@
-let baseURL = "http://localhost:8080/Backend_war/";
+let baseURL = "http://localhost:8080/Backend_war/customer/";
 
 
 $("#saveCustomer").on('click', function () {
