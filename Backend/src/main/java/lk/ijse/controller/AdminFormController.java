@@ -27,4 +27,9 @@ public class AdminFormController {
         adminService.deleteAdmin(code_red);
         return new ResponseUtil("OK", "Successfully Deleted ! " + code_red, "");
     }
+
+    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCustomers(){
+        return new ResponseUtil("OK","Successful",adminService.getAllAdmin());
+    }
 }
