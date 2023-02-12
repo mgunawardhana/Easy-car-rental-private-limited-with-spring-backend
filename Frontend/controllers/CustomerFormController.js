@@ -19,12 +19,10 @@ function saveCustomer() {
     });
 }
 
-$("#updateCustomerBtn").on('click', function () {
-
+$("#updateCustomer").on('click', function () {
     var customerObj = {
-        id:$('#id').val(),
-        name:$('#firstName').val(),//TODO customer name update issue because name has first and last but how can i update database
-        name:$('#lastName').val(),//TODO customer name update issue because name has first and last but how can i update database
+        id:$('#id').val(),//TODO check what can i do for this error
+        name:{firstName: $('#firstName').val(),lastName:$('#lastName').val()},
         address:$('#address').val(),
         email:$('#email').val(),
         contactNo:$('#contactNo').val(),
