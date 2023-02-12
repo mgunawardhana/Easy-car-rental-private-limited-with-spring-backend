@@ -21,4 +21,10 @@ public class AdminFormController {
         adminService.saveAdmin(adminDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
+
+    @DeleteMapping
+    public ResponseUtil deleteCustomer(String code) {
+        adminService.deleteAdmin(code);
+        return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
+    }
 }
