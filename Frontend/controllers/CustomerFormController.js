@@ -98,10 +98,9 @@ function bindRowClickEvents() {
         let id = $(this).children(":eq(0)").text();
         let firstName = $(this).children(":eq(1)").text();
 
-/*
-        let itCode = $("#orderTable").children().eq(i).children(":eq(0)").text();
-*/
-        let lastName = $(this).children(":eq(2)").text();
+         let lastName = $(this).children().eq(2).children(":eq(1)").text();
+
+       /* let lastName = $(this).children(":eq(2)").text();*/
         let address = $(this).children(":eq(3)").text();
         let email = $(this).children(":eq(4)").text();
         let contactNo = $(this).children(":eq(5)").text();

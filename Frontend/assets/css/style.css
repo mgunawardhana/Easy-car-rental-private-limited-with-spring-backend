@@ -1,5 +1,7 @@
 .myCol {
-    background: linear-gradient(135deg, #9C19E0, #14031e) !important;
+    /*background: linear-gradient(135deg, #9C19E0, #14031e) !important;*/
+    background:#ffa502 !important;
+
 }
 
 .blinkAnim {
@@ -7,6 +9,11 @@
     background: rgb(255, 255, 255) !important;
     box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px !important;
 }
+
+.barChart{
+    background: linear-gradient(250deg,black, #ffa502) !important;
+}
+
 
 .specialBtn {
     position: absolute;
