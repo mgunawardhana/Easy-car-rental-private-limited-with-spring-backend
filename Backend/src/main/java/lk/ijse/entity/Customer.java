@@ -31,6 +31,7 @@ public class Customer {
     private String email;
     @Column(name = "contact_No")
     private String contactNo;
+
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
 }

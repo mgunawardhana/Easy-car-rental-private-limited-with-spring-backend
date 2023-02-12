@@ -39,7 +39,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void deleteCustomer(String id) {
-
+        if (customerRepo.existsById(id)) {
+            customerRepo.deleteById(id);
+        } else {
+            throw new RuntimeException("No such a customer !");
+        }
     }
 
     @Override

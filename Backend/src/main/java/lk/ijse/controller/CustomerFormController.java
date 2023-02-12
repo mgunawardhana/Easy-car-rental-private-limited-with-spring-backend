@@ -29,4 +29,9 @@ public class CustomerFormController {
         return new ResponseUtil("OK","Successful",customerService.getAllCustomer());
     }
 
+    @DeleteMapping
+    public ResponseUtil deleteCustomer(String code) {
+        customerService.deleteCustomer(code);
+        return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
+    }
 }
