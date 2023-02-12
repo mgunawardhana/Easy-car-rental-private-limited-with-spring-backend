@@ -11,13 +11,14 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private CustomerRepo customerRepo;
+    CustomerRepo customerRepo;
     @Autowired
     ModelMapper modelMapper;
 
@@ -42,7 +43,9 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public ArrayList<CustomerDTO> getAllCustomers() {
-        return null;
+    public List<CustomerDTO> getAllCustomer() {
+        return modelMapper.map(customerRepo.findAll(), new TypeToken<ArrayList<CustomerDTO>>() {
+        }.getType());
     }
+
 }

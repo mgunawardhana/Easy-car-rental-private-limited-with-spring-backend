@@ -33,5 +33,4 @@ public class Customer {
     private String contactNo;
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
-
 }

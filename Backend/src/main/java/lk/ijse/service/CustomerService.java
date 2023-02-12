@@ -3,6 +3,7 @@ package lk.ijse.service;
 import lk.ijse.dto.CustomerDTO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface CustomerService {
     void saveCustomer(CustomerDTO customerDTO);
@@ -11,7 +12,7 @@ public interface CustomerService {
 
     void deleteCustomer(String id);
 
-    ArrayList<CustomerDTO> getAllCustomers();
+    List<CustomerDTO> getAllCustomer();
 
 
 }

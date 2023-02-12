@@ -12,7 +12,6 @@ import lombok.ToString;
 @Data
 @ToString
 public class CustomerDTO {
-
     private String id;
     private String nic;
     private Name name;

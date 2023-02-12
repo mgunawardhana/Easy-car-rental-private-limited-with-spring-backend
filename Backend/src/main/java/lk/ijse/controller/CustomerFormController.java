@@ -4,6 +4,7 @@ import lk.ijse.dto.CustomerDTO;
 import lk.ijse.service.CustomerService;
 import lk.ijse.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,11 +16,17 @@ public class CustomerFormController {
     public CustomerService customerService;
 
 
-    @PostMapping("save_customer")
+    //TODO customers firstname and lastname , userid values are not hitting the database try it...
+    @PostMapping(value = "save_customer",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customerDTO) {
         customerService.saveCustomer(customerDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
 
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCustomers(){
+        return new ResponseUtil("OK","Successful",customerService.getAllCustomer());
+    }
 
 }
