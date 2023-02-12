@@ -9,7 +9,7 @@ public interface AdminService {
 
     void updateAdmin(AdminDTO adminDTO);
 
-    void deleteAdmin(String id);
+    void deleteAdmin(String code);
 
     List<AdminDTO> getAllAdmin();
 }

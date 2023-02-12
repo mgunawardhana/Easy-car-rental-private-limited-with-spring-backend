@@ -23,8 +23,8 @@ public class AdminFormController {
     }
 
     @DeleteMapping
-    public ResponseUtil deleteCustomer(String code) {
-        adminService.deleteAdmin(code);
-        return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
+    public ResponseUtil deleteCustomer(String code_red) {
+        adminService.deleteAdmin(code_red);
+        return new ResponseUtil("OK", "Successfully Deleted ! " + code_red, "");
     }
 }

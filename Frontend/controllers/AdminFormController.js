@@ -20,7 +20,7 @@ function saveAdmin() {
 
 $("#deleteCustomer").on('click', function () {
     $.ajax({
-        url: baseURL + "?code_red="+ $("#adminId").val(),
+        url: baseURL + $("#adminId").val(),
         method: "delete",
         dataType: "json",
         success: function (resp) {
