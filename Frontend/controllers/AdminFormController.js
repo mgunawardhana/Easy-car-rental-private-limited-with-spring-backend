@@ -10,20 +10,14 @@ function saveAdmin() {
     let formData = $("#adminFormController").serialize();
     $.ajax({
         url: baseURL + "save_admin", method: "post", data: formData, dataType: "json", success: function (res) {
-            alert(res.message);
             getAllAdmins();
+            alert(res.message);
         }, error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
             alert(errorMessage.message);
         }
     });
 }
-
-
-
-
-
-
 
 $("#deleteCustomer").on('click', function () {
     $.ajax({
@@ -39,11 +33,10 @@ $("#deleteCustomer").on('click', function () {
     });
 });
 
-
 function getAllAdmins() {
     $("#adminTableBody").empty();
     $.ajax({
-        url: baseURL + "get_all", success: function (res) {
+        url: baseURL + "get_all_admin", success: function (res) {
             for (let c of res.data) {
 
                 let firstName = c.name.firstName;
@@ -69,8 +62,8 @@ function getAllAdmins() {
                     + "</tr>";
                 $("#adminTableBody").append(row);
             }
-            bindRowClickEvents();
-            clearTextFields();
+           /* bindRowClickEvents();
+            clearTextFields();*/
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
