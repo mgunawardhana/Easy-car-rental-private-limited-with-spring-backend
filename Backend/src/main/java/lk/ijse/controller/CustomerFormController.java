@@ -35,11 +35,9 @@ public class CustomerFormController {
         return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
     }
 
-    @PutMapping("update_customer")
+    @PutMapping(value = "update_customer",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO) {
         customerService.updateCustomer(customerDTO);
         return new ResponseUtil("OK", "Successfully updated ! " + customerDTO.getId(), "");
     }
-
-
 }

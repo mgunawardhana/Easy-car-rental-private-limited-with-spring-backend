@@ -21,16 +21,18 @@ function saveCustomer() {
 
 $("#updateCustomerBtn").on('click', function () {
 
-    let cusId = $('#cusIdTxt').val();
-    let cusName = $('#cusNameTxt').val();
-    let cusAddress = $('#cusAddressTxt').val();
-    let cusContact = $('#cusContactTxt').val();
-
     var customerObj = {
-        id: cusId,
-        name: cusName,
-        address: cusAddress,
-        contact: cusContact
+        id:$('#id').val(),
+        name:$('#firstName').val(),//TODO customer name update issue because name has first and last but how can i update database
+        name:$('#lastName').val(),//TODO customer name update issue because name has first and last but how can i update database
+        address:$('#address').val(),
+        email:$('#email').val(),
+        contactNo:$('#contactNo').val(),
+        user:$('#userId').val(),
+        password:$('#password').val(),
+        nic:$('#nic').val(),
+        drivingLicenseNo:$('#drivingLicenseNo').val(),
+        role:$('#role').val()
     }
 
     $.ajax({
