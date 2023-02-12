@@ -16,7 +16,6 @@ public class CustomerFormController {
     public CustomerService customerService;
 
 
-    //TODO customers firstname and lastname , userid values are not hitting the database try it...
     @PostMapping(value = "save_customer",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customerDTO) {
         customerService.saveCustomer(customerDTO);

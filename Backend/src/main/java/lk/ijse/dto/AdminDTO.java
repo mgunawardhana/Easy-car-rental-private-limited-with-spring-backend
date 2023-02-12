@@ -2,8 +2,11 @@ package lk.ijse.dto;
 
 
 import lk.ijse.embeded.Name;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 
 @Data
 @ToString
