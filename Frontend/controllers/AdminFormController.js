@@ -17,3 +17,17 @@ function saveAdmin() {
         }
     });
 }
+
+$("#deleteCustomer").on('click', function () {
+    $.ajax({
+        url: baseURL + "?code_red="+ $("#adminId").val(),
+        method: "delete",
+        dataType: "json",
+        success: function (resp) {
+            getAllCustomers();
+            alert(resp.message);
+        }, error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});

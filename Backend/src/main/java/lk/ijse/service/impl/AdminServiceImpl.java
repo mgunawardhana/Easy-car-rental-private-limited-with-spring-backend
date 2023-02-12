@@ -2,7 +2,6 @@ package lk.ijse.service.impl;
 
 import lk.ijse.dto.AdminDTO;
 import lk.ijse.entity.Admin;
-import lk.ijse.entity.Customer;
 import lk.ijse.repo.AdminRepo;
 import lk.ijse.service.AdminService;
 import org.modelmapper.ModelMapper;
