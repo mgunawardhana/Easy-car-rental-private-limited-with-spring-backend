@@ -19,6 +19,36 @@ function saveCustomer() {
     });
 }
 
+$("#updateCustomerBtn").on('click', function () {
+
+    let cusId = $('#cusIdTxt').val();
+    let cusName = $('#cusNameTxt').val();
+    let cusAddress = $('#cusAddressTxt').val();
+    let cusContact = $('#cusContactTxt').val();
+
+    var customerObj = {
+        id: cusId,
+        name: cusName,
+        address: cusAddress,
+        contact: cusContact
+    }
+
+    $.ajax({
+        url: baseURL + "update_customer",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(customerObj),
+        dataType: "json",
+        success: function (res) {
+            getAllCustomers();
+            alert(res.message);
+            clearTextFields();
+        }, error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
+
 $("#deleteCustomer").on('click', function () {
     $.ajax({
         url: baseURL + "?code="+ $("#id").val(),

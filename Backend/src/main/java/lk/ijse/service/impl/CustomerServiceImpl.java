@@ -22,7 +22,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     ModelMapper modelMapper;
 
-
     @Override
     public void saveCustomer(CustomerDTO customerDTO) {
         if (customerRepo.existsById(customerDTO.getId())) {
@@ -55,5 +54,4 @@ public class CustomerServiceImpl implements CustomerService {
         return modelMapper.map(customerRepo.findAll(), new TypeToken<ArrayList<CustomerDTO>>() {
         }.getType());
     }
-
 }
