@@ -44,8 +44,8 @@ function getAllAdmins() {
                 let address = c.adminAddress;
                 let contact = c.adminContact;
                 let email = c.adminEmail;
-                let username = c.user.username;
-                let password = c.user.password;
+                let username = c.username;
+                let password = c.password;
                 let nic = c.adminNic;
                 let id = c.adminId;
 

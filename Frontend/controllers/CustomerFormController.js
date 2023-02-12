@@ -75,11 +75,11 @@ function getAllCustomers() {
                 let address = c.address;
                 let email = c.email;
                 let contactNo = c.contactNo;
-                let user_id = c.user;
-                let password = c.password;
+                let user_id = c.user.userId;
+                let password = c.user.password;
                 let nic = c.nic;
                 let drivingLicenceNo = c.drivingLicenseNo;
-                let role = c.role;
+                let role = c.user.role;
 
 
                 let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_id + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "</tr>";$("#customerTableBody").append(row);
