@@ -39,13 +39,13 @@ function getAllAdmins() {
         url: baseURL + "get_all_admin", success: function (res) {
             for (let c of res.data) {
 
-                let firstName = c.name.firstName;
-                let lastName = c.name.lastName;
+                let firstName = c.adminName.firstName;
+                let lastName = c.adminName.lastName;
                 let address = c.adminAddress;
                 let contact = c.adminContact;
                 let email = c.adminEmail;
-                let username = c.username;
-                let password = c.password;
+                let username = c.user.userName;
+                let password = c.user.password;
                 let nic = c.adminNic;
                 let id = c.adminId;
 
@@ -56,6 +56,7 @@ function getAllAdmins() {
                     + "<td>" + contact + "</td>"
                     + "<td>" + email + "</td>"
                     + "<td>" + username + "</td>"
+                    + "<td>" + password + "</td>"
                     + "<td>" + password + "</td>"
                     + "<td>" + nic + "</td>"
                     + "<td>" + id + "</td>"
