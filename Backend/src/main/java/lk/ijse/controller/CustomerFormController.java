@@ -24,7 +24,7 @@ public class CustomerFormController {
     }
 
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCustomers(){
         return new ResponseUtil("OK","Successful",customerService.getAllCustomer());
     }

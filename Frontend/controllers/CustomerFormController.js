@@ -23,7 +23,7 @@ function saveCustomer() {
 function getAllCustomers() {
     $("#customerTableBody").empty();
     $.ajax({
-        url: baseURL + "customer",
+        url: baseURL + "get_all",
         success: function (res) {
             for (let c of res.data) {
 
@@ -54,14 +54,14 @@ function getAllCustomers() {
                     "<td>" + role + "</td>" +
                     "</tr>"
                 ;
-
                 $("#customerTableBody").append(row);
             }
-            /*bindRowClickEvents();
-            clearTextFields();*/
+           bindRowClickEvents();
+            /*clearTextFields();*/
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
         }
     });
 }
+
