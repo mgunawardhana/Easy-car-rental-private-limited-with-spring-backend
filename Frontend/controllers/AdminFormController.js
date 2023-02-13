@@ -19,12 +19,9 @@ function saveAdmin() {
     });
 }
 
-$("#deleteCustomer").on('click', function () {
+$("#deleteAdmin").on('click', function () {
     $.ajax({
-        url: baseURL + $("#adminId").val(),
-        method: "delete",
-        dataType: "json",
-        success: function (resp) {
+        url: baseURL + "?code=" + $("#adminId").val(), method: "delete", dataType: "json", success: function (resp) {
             getAllAdmins();
             alert(resp.message);
         }, error: function (error) {
@@ -49,25 +46,38 @@ function getAllAdmins() {
                 let nic = c.adminNic;
                 let id = c.adminId;
 
-                let row = "<tr>"
-                    + "<td>" + firstName + "</td>"
-                    + "<td>" + lastName + "</td>"
-                    + "<td>" + address + "</td>"
-                    + "<td>" + contact + "</td>"
-                    + "<td>" + email + "</td>"
-                    + "<td>" + username + "</td>"
-                    + "<td>" + password + "</td>"
-                    + "<td>" + password + "</td>"
-                    + "<td>" + nic + "</td>"
-                    + "<td>" + id + "</td>"
-                    + "</tr>";
+                let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>" + "</tr>";
                 $("#adminTableBody").append(row);
             }
-           /* bindRowClickEvents();
-            clearTextFields();*/
+            bindRowClickEventsForAdminTable();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
         }
+    });
+}
+
+function bindRowClickEventsForAdminTable() {
+    $("#adminTableBody>tr").on('click', function () {
+        let firstName = $(this).children(":eq(0)").text();
+        let lastName = $(this).children(":eq(1)").text();
+        let address = $(this).children(":eq(2)").text();
+        let admin_contact = $(this).children(":eq(3)").text();
+        let email = $(this).children(":eq(4)").text();
+        let username = $(this).children(":eq(5)").text();
+        let password = $(this).children(":eq(6)").text();
+        let nic = $(this).children(":eq(7)").text();
+        let id = $(this).children(":eq(8)").text();
+
+        $('#id').val(firstName);
+        $('#firstName').val(lastName);
+        $('#lastName').val(address);
+        $('#address').val(admin_contact);
+        $('#email').val(email);
+        $('#contactNo').val(username);
+        $('#userId').val(password);
+        $('#password').val(nic);
+        $('#nic').val(id);
+
     });
 }

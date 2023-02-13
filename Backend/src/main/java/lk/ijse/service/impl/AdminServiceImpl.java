@@ -38,11 +38,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void deleteAdmin(String code) {
-        if (adminRepo.existsById(code)) {
-            adminRepo.deleteById(code);
+    public void deleteAdmin(String id) {
+        if (adminRepo.existsById(id)) {
+            adminRepo.deleteById(id);
         } else {
-            throw new RuntimeException("No such a admin like this !");
+            throw new RuntimeException("No such a admin !");
         }
     }
 

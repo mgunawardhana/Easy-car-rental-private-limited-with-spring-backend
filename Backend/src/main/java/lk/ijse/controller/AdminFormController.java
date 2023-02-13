@@ -25,10 +25,10 @@ public class AdminFormController {
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
 
-    @DeleteMapping
-    public ResponseUtil deleteAdmin(String code_red) {
-        adminService.deleteAdmin(code_red);
-        return new ResponseUtil("OK", "Successfully Deleted ! " + code_red, "");
+    @DeleteMapping()
+    public ResponseUtil deleteAdmin(String code) {
+        adminService.deleteAdmin(code);
+        return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
     }
 
     @GetMapping(value = "get_all_admin",produces = MediaType.APPLICATION_JSON_VALUE)
