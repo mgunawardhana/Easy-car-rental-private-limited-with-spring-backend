@@ -301,97 +301,89 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form>
-                            <div class="row">
+                        <form id="driverFormController">
+                            <div class="row form-group">
                                 <div class="col-12">
-                                    <h5 class="form-title"><span>Student Information</span></h5>
+                                    <h5 class="form-title"><span>Driver Management</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Driver ID</label>
+                                        <input class="form-control" id="id" name="id" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input class="form-control" id="address" name="address" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Contact</label>
+                                        <input class="form-control" id="contactNo" name="contactNo" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Availability</label>
+                                        <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                            <option>Select Type</option>
+                                            <option>AVAILABLE</option>
+                                            <option>NOT_AVAILABLE</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Licence No</label>
+                                        <input class="form-control" id="drivingLicenseNo" name="drivingLicenseNo" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input class="form-control" id="email" name="email" type="text">
+                                    </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" id="name.firstName" name="name.firstName" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" id="name.lastName" name="name.lastName" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Student Id</label>
-                                        <input class="form-control" type="text">
+                                        <label>User Name</label><!--user_name user.userName-->
+                                        <input class="form-control" id="user.userName" name="user.userName" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Gender</label>
-                                        <select class="form-control">
-                                            <option>Select Gender</option>
-                                            <option>Female</option>
-                                            <option>Male</option>
-                                            <option>Others</option>
-                                        </select>
+                                        <label>User Id</label>
+                                        <input class="form-control" id="user.userId" name="user.userId" type="text">
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Date of Birth</label>
-                                        <div>
-                                            <input class="form-control" type="date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Class</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Religion</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Joining Date</label>
-                                        <div>
-                                            <input class="form-control" type="date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Mobile Number</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Admission Number</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Section</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
+
+                               <!-- <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Student Image</label>
                                         <input class="form-control" type="file">
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <div class="col-12">
-                                    <button class="btn btn-primary bg-success" type="submit">Save</button>
-                                    <button class="btn btn-primary bg-warning" type="submit">Update</button>
-                                    <button class="btn btn-primary bg-danger" type="submit">Delete</button>
+                                    <button class="btn btn-primary bg-success" id="saveDriver" type="button">Save</button>
+                                    <button class="btn btn-primary bg-warning" id="updateDriver" type="button">Update</button>
+                                    <button class="btn btn-primary bg-danger" id="deleteDriver" type="button">Delete</button>
                                 </div>
                             </div>
                         </form>
@@ -596,6 +588,8 @@
     </div>
 </div>
 <!--JS File Links-->
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../controllers/DriverFormController.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
 <script src="../assets/js/core/bootstrap.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>

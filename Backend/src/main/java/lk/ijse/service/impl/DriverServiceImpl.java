@@ -2,6 +2,7 @@ package lk.ijse.service.impl;
 
 import lk.ijse.dto.DriverDTO;
 import lk.ijse.entity.Customer;
+import lk.ijse.entity.Driver;
 import lk.ijse.repo.CustomerRepo;
 import lk.ijse.repo.DriverRepo;
 import lk.ijse.service.DriverService;
@@ -22,11 +23,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO driverDTO) {
-       /* if (customerRepo.existsById(customerDTO.getId())) {
+        if (driverRepo.existsById(driverDTO.getId())) {
             throw new RuntimeException("Customer Already Exist !");
         } else {
-            customerRepo.save(modelMapper.map(customerDTO, Customer.class));
-        }*/
+            driverRepo.save(modelMapper.map(driverDTO, Driver.class));
+        }
     }
 
     @Override
