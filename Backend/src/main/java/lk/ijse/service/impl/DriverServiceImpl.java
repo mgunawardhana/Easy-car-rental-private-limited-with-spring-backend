@@ -33,10 +33,10 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void deleteDriver(String id) {
-        if (driverRepo.existsById(id)) {
-            driverRepo.deleteById(id);
+        if (!driverRepo.existsById(id)) {
+            throw new RuntimeException("No such a admin !");
         } else {
-            throw new RuntimeException("No such a customer !");
+            driverRepo.deleteById(id);
         }
     }
 

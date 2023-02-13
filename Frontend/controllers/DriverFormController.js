@@ -38,18 +38,7 @@ function getAllDrivers() {
                 let user_id = c.user.userId;
 
 
-                let row = "<tr>"
-                    + "<td>" + id + "</td>"
-                    + "<td>" + firstname + "</td>"
-                    + "<td>" + lastname + "</td>"
-                    + "<td>" + address + "</td>"
-                    + "<td>" + drivingLicenseNo + "</td>"
-                    + "<td>" + email + "</td>"
-                    + "<td>" + contactNo + "</td>"
-                    + "<td>" + password + "</td>"
-                    + "<td>" + driverAvailability + "</td>"
-                    + "<td>" + userName + "</td>"
-                    + "<td>" + user_id + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstname + "</td>" + "<td>" + lastname + "</td>" + "<td>" + address + "</td>" + "<td>" + drivingLicenseNo + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + password + "</td>" + "<td>" + driverAvailability + "</td>" + "<td>" + userName + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
 
                 $("#adminTableBody").append(row);
             }
@@ -64,11 +53,8 @@ function getAllDrivers() {
 
 $("#deleteDriver").on('click', function () {
     $.ajax({
-        url: baseURL + "?code="+ $("#id").val(),
-        method: "delete",
-        dataType: "json",
-        success: function (resp) {
-            getAllCustomers();
+        url: baseURL + "?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
+            getAllDrivers();
             alert(resp.message);
         }, error: function (error) {
             alert(JSON.parse(error.responseText).message);
