@@ -22,4 +22,9 @@ public class DriverFormController {
         driverService.saveDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
+
+    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCustomers(){
+        return new ResponseUtil("OK","Successful",driverService.getAllDriver());
+    }
 }
