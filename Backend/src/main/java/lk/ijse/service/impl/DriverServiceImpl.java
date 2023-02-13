@@ -1,6 +1,7 @@
 package lk.ijse.service.impl;
 
 import lk.ijse.dto.DriverDTO;
+import lk.ijse.entity.Customer;
 import lk.ijse.entity.Driver;
 import lk.ijse.repo.DriverRepo;
 import lk.ijse.service.DriverService;
@@ -42,7 +43,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void updateDriver(DriverDTO driverDTO) {
-
+        if (driverRepo.existsById(driverDTO.getId())) {
+            driverRepo.save(modelMapper.map(driverDTO, Driver.class));
+        } else {
+            throw new RuntimeException("Cannot find these driver id !");
+        }
     }
 
     @Override
