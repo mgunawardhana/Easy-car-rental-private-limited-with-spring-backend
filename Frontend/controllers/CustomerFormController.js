@@ -19,7 +19,7 @@ function saveCustomer() {
     });
 }
 
-$("#updateCustomer").on('click', function () {
+$("#updateAdmin").on('click', function () {
     var customerObj = {
         id:$('#id').val(),//TODO check what can i do for this error
         name:{firstName: $('#firstName').val(),lastName:$('#lastName').val()},
