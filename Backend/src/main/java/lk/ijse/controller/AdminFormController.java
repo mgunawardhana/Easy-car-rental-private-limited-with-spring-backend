@@ -15,9 +15,18 @@ import org.springframework.web.bind.annotation.*;
 public class AdminFormController {
 
 
+
+
+
+//TODO Admin update method not implemented please setup get_all name
+//TODO loading error and after setup the update method
+
+
+
+
+
     @Autowired
     public AdminService adminService;
-
 
     @PostMapping(value = "save_admin",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveAdmin(@ModelAttribute AdminDTO adminDTO) {
