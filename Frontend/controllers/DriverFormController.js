@@ -6,7 +6,6 @@ $("#saveDriver").on('click', function () {
     saveDriver();
 });
 
-
 function saveDriver() {
     let formData = $("#driverFormController").serialize();
     $.ajax({
@@ -62,3 +61,17 @@ function getAllDrivers() {
         }
     });
 }
+
+$("#deleteDriver").on('click', function () {
+    $.ajax({
+        url: baseURL + "?code="+ $("#id").val(),
+        method: "delete",
+        dataType: "json",
+        success: function (resp) {
+            getAllCustomers();
+            alert(resp.message);
+        }, error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
