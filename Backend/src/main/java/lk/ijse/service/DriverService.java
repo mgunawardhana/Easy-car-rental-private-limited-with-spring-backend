@@ -1,4 +1,4 @@
 package lk.ijse.service;
 
-public class DriverService {
+public interface DriverService {
 }
