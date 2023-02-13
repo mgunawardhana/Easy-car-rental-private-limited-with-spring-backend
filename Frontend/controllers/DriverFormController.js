@@ -42,6 +42,7 @@ function getAllDrivers() {
 
                 $("#adminTableBody").append(row);
             }
+
             // bindRowClickEvents();
             // clearTextFields();
         }, error: function (error) {
@@ -57,6 +58,38 @@ $("#deleteDriver").on('click', function () {
             getAllDrivers();
             alert(resp.message);
         }, error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
+
+$("#updateDriver").on('click', function () {
+    var driver = {
+        id: $("#id").val(),
+        firstname: $("#address").val(),
+        lastname: $("#contactNo").val(),
+        address: $("#driverAvailability").val(),
+        drivingLicenseNo: $("#drivingLicenseNo").val(),
+        email: $("#email").val(),
+        contactNo: $("#name.firstName").val(),
+        password: $("#name.lastName").val(),
+        driverAvailability: $("#user.userName").val(),
+        userName: $("#user.userId").val(),
+        user_id: $("#").val()
+    }
+
+    $.ajax({
+        url: baseURL + "update_driver",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(driver),
+        dataType: "json",
+        success: function (res) {
+            getAllDrivers();
+            alert(res.message);
+            clearTextFields();
+        },
+        error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
     });
