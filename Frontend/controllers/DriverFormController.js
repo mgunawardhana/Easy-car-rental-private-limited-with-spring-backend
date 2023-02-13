@@ -20,7 +20,7 @@ function saveDriver() {
 }
 
 function getAllDrivers() {
-    $("#adminTableBody").empty();
+    $("#driverTableBody").empty();
     $.ajax({
         url: baseURL + "get_all", success: function (res) {
             for (let c of res.data) {
@@ -40,11 +40,10 @@ function getAllDrivers() {
 
                 let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstname + "</td>" + "<td>" + lastname + "</td>" + "<td>" + address + "</td>" + "<td>" + drivingLicenseNo + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + password + "</td>" + "<td>" + driverAvailability + "</td>" + "<td>" + userName + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
 
-                $("#adminTableBody").append(row);
+                $("#driverTableBody").append(row);
             }
 
-            // bindRowClickEvents();
-            // clearTextFields();
+            bindRowClickEventsForDriver();            // clearTextFields();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
@@ -64,22 +63,35 @@ $("#deleteDriver").on('click', function () {
 });
 
 $("#updateDriver").on('click', function () {
+
+    let driver_id = $("#id").val();
+    let fistname = $("#firstName").val();
+    let lastname = $("#lastName").val();
+    let address = $("#address").val();
+    let licence_number = $("#drivingLicenseNo").val();
+    let email = $("#email").val();
+    let contact = $("#contactNo").val();
+    let password = $("#").val();
+    let availability = $("#driverAvailability").val();
+    let username = $("#userName").val();
+    let user_id = $("#userId").val();
+
     var driver = {
-        id: $("#id").val(),
-        firstname: $("#address").val(),
-        lastname: $("#contactNo").val(),
-        address: $("#driverAvailability").val(),
-        drivingLicenseNo: $("#drivingLicenseNo").val(),
-        email: $("#email").val(),
-        contactNo: $("#name.firstName").val(),
-        password: $("#name.lastName").val(),
-        driverAvailability: $("#user.userName").val(),
-        userName: $("#user.userId").val(),
-        user_id: $("#").val()
+        driver_id: driver_id,
+        fistname: fistname,
+        lastname: lastname,
+        address: address,
+        licence_number: licence_number,
+        email: email,
+        contact: contact,
+        password: password,
+        availability: availability,
+        username: username,
+        user_id: user_id
     }
 
     $.ajax({
-        url: baseURL + "update_driver",
+        url: baseURL +"update",
         method: "put",
         contentType: "application/json",
         data: JSON.stringify(driver),
@@ -87,10 +99,41 @@ $("#updateDriver").on('click', function () {
         success: function (res) {
             getAllDrivers();
             alert(res.message);
-            clearTextFields();
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
     });
 });
+
+function bindRowClickEventsForDriver() {
+    $("#driverTableBody>tr").on('click', function () {
+        let id = $(this).children(":eq(0)").text();
+        let firstName = $(this).children(":eq(1)").text();
+
+        let lastName = $(this).children().eq(2).children(":eq(1)").text();
+
+        /* let lastName = $(this).children(":eq(2)").text();*/
+        let address = $(this).children(":eq(3)").text();
+        let email = $(this).children(":eq(4)").text();
+        let contactNo = $(this).children(":eq(5)").text();
+        let userId = $(this).children(":eq(6)").text();
+        let password = $(this).children(":eq(7)").text();
+        let nic = $(this).children(":eq(8)").text();
+        let drivingLicenseNo = $(this).children(":eq(9)").text();
+        let role = $(this).children(":eq(10)").text();
+
+        $('#id').val(id);
+        $('#firstName').val(firstName);
+        $('#lastName').val(lastName);
+        $('#address').val(address);
+        $('#email').val(email);
+        $('#contactNo').val(contactNo);
+        $('#userId').val(userId);
+        $('#password').val(password);
+        $('#nic').val(nic);
+        $('#drivingLicenseNo').val(drivingLicenseNo);
+        $('#role').val(role);
+
+    });
+}

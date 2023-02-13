@@ -46,7 +46,7 @@ public class DriverServiceImpl implements DriverService {
         if (driverRepo.existsById(driverDTO.getId())) {
             driverRepo.save(modelMapper.map(driverDTO, Driver.class));
         } else {
-            throw new RuntimeException("Cannot find these driver id !");
+            throw new RuntimeException("Cannot find these customer id !");
         }
     }
 

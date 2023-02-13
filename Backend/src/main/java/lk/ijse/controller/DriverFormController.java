@@ -18,13 +18,13 @@ public class DriverFormController {
     public DriverService driverService;
 
     @PostMapping(value = "save_driver",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveCustomer(@ModelAttribute DriverDTO driverDTO) {
+    public ResponseUtil saveDriver(@ModelAttribute DriverDTO driverDTO) {
         driverService.saveDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
 
     @DeleteMapping
-    public ResponseUtil deleteCustomer(String code) {
+    public ResponseUtil deleteDriver(String code) {
         driverService.deleteDriver(code);
         System.out.println(code+" driver service impl");
 
@@ -32,7 +32,13 @@ public class DriverFormController {
     }
 
     @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllCustomers(){
+    public ResponseUtil getAllDrivers(){
         return new ResponseUtil("OK","Successful",driverService.getAllDriver());
+    }
+
+    @PutMapping(value = "update")
+    public ResponseUtil updateCustomer(@RequestBody DriverDTO driverDTO) {
+        driverService.updateDriver(driverDTO);
+        return new ResponseUtil("OK", "Successfully updated ! " + driverDTO.getId(), "");
     }
 }
