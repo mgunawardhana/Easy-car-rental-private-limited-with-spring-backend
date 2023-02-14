@@ -25,7 +25,7 @@ public class VehicleController {
 
     @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllDrivers(){
-        return new ResponseUtil("OK","Successful",driverService.getAllDriver());
+        return new ResponseUtil("OK","Successful",vehicleService.getAllVehicle());
     }
 
 }
