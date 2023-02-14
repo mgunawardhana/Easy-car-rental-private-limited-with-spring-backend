@@ -1,5 +1,6 @@
 package lk.ijse.service.impl;
 
+import lk.ijse.dto.DriverDTO;
 import lk.ijse.dto.VehicleDTO;
 import lk.ijse.entity.Customer;
 import lk.ijse.entity.Vehicle;
@@ -7,10 +8,12 @@ import lk.ijse.repo.CustomerRepo;
 import lk.ijse.repo.VehicleRepo;
 import lk.ijse.service.VehicleService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,6 +44,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public List<VehicleDTO> getAllVehicle() {
-        return null;
+        return modelMapper.map(vehicleRepo.findAll(), new TypeToken<ArrayList<VehicleDTO>>() {
+        }.getType());
     }
 }
