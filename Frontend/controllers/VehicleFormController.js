@@ -50,12 +50,30 @@ function getAllVehicle() {
 
 
 
-                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstname + "</td>" + "<td>" + lastname + "</td>" + "<td>" + address + "</td>" + "<td>" + drivingLicenseNo + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + password + "</td>" + "<td>" + driverAvailability + "</td>" + "<td>" + userName + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
+                let row = "<tr>"
+                    + "<td>" + vehicleId + "</td>"
+                    + "<td>" + noOfPassengers + "</td>"
+                    + "<td>" + extraKmPrice + "</td>"
+                    + "<td>" + registrationNo + "</td>"
+                    + "<td>" + Colour + "</td>"
+                    + "<td>" + daily_amount + "</td>"
+                    + "<td>" + monthly_amount + "</td>"
+                    + "<td>" + Availability + "</td>"
+                    + "<td>" + brand + "</td>"
+                    + "<td>" + transmission + "</td>"
+                    + "<td>" + daily_km + "</td>"
+                    + "<td>" + monthly_km + "</td>"
+                    + "<td>" + fuelType + "</td>"
+                    + "<td>" + damageFee + "</td>"
+                    + "<td>" + vehicleType + "</td>"
+                    + "<td>" + service_milage + "</td>"
+                    + "<td>" + last_service + "</td>"
+                    + "</tr>";
 
                 $("#vehicleFormController").append(row);
             }
-
-            bindRowClickEventsForDriver();            // clearTextFields();
+            //
+            // bindRowClickEventsForDriver();            // clearTextFields();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
