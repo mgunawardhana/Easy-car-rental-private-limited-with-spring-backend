@@ -318,12 +318,7 @@
                                                type="text">
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Monthly Amount</label>
-                                        <input class="form-control" id="vehiclePriceRate.monthlyRate" name="vehiclePriceRate.monthlyRate" type="text">
-                                    </div>
-                                </div>
+
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Extra Km Price</label>
@@ -344,11 +339,17 @@
                                         <input class="form-control" id="vehicleColour" name="vehicleColour" type="text">
                                     </div>
                                 </div>
-
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Daily Amount</label>
                                         <input class="form-control" id="vehiclePriceRate.dailyRate" name="vehiclePriceRate.dailyRate" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Monthly Amount</label>
+                                        <input class="form-control" id="vehiclePriceRate.monthlyRate" name="vehiclePriceRate.monthlyRate" type="text">
                                     </div>
                                 </div>
 
@@ -363,6 +364,14 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Vehicle Brand</label>
+                                        <input class="form-control" id="vehicleBrand" name="vehicleBrand" type="text">
+                                    </div>
+                                </div>
+
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Transmission</label>
@@ -371,6 +380,20 @@
                                             <option>AUTO</option>
                                             <option>MANUAL</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Daily Km</label><!--user_name user.userName-->
+                                        <input class="form-control" id="freeMileage.dailyMileage"
+                                               name="freeMileage.dailyMileage" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Monthly Km</label><!--user_name user.userName-->
+                                        <input class="form-control" id="freeMileage.monthlyMileage"
+                                               name="freeMileage.monthlyMileage" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -385,6 +408,15 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
+                                        <label>Damage Fee</label><!--user_name user.userName-->
+                                        <input class="form-control" id="refundableDamagedFee"
+                                               name="refundableDamagedFee" type="text">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
                                         <label>Vehicle Type</label>
                                         <select class="form-control" id="vehicleType" name="vehicleType">
                                             <option>Select Type</option>
@@ -394,36 +426,6 @@
                                         </select>
                                     </div>
                                 </div>
-
-
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Vehicle Brand</label>
-                                        <input class="form-control" id="vehicleBrand" name="vehicleBrand" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Daily Km</label><!--user_name user.userName-->
-                                        <input class="form-control" id="#"
-                                               name="" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Damage Fee</label>
-                                        <input class="form-control" id="refundableDamagedFee"
-                                               name="refundableDamagedFee" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Monthly Km</label>
-                                        <input class="form-control" id=""
-                                               name="vehiclePriceRate.monthlyRate" type="text">
-                                    </div>
-                                </div>
-
 
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
@@ -473,9 +475,6 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         No of Passenger
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Monthly Amount
-                                    </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                         Extra Km Price
                                     </th>
@@ -488,29 +487,33 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Daily Amount
                                     </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Monthly Amount
+                                    </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                         Availability
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Transmission
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        FuelType
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        Vehicle Type
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Vehicle Brand
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Transmission
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Daily Km
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Monthly Km
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        FuelType
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                         Damage Fee
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Monthly Km
+
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Vehicle Type
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                         Service Millage
@@ -518,7 +521,6 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                         Last Service
                                     </th>
-                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody id="vehicleTableBody">
