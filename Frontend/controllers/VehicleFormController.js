@@ -14,6 +14,7 @@ function saveVehicle() {
     $.ajax({
         url: baseURL + "save_vehicle", method: "post", data: formData, dataType: "json", success: function (res) {
             alert(res.message);
+            getAllVehicle();
         }, error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
             alert(errorMessage.message);
@@ -21,7 +22,7 @@ function saveVehicle() {
     });
 }
 function getAllVehicle() {
-    $("#vehicleFormController").empty();
+    $("#vehicleTableBody").empty();
     $.ajax({
         url: baseURL + "get_all", success: function (res) {
             for (let c of res.data) {
@@ -70,7 +71,7 @@ function getAllVehicle() {
                     + "<td>" + last_service + "</td>"
                     + "</tr>";
 
-                $("#vehicleFormController").append(row);
+                $("#vehicleTableBody").append(row);
             }
             //
             // bindRowClickEventsForDriver();            // clearTextFields();
