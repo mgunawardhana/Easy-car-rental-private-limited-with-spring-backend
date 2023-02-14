@@ -18,20 +18,20 @@ public class VehicleController {
 
 
     @PostMapping(value = "save_vehicle",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveCustomer(@ModelAttribute VehicleDTO vehicleDTO) {
+    public ResponseUtil saveVehicle(@ModelAttribute VehicleDTO vehicleDTO) {
         vehicleService.saveVehicle(vehicleDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
 
     @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllDrivers(){
+    public ResponseUtil getAllVehicle(){
         return new ResponseUtil("OK","Successful",vehicleService.getAllVehicle());
     }
 
     @DeleteMapping
-    public ResponseUtil deleteDriver(String code) {
+    public ResponseUtil deleteVehicle(String code) {
         vehicleService.deleteVehicle(code);
-        System.out.println(code+" driver service impl");
+        System.out.println(code+" vehicle service impl");
 
         return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
     }

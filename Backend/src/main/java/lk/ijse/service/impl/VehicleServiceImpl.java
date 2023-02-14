@@ -33,8 +33,12 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public void deleteVehicle(String id) {
-
+    public void deleteVehicle(String code) {
+        if (vehicleRepo.existsById(code)) {
+            throw new RuntimeException("No such a vehicle !");
+        } else {
+            vehicleRepo.deleteById(code);
+        }
     }
 
     @Override

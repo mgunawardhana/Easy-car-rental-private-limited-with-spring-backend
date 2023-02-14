@@ -82,6 +82,7 @@ function getAllVehicle() {
     });
 }
 
+//TODO vehicle error in delete method
 
 $("#deleteVehicle").on('click', function () {
     $.ajax({

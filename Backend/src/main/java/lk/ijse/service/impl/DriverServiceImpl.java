@@ -43,10 +43,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void updateDriver(DriverDTO driverDTO) {
-        if (driverRepo.existsById(driverDTO.getId())) {
-            driverRepo.save(modelMapper.map(driverDTO, Driver.class));
-        } else {
+        if (!driverRepo.existsById(driverDTO.getId())) {
             throw new RuntimeException("Cannot find these customer id !");
+        } else {
+            driverRepo.save(modelMapper.map(driverDTO, Driver.class));
+
         }
     }
 
