@@ -266,7 +266,7 @@ header.shadow #search-icon {
   margin: 0.8rem 0;
 }
 .parts-container .box .btn {
-  max-width: 120px;
+  max-width: 140px;
 }
 .parts-container .box .details {
   display: flex;
@@ -312,7 +312,7 @@ header.shadow #search-icon {
   font-size: 1.2rem;
 }
 .blog-container .box p {
-  font-size: 0.938rem;
+  font-size: 0.850rem;/*----------------------------------------------------card details font size */
   margin: 4px 0;
 }
 .blog-container .box .blog-btn {
