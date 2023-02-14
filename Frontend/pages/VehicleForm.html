@@ -308,37 +308,40 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Vehicle ID</label>
-                                        <input class="form-control" id="id" name="id" type="text">
+                                        <input class="form-control" id="vehicleId" name="vehicleId" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>No of Passenger</label>
-                                        <input class="form-control" id="address" name="address" type="text">
+                                        <input class="form-control" id="numberOfPassenger" name="numberOfPassenger"
+                                               type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Monthly Amount</label>
-                                        <input class="form-control" id="contactNo" name="contactNo" type="text">
+                                        <input class="form-control" id="" name="" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Extra Km Price</label>
-                                        <input class="form-control" id="contactNo" name="contactNo" type="text">
+                                        <input class="form-control" id="vehiclePriceRate" name="vehiclePriceRate"
+                                               type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Registration No</label>
-                                        <input class="form-control" id="drivingLicenseNo" name="drivingLicenseNo" type="text">
+                                        <input class="form-control" id="registrationNo" name="registrationNo"
+                                               type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Colour</label>
-                                        <input class="form-control" id="email" name="email" type="text">
+                                        <input class="form-control" id="vehicleColour" name="vehicleColour" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -350,7 +353,8 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Availability</label>
-                                        <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                        <select class="form-control" id="vehicleAvailability"
+                                                name="vehicleAvailability">
                                             <option>Select Type</option>
                                             <option>AVAILABLE</option>
                                             <option>NOT_AVAILABLE</option>
@@ -360,7 +364,7 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Transmission</label>
-                                        <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                        <select class="form-control" id="transmissionType" name="transmissionType">
                                             <option>Select Type</option>
                                             <option>AUTO</option>
                                             <option>MANUAL</option>
@@ -370,20 +374,21 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>FuelType</label>
-                                        <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                        <select class="form-control" id="fuelType" name="fuelType">
                                             <option>Select Type</option>
-                                            <option>AVAILABLE</option>
-                                            <option>NOT_AVAILABLE</option>
+                                            <option>DIESEL</option>
+                                            <option>PETROL</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Vehicle Type</label>
-                                        <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                        <select class="form-control" id="vehicleType" name="vehicleType">
                                             <option>Select Type</option>
-                                            <option>AVAILABLE</option>
-                                            <option>NOT_AVAILABLE</option>
+                                            <option>GENERAL</option>
+                                            <option>PREMIUM</option>
+                                            <option>LUXURY</option>
                                         </select>
                                     </div>
                                 </div>
@@ -392,25 +397,28 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Vehicle Brand</label>
-                                        <input class="form-control" id="lastName" name="name.lastName" type="text">
+                                        <input class="form-control" id="vehicleBrand" name="vehicleBrand" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Daily Km</label><!--user_name user.userName-->
-                                        <input class="form-control" id="userName" name="user.userName" type="text">
+                                        <input class="form-control" id="vehiclePriceRate.dailyRate"
+                                               name="vehiclePriceRate.dailyRate" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Damage Fee</label>
-                                        <input class="form-control" id="userId" name="user.userId" type="text">
+                                        <input class="form-control" id="refundableDamagedFee"
+                                               name="refundableDamagedFee" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Monthly Km</label>
-                                        <input class="form-control" id="lastName" name="name.lastName" type="text">
+                                        <input class="form-control" id="vehiclePriceRate.monthlyRate"
+                                               name="vehiclePriceRate.monthlyRate" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -422,15 +430,19 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Last Service</label>
-                                        <input class="form-control" id="userId" name="user.userId" type="text">
+                                        <input class="form-control" id="lastServiceMileage" name="lastServiceMileage"
+                                               type="text">
                                     </div>
                                 </div>
 
 
                                 <div class="col-12">
-                                    <button class="btn btn-primary bg-success" id="saveDriver" type="button">Save</button>
-                                    <button class="btn btn-primary bg-warning" id="updateDriver" type="button">Update</button>
-                                    <button class="btn btn-primary bg-danger" id="deleteDriver" type="button">Delete</button>
+                                    <button class="btn btn-primary bg-success" id="saveDriver" type="button">Save
+                                    </button>
+                                    <button class="btn btn-primary bg-warning" id="updateDriver" type="button">Update
+                                    </button>
+                                    <button class="btn btn-primary bg-danger" id="deleteDriver" type="button">Delete
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -450,42 +462,60 @@
                                 <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Driver ID
+                                        Vehicle ID
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        FirstName
+                                        No of Passenger
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        LastName
+                                        Monthly Amount
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        Address
+                                        Extra Km Price
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        License No
+                                        Registration No
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Email
+                                        Colour
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Contact
+                                        Daily Amount
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        Password
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Availability
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        UserName
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Transmission
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        UserId
+                                        FuelType
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Vehicle Type
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Vehicle Brand
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Daily Km
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Damage Fee
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Monthly Km
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Service Millage
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Last Service
                                     </th>
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody id="driverTableBody">
+                                <tbody id="vehicleTableBody">
                                 <!--=====================================================================================================   this is second table-->
 
 
@@ -516,7 +546,7 @@
                         <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                             <li class="nav-item">
                                 <a class="nav-link text-muted" href="" target="_blank">Creative
-                                    Tim</a>
+                                    </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-muted" href=""
