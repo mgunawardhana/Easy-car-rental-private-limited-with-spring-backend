@@ -119,18 +119,20 @@ header.shadow #search-icon {
   font-size: 1rem;
 }
 .home {
+
   opacity: 0.8;
   max-width: 1300px;
   margin: auto;
   width: 100%;
   min-height: 640px;
+  border-radius: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px !important;
   display: flex;
   align-items: center;
   background: url("../site/assets/858816.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center left;
-
 }
 .home-text {
   padding-left: 130px;
@@ -285,13 +287,23 @@ header.shadow #search-icon {
   gap: 2rem;
   margin-top: 2rem;
 }
+
+
+
 .blog-container .box {
   flex: 1 1 13rem;
   padding: 20px;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px !important;
 }
 .blog-container .box:hover {
-  background: #f6f6f6;
+  background:var(--main-color);
 }
+
+
+
+
 .blog-container .box span {
   font-size: 0.8rem;
   color: var(--main-color);
