@@ -81,3 +81,15 @@ function getAllVehicle() {
         }
     });
 }
+
+
+$("#deleteVehicle").on('click', function () {
+    $.ajax({
+        url: baseURL + "?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
+          getAllVehicle();
+            alert(resp.message);
+        }, error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});

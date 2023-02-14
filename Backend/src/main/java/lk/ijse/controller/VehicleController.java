@@ -28,4 +28,12 @@ public class VehicleController {
         return new ResponseUtil("OK","Successful",vehicleService.getAllVehicle());
     }
 
+    @DeleteMapping
+    public ResponseUtil deleteDriver(String code) {
+        vehicleService.deleteVehicle(code);
+        System.out.println(code+" driver service impl");
+
+        return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
+    }
+
 }
