@@ -23,11 +23,6 @@ public class VehicleController {
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
 
-    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllVehicle(){
-        return new ResponseUtil("OK","Successful",vehicleService.getAllVehicle());
-    }
-
     @DeleteMapping
     public ResponseUtil deleteVehicle(String code) {
         vehicleService.deleteVehicle(code);
@@ -35,5 +30,12 @@ public class VehicleController {
 
         return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
     }
+
+    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllVehicle(){
+        return new ResponseUtil("OK","Successful",vehicleService.getAllVehicle());
+    }
+
+
 
 }

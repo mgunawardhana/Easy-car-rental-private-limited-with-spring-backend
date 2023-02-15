@@ -86,7 +86,8 @@ function getAllVehicle() {
 
 $("#deleteVehicle").on('click', function () {
     $.ajax({
-        url: baseURL + "?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
+        url: baseURL + "?code=" + $("#vehicleId").val(), method: "delete", dataType: "json", success: function (resp) {
+            console.log($("#vehicleId").val())
           getAllVehicle();
             alert(resp.message);
         }, error: function (error) {
