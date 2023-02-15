@@ -19,18 +19,33 @@ function saveCustomer() {
     });
 }
 
-$("#updateAdmin").on('click', function () {
+$("#updateCustomer").on('click', function () {
+
+    let id = $('#id').val();
+    let firstName = $('#firstName').val();
+    let lastName = $('#lastName').val();
+    let address = $('#address').val();
+    let email = $('#email').val();
+    let contactNo = $('#contactNo').val();
+    let user_id = $('#userId').val();
+    let password = $('#password').val();
+    let nic = $('#nic').val();
+    let drivingLicenceNo = $('#drivingLicenseNo').val();
+    let role = $('#role').val();
+
     var customerObj = {
-        id:$('#id').val(),//TODO check what can i do for this error
-        name:{firstName: $('#firstName').val(),lastName:$('#lastName').val()},
-        address:$('#address').val(),
-        email:$('#email').val(),
-        contactNo:$('#contactNo').val(),
-        user:$('#userId').val(),
-        password:$('#password').val(),
-        nic:$('#nic').val(),
-        drivingLicenseNo:$('#drivingLicenseNo').val(),
-        role:$('#role').val()
+        id: id,
+        name: {
+            firstName: firstName, lastName: lastName
+        },
+        address: address,
+        email: email,
+        contactNo: contactNo,
+        user: user_id,
+        password: password,
+        nic: nic,
+        drivingLicenseNo: drivingLicenceNo,
+        role: role
     }
 
     $.ajax({
@@ -43,7 +58,8 @@ $("#updateAdmin").on('click', function () {
             getAllCustomers();
             alert(res.message);
             clearTextFields();
-        }, error: function (error) {
+        },
+        error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
     });
@@ -51,10 +67,7 @@ $("#updateAdmin").on('click', function () {
 
 $("#deleteCustomer").on('click', function () {
     $.ajax({
-        url: baseURL + "?code="+ $("#id").val(),
-        method: "delete",
-        dataType: "json",
-        success: function (resp) {
+        url: baseURL + "?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
             getAllCustomers();
             alert(resp.message);
         }, error: function (error) {
@@ -82,7 +95,8 @@ function getAllCustomers() {
                 let role = c.user.role;
 
 
-                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_id + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "</tr>";$("#customerTableBody").append(row);
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_id + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "</tr>";
+                $("#customerTableBody").append(row);
             }
             bindRowClickEvents();
             clearTextFields();
@@ -97,10 +111,7 @@ function bindRowClickEvents() {
     $("#customerTableBody>tr").on('click', function () {
         let id = $(this).children(":eq(0)").text();
         let firstName = $(this).children(":eq(1)").text();
-
-         let lastName = $(this).children().eq(2).children(":eq(1)").text();
-
-       /* let lastName = $(this).children(":eq(2)").text();*/
+        let lastName = $(this).children(":eq(1)").text();
         let address = $(this).children(":eq(3)").text();
         let email = $(this).children(":eq(4)").text();
         let contactNo = $(this).children(":eq(5)").text();
@@ -116,7 +127,7 @@ function bindRowClickEvents() {
         $('#address').val(address);
         $('#email').val(email);
         $('#contactNo').val(contactNo);
-        $('#userId').val(userId);
+        $('#userName').val(userId);
         $('#password').val(password);
         $('#nic').val(nic);
         $('#drivingLicenseNo').val(drivingLicenseNo);

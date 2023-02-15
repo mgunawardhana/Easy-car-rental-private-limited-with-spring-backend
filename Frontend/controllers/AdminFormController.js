@@ -57,6 +57,51 @@ function getAllAdmins() {
     });
 }
 
+$("#updateAdmin").on('click', function () {
+
+    let firstName = $("#firstName").val();
+    let lastName = $("#lastName").val();
+    let address = $("#adminAddress").val();
+    let contact = $("#adminContact").val();
+    let email = $("#adminEmail").val();
+    let username = $("#userName").val();
+    let password = $("#password").val();
+    let nic = $("#adminNic").val();
+    let id = $("#adminId").val();
+
+
+    var adminObj = {
+        firstName: firstName,
+        lastName: lastName,
+        address: address,
+        contact: contact,
+        email: email,
+        username: username,
+        password: password,
+        nic: nic,
+        id: id
+    }
+
+    $.ajax({
+        url: baseURL + "update",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(adminObj),
+        dataType: "json",
+        success: function (res) {
+            alert("update method invoked");
+            getAllAdmins();
+            alert(res.message);
+            clearTextFields();
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+
+});
+
+
 function bindRowClickEventsForAdminTable() {
     $("#adminTableBody>tr").on('click', function () {
         let firstName = $(this).children(":eq(0)").text();
