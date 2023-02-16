@@ -40,10 +40,9 @@ $("#updateCustomer").on('click', function () {
         address: address,
         email: email,
         contactNo: contactNo,
-        user: {userName: userName, userId: user_id, password: password},
+        user: {userName: userName, userId: user_id, password: password, role: role},
         nic: nic,
         drivingLicenseNo: drivingLicenceNo,
-        role: role,
     }
 
     $.ajax({
