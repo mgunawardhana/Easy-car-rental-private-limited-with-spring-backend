@@ -32,20 +32,19 @@ $("#updateCustomer").on('click', function () {
     let nic = $('#nic').val();
     let drivingLicenceNo = $('#drivingLicenseNo').val();
     let role = $('#role').val();
+    let userName = $('#userName').val();
 
     var customerObj = {
         id: id,
-        name: {
-            firstName: firstName, lastName: lastName
-        },
+        name: {firstName: firstName, lastName: lastName},
         address: address,
         email: email,
         contactNo: contactNo,
-        user: user_id,
+        user: {userName:userName,userId:user_id},
         password: password,
         nic: nic,
         drivingLicenseNo: drivingLicenceNo,
-        role: role
+        role: role,
     }
 
     $.ajax({
@@ -88,14 +87,28 @@ function getAllCustomers() {
                 let address = c.address;
                 let email = c.email;
                 let contactNo = c.contactNo;
-                let user_id = c.user.userId;
+                let user_name = c.user.userName;
                 let password = c.user.password;
                 let nic = c.nic;
                 let drivingLicenceNo = c.drivingLicenseNo;
                 let role = c.user.role;
+                let user_id = c.user.userId;
 
 
-                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_id + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "</tr>";
+                let row = "<tr>"
+                    + "<td>" + id + "</td>"
+                    + "<td>" + firstName + "</td>"
+                    + "<td>" + lastName + "</td>"
+                    + "<td>" + address + "</td>"
+                    + "<td>" + email + "</td>"
+                    + "<td>" + contactNo +"</td>"
+                    + "<td>" + user_name + "</td>"
+                    + "<td>" + password + "</td>"
+                    + "<td>" + nic + "</td>"
+                    + "<td>" + drivingLicenceNo + "</td>"
+                    + "<td>" + role + "</td>"
+                    + "<td>" + user_id + "</td>"
+                    + "</tr>";
                 $("#customerTableBody").append(row);
             }
             bindRowClickEvents();
@@ -115,11 +128,13 @@ function bindRowClickEvents() {
         let address = $(this).children(":eq(3)").text();
         let email = $(this).children(":eq(4)").text();
         let contactNo = $(this).children(":eq(5)").text();
-        let userId = $(this).children(":eq(6)").text();
+        let userName = $(this).children(":eq(6)").text();
         let password = $(this).children(":eq(7)").text();
         let nic = $(this).children(":eq(8)").text();
         let drivingLicenseNo = $(this).children(":eq(9)").text();
         let role = $(this).children(":eq(10)").text();
+        let userId = $(this).children(":eq(11)").text();
+
 
         $('#id').val(id);
         $('#firstName').val(firstName);
@@ -127,11 +142,12 @@ function bindRowClickEvents() {
         $('#address').val(address);
         $('#email').val(email);
         $('#contactNo').val(contactNo);
-        $('#userName').val(userId);
+        $('#userName').val(userName);
         $('#password').val(password);
         $('#nic').val(nic);
         $('#drivingLicenseNo').val(drivingLicenseNo);
         $('#role').val(role);
+        $('#userId').val(userId);
 
     });
 }
