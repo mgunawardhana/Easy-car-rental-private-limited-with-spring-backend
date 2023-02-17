@@ -10,6 +10,8 @@ import lombok.ToString;
 
 @Data
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class AdminDTO {
 
     private String adminId;
@@ -20,7 +22,7 @@ public class AdminDTO {
     private String adminContact;
     private UserDTO user;
 
-    public AdminDTO(String adminId, String adminNic, Name adminName, String adminAddress, String adminEmail, String adminContact, UserDTO user) {
+/*    public AdminDTO(String adminId, String adminNic, Name adminName, String adminAddress, String adminEmail, String adminContact, UserDTO user) {
         this.adminId = adminId;
         this.adminNic = adminNic;
         this.adminName = adminName;
@@ -31,5 +33,5 @@ public class AdminDTO {
     }
 
     public AdminDTO() {
-    }
+    }*/
 }

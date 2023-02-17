@@ -91,9 +91,14 @@ function getAllCustomers() {
                 let drivingLicenceNo = c.drivingLicenseNo;
                 let role = c.user.role;
                 let user_id = c.user.userId;
+                let password = c.user.password;
 
 
-                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_name + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>"
+                    + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>"
+                    + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_name + "</td>"
+                    + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>"
+                    + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
                 $("#customerTableBody").append(row);
             }
             bindRowClickEvents();
