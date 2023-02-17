@@ -1,7 +1,7 @@
 let baseURL = "http://localhost:8080/Backend_war/customer/";
 
 getAllCustomers();
-
+genarateID();
 $("#saveCustomer").on('click', function () {
     saveCustomer();
 });
@@ -52,9 +52,9 @@ $("#updateCustomer").on('click', function () {
         data: JSON.stringify(customerObj),
         dataType: "json",
         success: function (res) {
+            clearTextFields();
             getAllCustomers();
             alert(res.message);
-            clearTextFields();
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
@@ -65,6 +65,7 @@ $("#updateCustomer").on('click', function () {
 $("#deleteCustomer").on('click', function () {
     $.ajax({
         url: baseURL + "?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
+            clearTextFields();
             getAllCustomers();
             alert(resp.message);
         }, error: function (error) {
@@ -86,7 +87,6 @@ function getAllCustomers() {
                 let email = c.email;
                 let contactNo = c.contactNo;
                 let user_name = c.user.userName;
-                let password = c.user.password;
                 let nic = c.nic;
                 let drivingLicenceNo = c.drivingLicenseNo;
                 let role = c.user.role;
@@ -98,6 +98,18 @@ function getAllCustomers() {
             }
             bindRowClickEvents();
             clearTextFields();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
+
+function genarateID() {
+    $("#customerTableBody").empty();
+    $.ajax({
+        url: baseURL + "?test=", success: function (res) {
+            $('#id').val(res.data.id);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
@@ -144,9 +156,10 @@ function clearTextFields() {
     $('#address').val();
     $('#email').val();
     $('#contactNo').val();
-    $('#userId').val();
+    $('#userName').val();
     $('#password').val();
     $('#nic').val();
     $('#drivingLicenseNo').val();
     $('#role').val();
+    $('#userId').val();
 }

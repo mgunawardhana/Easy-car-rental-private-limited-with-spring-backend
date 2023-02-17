@@ -39,4 +39,9 @@ public class CustomerFormController {
         customerService.updateCustomer(customerDTO);
         return new ResponseUtil("OK", "Successfully updated ! " + customerDTO.getId(), "");
     }
+
+    @GetMapping(params = {"test"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateCustomersIds(@RequestParam String test) {
+        return new ResponseUtil("Ok", "", customerService.generateCustomerIds());
+    }
 }

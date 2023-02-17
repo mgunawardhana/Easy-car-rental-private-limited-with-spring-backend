@@ -15,6 +15,7 @@ function saveVehicle() {
         url: baseURL + "save_vehicle", method: "post", data: formData, dataType: "json", success: function (res) {
             alert(res.message);
             getAllVehicle();
+            bindRowClickEventsForVehicle();
         }, error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
             alert(errorMessage.message);
@@ -44,8 +45,8 @@ function getAllVehicle() {
                 let damageFee = c.refundableDamagedFee;
 
                 let vehicleType = c.vehicleType;
-
-                let service_milage = null;
+                //
+                // let service_milage = c.;
 
                 let last_service = c.lastServiceMileage;
 
@@ -67,20 +68,44 @@ function getAllVehicle() {
                     + "<td>" + fuelType + "</td>"
                     + "<td>" + damageFee + "</td>"
                     + "<td>" + vehicleType + "</td>"
-                    + "<td>" + service_milage + "</td>"
+              /*      + "<td>" + service_milage + "</td>"*/
                     + "<td>" + last_service + "</td>"
                     + "</tr>";
 
                 $("#vehicleTableBody").append(row);
             }
-            //
-            // bindRowClickEventsForDriver();            // clearTextFields();
+            bindRowClickEventsForVehicle();         // clearTextFields();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
         }
     });
 }
+
+function bindRowClickEventsForVehicle() {
+    $("#vehicleTableBody>tr").on('click', function () {
+        $('#vehicleId').val($(this).children(":eq(0)").text());
+        $('#numberOfPassenger').val($(this).children(":eq(1)").text());
+        $('#extraKmPer').val($(this).children(":eq(2)").text());
+        $('#registrationNo').val($(this).children(":eq(3)").text());
+        $('#vehicleColour').val($(this).children(":eq(4)").text());
+        $('#dailyRate').val($(this).children(":eq(5)").text());
+        $('#monthlyRate').val($(this).children(":eq(6)").text());
+        $('#vehicleAvailability').val($(this).children(":eq(7)").text());
+        $('#vehicleBrand').val($(this).children(":eq(8)").text());
+        $('#transmissionType').val($(this).children(":eq(9)").text());
+        $('#dailyMileage').val($(this).children(":eq(10)").text());
+        $('#monthlyMileage').val($(this).children(":eq(11)").text());
+        $('#fuelType').val($(this).children(":eq(12)").text());
+        $('#refundableDamagedFee').val($(this).children(":eq(13)").text());
+        $('#vehicleType').val($(this).children(":eq(14)").text());
+        $('#dailyMileage1').val($(this).children(":eq(15)").text());
+        $('#lastServiceMileage').val($(this).children(":eq(16)").text());
+
+
+    });
+}
+
 
 //TODO vehicle error in delete method
 

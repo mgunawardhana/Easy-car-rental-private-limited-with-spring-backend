@@ -367,16 +367,34 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>User Id</label>
-                                        <input class="form-control" id="userId" name="user.userId" type="text">
+                                        <input class="form-control" disabled id="userId"  type="text">
                                     </div>
                                 </div>
 
-                               <!-- <div class="col-12 col-sm-6">
+                                <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label>Student Image</label>
-                                        <input class="form-control" type="file">
+                                        <label>password</label>
+                                        <input class="form-control" id="password" name="user.password" type="text">
                                     </div>
-                                </div>-->
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>NIC</label>
+                                        <input class="form-control" id="nic" name="nic" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <select class="form-control" id="role" name="user.role">
+                                            <option>Select Type</option>
+                                            <option>CUSTOMER</option>
+                                            <option>ADMIN</option>
+                                            <option>DRIVER</option>
+                                        </select>
+                                    </div>
+                                </div>
+
 
                                 <div class="col-12">
                                     <button class="btn btn-primary bg-success" id="saveDriver" type="button">Save</button>
@@ -421,9 +439,6 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Contact
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        Password
-                                    </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Availability
                                     </th>
@@ -432,6 +447,12 @@
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                         UserId
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Nic
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Password
                                     </th>
                                     <th></th>
                                 </tr>

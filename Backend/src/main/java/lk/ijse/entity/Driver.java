@@ -18,6 +18,7 @@ public class Driver {
 
     @Id
     private String id;
+
     @Column(name = "user_name")
     private String nic;
     @Column(name = "license_no")
