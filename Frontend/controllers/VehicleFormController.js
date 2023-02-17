@@ -28,30 +28,27 @@ function getAllVehicle() {
             for (let c of res.data) {
 
                 let vehicleId = c.vehicleId;
-                let noOfPassengers = c.numberOfPassenger;
-                let extraKmPrice = c.extraKmPer;
                 let registrationNo = c.registrationNo;
+                let brand = c.vehicleBrand;
+                let vehicleType = c.vehicleType;
+                let fuelType = c.fuelType;
+                let noOfPassengers = c.numberOfPassenger;
                 let Colour = c.vehicleColour;
+                let transmission = c.transmissionType;
+                let damageFee = c.refundableDamagedFee;
                 let daily_amount = c.vehiclePriceRate.dailyRate;
                 let monthly_amount = c.vehiclePriceRate.monthlyRate;
-                let Availability = c.vehicleAvailability;
-                let brand = c.vehicleBrand;
-                let transmission = c.transmissionType;
                 let daily_km = c.freeMileage.dailyMileage;
                 let monthly_km = c.freeMileage.monthlyMileage;
-                let fuelType = c.fuelType;
-
-                let damageFee = c.refundableDamagedFee;
-
-                let vehicleType = c.vehicleType;
-                //
-                // let service_milage = c.;
-
                 let last_service = c.lastServiceMileage;
+                let extraKmPrice = c.extraKmPer;
+                let Availability = c.vehicleAvailability;
 
+                //TODO vehicleMileage equals to serviceMileage
+                let vehicle_mileage = c.vehicleMileage;
 
                 let row = "<tr>" + "<td>" + vehicleId + "</td>" + "<td>" + noOfPassengers + "</td>" + "<td>" + extraKmPrice + "</td>" + "<td>" + registrationNo + "</td>" + "<td>" + Colour + "</td>" + "<td>" + daily_amount + "</td>" + "<td>" + monthly_amount + "</td>" + "<td>" + Availability + "</td>" + "<td>" + brand + "</td>" + "<td>" + transmission + "</td>" + "<td>" + daily_km + "</td>" + "<td>" + monthly_km + "</td>" + "<td>" + fuelType + "</td>" + "<td>" + damageFee + "</td>" + "<td>" + vehicleType + "</td>"
-                    /*      + "<td>" + service_milage + "</td>"*/ + "<td>" + last_service + "</td>" + "</tr>";
+                          + "<td>" +last_service  + "</td>" + "<td>" + vehicle_mileage + "</td>" + "</tr>";
 
                 $("#vehicleTableBody").append(row);
             }
@@ -108,7 +105,7 @@ $("#updateVehicle").on('click', function () {
         dataType: "json",
         success: function (res) {
             alert("update method invoked");
-            getAllAdmins();
+            getAllVehicle();
             alert(res.message);
             clearTextFields();
         },

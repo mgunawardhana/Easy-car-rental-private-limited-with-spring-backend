@@ -26,11 +26,11 @@ public class VehicleDTO {
 
     private TransmissionType transmissionType;
     private double refundableDamagedFee;
-    private int vehicleMileage;
+    private int vehicleMileage;//TODO checkout here
     private PriceRate vehiclePriceRate;
     private Mileage freeMileage;
     private int lastServiceMileage;
     private double extraKmPer;
     private AvailabilityType vehicleAvailability;
-    private RequestType needMaintenance;
+    private RequestType needMaintenance;//TODO checkout here
 }
