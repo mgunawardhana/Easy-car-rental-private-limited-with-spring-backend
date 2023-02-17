@@ -77,11 +77,33 @@ $("#deleteDriver").on('click', function () {
 
 $("#updateDriver").on('click', function () {
 
+    let id = $('#id').val();
+    let address = $('#address').val();
+    let contactNo = $('#contactNo').val();
+    let driverAvailability = $('#driverAvailability').val();
+    let drivingLicenseNo = $('#drivingLicenseNo').val();
+    let email = $('#email').val();
+    let firstName = $('#firstName').val();
+    let lastName = $('#lastName').val();
+    let userName = $('#userName').val();
+    let userId = $('#userId').val();
+    let password = $('#password').val();
+    let nic = $('#nic').val();
+    let role = $('#role').val();
+
+
     //TODO implement this
 
     var driver = {
-
-
+        id:id,
+        address:address,
+        contactNo:contactNo,
+        driverAvailability:driverAvailability,
+        drivingLicenseNo:drivingLicenseNo,
+        email:email,
+        name:{ firstName:firstName, lastName:lastName},
+        user:{userId:userId,userName:userName,password:password,role:role},
+        nic:nic,
     }
 
     $.ajax({
