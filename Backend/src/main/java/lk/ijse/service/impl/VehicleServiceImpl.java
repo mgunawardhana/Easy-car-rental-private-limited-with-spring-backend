@@ -3,6 +3,7 @@ package lk.ijse.service.impl;
 import lk.ijse.dto.DriverDTO;
 import lk.ijse.dto.VehicleDTO;
 import lk.ijse.entity.Customer;
+import lk.ijse.entity.Driver;
 import lk.ijse.entity.Vehicle;
 import lk.ijse.repo.CustomerRepo;
 import lk.ijse.repo.VehicleRepo;
@@ -42,8 +43,13 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public void updateVehicle(VehicleDTO driverDTO) {
+    public void updateVehicle(VehicleDTO vehicleDTO) {
+        if (!vehicleRepo.existsById(vehicleDTO.getVehicleId())) {
+            throw new RuntimeException("Cannot find these vehicle id !");
+        } else {
+            vehicleRepo.save(modelMapper.map(vehicleDTO, Vehicle.class));
 
+        }
     }
 
     @Override

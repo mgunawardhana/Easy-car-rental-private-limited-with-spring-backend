@@ -37,7 +37,7 @@ public class DriverFormController {
     }
 
     @PutMapping(value = "update")
-    public ResponseUtil updateCustomer(@RequestBody DriverDTO driverDTO) {
+    public ResponseUtil updateDriver(@RequestBody DriverDTO driverDTO) {
         driverService.updateDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully updated ! " + driverDTO.getId(), "");
     }
