@@ -69,16 +69,6 @@ $("#updateAdmin").on('click', function () {
     let nic = $("#adminNic").val();
     let id = $("#adminId").val();
 
-    console.log(firstName,
-    lastName,
-    address,
-    contact,
-    email,
-    username,
-    password,
-    nic,
-    id);
-
     var adminObj = {
         name: {firstName: firstName, lastName: lastName},
         address: address,
@@ -117,8 +107,8 @@ function bindRowClickEventsForAdminTable() {
         $("#adminContact").val($(this).children(":eq(3)").text());
         $("#adminEmail").val($(this).children(":eq(4)").text());
         $("#userName").val($(this).children(":eq(5)").text());
-        $("#password").val($(this).children(":eq(6)").text());
-        $("#adminNic").val($(this).children(":eq(7)").text());
-        $("#adminId").val($(this).children(":eq(8)").text());
+        $("#password").val($(this).children(":eq(7)").text());
+        $("#adminNic").val($(this).children(":eq(8)").text());
+        $("#adminId").val($(this).children(":eq(9)").text());
     });
 }

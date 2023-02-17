@@ -2,16 +2,15 @@ package lk.ijse.dto;
 
 
 import lk.ijse.embeded.Name;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 
-@Data
+
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class AdminDTO {
 
     private String adminId;

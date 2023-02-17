@@ -1,8 +1,6 @@
 let baseURL = "http://localhost:8080/Backend_war/vehicle/";
 
 
-
-
 getAllVehicle();
 
 $("#saveVehicle").on('click', function () {
@@ -22,6 +20,7 @@ function saveVehicle() {
         }
     });
 }
+
 function getAllVehicle() {
     $("#vehicleTableBody").empty();
     $.ajax({
@@ -51,26 +50,8 @@ function getAllVehicle() {
                 let last_service = c.lastServiceMileage;
 
 
-
-                let row = "<tr>"
-                    + "<td>" + vehicleId + "</td>"
-                    + "<td>" + noOfPassengers + "</td>"
-                    + "<td>" + extraKmPrice + "</td>"
-                    + "<td>" + registrationNo + "</td>"
-                    + "<td>" + Colour + "</td>"
-                    + "<td>" + daily_amount + "</td>"
-                    + "<td>" + monthly_amount + "</td>"
-                    + "<td>" + Availability + "</td>"
-                    + "<td>" + brand + "</td>"
-                    + "<td>" + transmission + "</td>"
-                    + "<td>" + daily_km + "</td>"
-                    + "<td>" + monthly_km + "</td>"
-                    + "<td>" + fuelType + "</td>"
-                    + "<td>" + damageFee + "</td>"
-                    + "<td>" + vehicleType + "</td>"
-              /*      + "<td>" + service_milage + "</td>"*/
-                    + "<td>" + last_service + "</td>"
-                    + "</tr>";
+                let row = "<tr>" + "<td>" + vehicleId + "</td>" + "<td>" + noOfPassengers + "</td>" + "<td>" + extraKmPrice + "</td>" + "<td>" + registrationNo + "</td>" + "<td>" + Colour + "</td>" + "<td>" + daily_amount + "</td>" + "<td>" + monthly_amount + "</td>" + "<td>" + Availability + "</td>" + "<td>" + brand + "</td>" + "<td>" + transmission + "</td>" + "<td>" + daily_km + "</td>" + "<td>" + monthly_km + "</td>" + "<td>" + fuelType + "</td>" + "<td>" + damageFee + "</td>" + "<td>" + vehicleType + "</td>"
+                    /*      + "<td>" + service_milage + "</td>"*/ + "<td>" + last_service + "</td>" + "</tr>";
 
                 $("#vehicleTableBody").append(row);
             }
@@ -81,6 +62,63 @@ function getAllVehicle() {
         }
     });
 }
+
+
+$("#updateVehicle").on('click', function () {
+    let vehicleId = $('#vehicleId').val();
+    let numberOfPassenger = $('#numberOfPassenger').val();
+    let extraKmPer = $('#extraKmPer').val();
+    let registrationNo = $('#registrationNo').val();
+    let vehicleColour = $('#vehicleColour').val();
+    let dailyRate = $('#dailyRate').val();
+    let monthlyRate = $('#monthlyRate').val();
+    let vehicleAvailability = $('#vehicleAvailability').val();
+    let vehicleBrand = $('#vehicleBrand').val();
+    let transmissionType = $('#transmissionType').val();
+    let dailyMileage = $('#dailyMileage').val();
+    let monthlyMileage = $('#monthlyMileage').val();
+    let fuelType = $('#fuelType').val();
+    let refundableDamagedFee = $('#refundableDamagedFee').val();
+    let vehicleType = $('#vehicleType').val();
+    let lastServiceMileage = $('#lastServiceMileage').val();
+
+
+    var vehicleObj = {
+        vehicleId: vehicleId,
+        numberOfPassenger: numberOfPassenger,
+        extraKmPer: extraKmPer,
+        registrationNo: registrationNo,
+        vehicleColour: vehicleColour,
+        vehiclePriceRate: {dailyRate: dailyRate, monthlyRate: monthlyRate},
+        freeMileage: {dailyMileage: dailyMileage, monthlyMileage: monthlyMileage},
+        vehicleAvailability: vehicleAvailability,
+        vehicleBrand: vehicleBrand,
+        transmissionType: transmissionType,
+        fuelType: fuelType,
+        refundableDamagedFee: refundableDamagedFee,
+        vehicleType: vehicleType,
+        lastServiceMileage: lastServiceMileage,
+    }
+
+    $.ajax({
+        url: baseURL + "update",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(vehicleObj),
+        dataType: "json",
+        success: function (res) {
+            alert("update method invoked");
+            getAllAdmins();
+            alert(res.message);
+            clearTextFields();
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+
+});
+
 
 function bindRowClickEventsForVehicle() {
     $("#vehicleTableBody>tr").on('click', function () {
@@ -113,7 +151,7 @@ $("#deleteVehicle").on('click', function () {
     $.ajax({
         url: baseURL + "?code=" + $("#vehicleId").val(), method: "delete", dataType: "json", success: function (resp) {
             console.log($("#vehicleId").val())
-          getAllVehicle();
+            getAllVehicle();
             alert(resp.message);
         }, error: function (error) {
             alert(JSON.parse(error.responseText).message);
