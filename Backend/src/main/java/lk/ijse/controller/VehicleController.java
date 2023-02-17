@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 import lk.ijse.dto.CustomerDTO;
+import lk.ijse.dto.DriverDTO;
 import lk.ijse.dto.VehicleDTO;
 import lk.ijse.service.CustomerService;
 import lk.ijse.service.VehicleService;
@@ -36,6 +37,10 @@ public class VehicleController {
         return new ResponseUtil("OK","Successful",vehicleService.getAllVehicle());
     }
 
-
+    @PutMapping(value = "update")
+    public ResponseUtil updateDriver(@RequestBody VehicleDTO vehicleDTO) {
+        vehicleService.updateVehicle(vehicleDTO);
+        return new ResponseUtil("OK", "Successfully updated ! " + vehicleDTO.getVehicleId(), "");
+    }
 
 }
