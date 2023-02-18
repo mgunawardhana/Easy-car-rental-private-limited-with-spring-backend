@@ -331,56 +331,53 @@
                 <div class="card">
                     <div class="card-body">
 
-
                         <form id="adminFormController">
                             <div class="row form-group">
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Payment ID</label>
-                                        <input class="form-control" id="adminEmail" name="adminEmail" type="text">
+                                        <input class="form-control" id="paymentId" name="paymentId" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Invoice NO</label>
-                                        <input class="form-control" id="userName" name="user.userName" type="text">
+                                        <input class="form-control" id="invoiceNo" name="invoiceNo" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Date</label>
-                                        <input class="form-control" id="password" name="user.password" type="text">
+                                        <input class="form-control" id="date" name="date" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Booking ID</label>
-                                        <input class="form-control" id="adminNic" name="adminNic" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Amount</label>
-                                        <input class="form-control" id="adminId" name="user.adminId" type="text">
+                                        <input class="form-control" id="bookingId" name="bookingId" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Payment Type</label>
-                                        <select class="form-control" id="role" name="user.role">
+                                        <select class="form-control" id="payment" name="payment">
                                             <option>Select Type</option>
-                                            <option>ADMIN</option>
-                                            <option>ADMIN</option>
-                                            <option>ADMIN</option>
+                                            <option>DAMAGE</option>
+                                            <option>RENT</option>
+                                            <option>OTHER</option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Amount</label>
+                                        <input class="form-control" id="amount" name="amount" type="text">
+                                    </div>
+                                </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary bg-success" id="saveAdmin" type="button">Save
+                                    <button class="btn btn-primary bg-success" id="save" type="button">Save
                                     </button>
-                                    <button class="btn btn-primary bg-warning" id="updateAdmin" type="button">Update
-                                    </button>
-                                    <button class="btn btn-primary bg-danger" id="deleteAdmin" type="button">Delete
+                                    <button class="btn btn-primary bg-danger" id="cancel" type="button">Delete
                                     </button>
                                 </div>
                             </div>
@@ -401,22 +398,22 @@
                                 <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        F_Name
+                                        Payment ID
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        L_Name
+                                        Invoice NO
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Address
+                                        Date
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        Contact
+                                        Booking ID
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Email
+                                        Payment Type
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        UserName
+                                        Amount
                                     </th>
 
                                 </tr>
