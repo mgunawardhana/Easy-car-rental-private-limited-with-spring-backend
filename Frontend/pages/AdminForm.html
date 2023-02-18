@@ -369,10 +369,24 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Admin Id</label>
-                                        <input class="form-control" id="adminId" name="adminId" type="text">
+                                        <input class="form-control" id="adminId" name="user.adminId" type="text">
                                     </div>
                                 </div>
-
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <select class="form-control" id="role" name="user.role">
+                                            <option>Select Type</option>
+                                            <option>ADMIN</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>User ID</label>
+                                        <input class="form-control" id="userId" disabled type="text">
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary bg-success" id="saveAdmin" type="button">Save
                                     </button>
@@ -381,8 +395,6 @@
                                     <button class="btn btn-primary bg-danger" id="deleteAdmin" type="button">Delete
                                     </button>
                                 </div>
-
-
                             </div>
                         </form>
                     </div>
@@ -421,14 +433,17 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Password
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        ConfirmPwd
-                                    </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         NIC
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                         AdminID
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Role
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        UserID
                                     </th>
 
                                 </tr>

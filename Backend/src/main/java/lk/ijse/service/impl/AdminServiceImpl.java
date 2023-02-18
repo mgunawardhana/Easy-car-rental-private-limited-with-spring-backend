@@ -4,6 +4,7 @@ import lk.ijse.dto.AdminDTO;
 import lk.ijse.dto.CustomerDTO;
 import lk.ijse.entity.Admin;
 import lk.ijse.entity.Customer;
+import lk.ijse.entity.Driver;
 import lk.ijse.repo.AdminRepo;
 import lk.ijse.service.AdminService;
 import org.modelmapper.ModelMapper;
@@ -34,11 +35,11 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void updateAdmin(AdminDTO adminDTO) {
-        if (adminRepo.existsById(adminDTO.getAdminName().getFirstName())) {
-            System.out.println("admin method invoked on service");
-            adminRepo.save(modelMapper.map(adminDTO, Admin.class));
-        } else {
+
+        if (!adminRepo.existsById(adminDTO.getAdminId())) {
             throw new RuntimeException("Cannot find these customer id !");
+        } else {
+            adminRepo.save(modelMapper.map(adminDTO, Admin.class));
         }
     }
 

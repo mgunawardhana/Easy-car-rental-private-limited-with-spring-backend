@@ -45,8 +45,10 @@ function getAllAdmins() {
                 let password = c.user.password;
                 let nic = c.adminNic;
                 let id = c.adminId;
+                let role = c.user.role;
+                let userId = c.user.userId;
 
-                let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>"+ "<td>" + role + "</td>" + "<td>" + userId + "</td>"+ "</tr>";
                 $("#adminTableBody").append(row);
             }
             bindRowClickEventsForAdminTable();
@@ -68,13 +70,15 @@ $("#updateAdmin").on('click', function () {
     let password = $("#password").val();
     let nic = $("#adminNic").val();
     let id = $("#adminId").val();
+    let role = $("#role").val();
+    let userId =  $("#userId").val();
 
     var adminObj = {
         name: {firstName: firstName, lastName: lastName},
         address: address,
         contact: contact,
         email: email,
-        user: {username: username, password: password},
+        user: {username: username, password: password,role:role,userId:userId},
         nic: nic,
         id: id
     }
@@ -86,7 +90,6 @@ $("#updateAdmin").on('click', function () {
         data: JSON.stringify(adminObj),
         dataType: "json",
         success: function (res) {
-            alert("update method invoked");
             getAllAdmins();
             alert(res.message);
             clearTextFields();
@@ -107,8 +110,10 @@ function bindRowClickEventsForAdminTable() {
         $("#adminContact").val($(this).children(":eq(3)").text());
         $("#adminEmail").val($(this).children(":eq(4)").text());
         $("#userName").val($(this).children(":eq(5)").text());
-        $("#password").val($(this).children(":eq(7)").text());
-        $("#adminNic").val($(this).children(":eq(8)").text());
-        $("#adminId").val($(this).children(":eq(9)").text());
+        $("#password").val($(this).children(":eq(6)").text());
+        $("#adminNic").val($(this).children(":eq(7)").text());
+        $("#adminId").val($(this).children(":eq(8)").text());
+        $("#role").val($(this).children(":eq(9)").text());
+        $("#userId").val($(this).children(":eq(10)").text());
     });
 }

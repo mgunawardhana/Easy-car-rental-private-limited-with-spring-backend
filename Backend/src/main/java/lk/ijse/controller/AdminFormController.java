@@ -32,9 +32,8 @@ public class AdminFormController {
         return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
     }
 
-    @PutMapping("update")
+    @PutMapping(value = "update")
     public ResponseUtil updateAdmin(@RequestBody AdminDTO adminDTO) {
-        System.out.println(adminDTO.toString());
         adminService.updateAdmin(adminDTO);
         return new ResponseUtil("OK", "Successfully updated ! " + adminDTO.getAdminId(), "");
     }

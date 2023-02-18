@@ -47,7 +47,6 @@ public class DriverServiceImpl implements DriverService {
             throw new RuntimeException("Cannot find these customer id !");
         } else {
             driverRepo.save(modelMapper.map(driverDTO, Driver.class));
-
         }
     }
 
