@@ -4,7 +4,6 @@ loadAllCustomersToCombo();
 loadAllDriversToCombo();
 function loadAllCustomersToCombo() {
     $('#customer').empty();
-
     $.ajax({
         url: baseURL + "/get_all_customers", method: "GET", dataType: "json", success: function (res) {
             for (let customer of res.data) {
@@ -16,6 +15,18 @@ function loadAllCustomersToCombo() {
         }
     });
 }
+
+$('#customer').on('click', function () {
+    $.ajax({
+        url: baseURL + "/get_all_customers", method: "GET", dataType: "json", success: function (res) {
+            for (let customer of res.data) {
+                if (customer.id === $('#customer').val()) {
+                    $("#customerName").val(customer.name.firstName);
+                }
+            }
+        }
+    });
+});
 
 function loadAllDriversToCombo() {
     $('#driverId').empty();
