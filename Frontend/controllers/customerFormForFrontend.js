@@ -15,7 +15,6 @@ function loadAllCustomersToCombo() {
         }
     });
 }
-
 $('#customer').on('click', function () {
     $.ajax({
         url: baseURL + "/get_all_customers", method: "GET", dataType: "json", success: function (res) {
@@ -42,7 +41,6 @@ function loadAllDriversToCombo() {
         }
     });
 }
-
 $('#driverId').on('click', function () {
     $.ajax({
         url: baseURL + "/get_all_drivers", method: "GET", dataType: "json", success: function (res) {
@@ -54,3 +52,18 @@ $('#driverId').on('click', function () {
         }
     });
 });
+
+function loadAllDriversToCombo() {
+    $('#driverId').empty();
+
+    $.ajax({
+        url: baseURL + "/get_all_vehicles", method: "GET", dataType: "json", success: function (res) {
+            for (let driver of res.data) {
+                $("#driverId").append(`<option>${driver.id}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}

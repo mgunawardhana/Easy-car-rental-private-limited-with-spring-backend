@@ -2,10 +2,13 @@ package lk.ijse.service.impl;
 
 import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
+import lk.ijse.dto.VehicleDTO;
 import lk.ijse.repo.AdminRepo;
 import lk.ijse.repo.CustomerRepo;
 import lk.ijse.repo.DriverRepo;
+import lk.ijse.repo.VehicleRepo;
 import lk.ijse.service.BookingService;
+import lk.ijse.service.VehicleService;
 import lk.ijse.util.ResponseUtil;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -27,6 +30,8 @@ public class BookingServiceImpl implements BookingService {
     CustomerRepo customerRepo;
     @Autowired
     DriverRepo driverRepo;
+    @Autowired
+    private VehicleRepo vehicleRepo;
 
     @Override
     public ArrayList<CustomerDTO> loadAllCustomersInTheCombo() {
@@ -39,6 +44,13 @@ public class BookingServiceImpl implements BookingService {
     public ArrayList<DriverDTO> loadAllItemsInTheCombo() {
         System.out.println(driverRepo.findAll());
         return modelMapper.map(driverRepo.findAll(), new TypeToken<ArrayList<DriverDTO>>() {
+        }.getType());
+    }
+
+    @Override
+    public ArrayList<VehicleDTO> loadAllVehiclesInToTheCombo() {
+        System.out.println(vehicleRepo.findAll());
+        return modelMapper.map(vehicleRepo.findAll(), new TypeToken<ArrayList<VehicleDTO>>() {
         }.getType());
     }
 
