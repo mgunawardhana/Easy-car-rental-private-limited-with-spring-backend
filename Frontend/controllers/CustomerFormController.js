@@ -1,4 +1,4 @@
-let baseURL = "http://localhost:8080/Backend_war/customer/";
+let baseURL = "http://localhost:8080/Backend_war";
 
 getAllCustomers();
 genarateID();
@@ -9,7 +9,7 @@ $("#saveCustomer").on('click', function () {
 function saveCustomer() {
     let formData = $("#CustomerFormController").serialize();
     $.ajax({
-        url: baseURL + "save_customer", method: "post", data: formData, dataType: "json", success: function (res) {
+        url: baseURL + "/customer/save_customer", method: "post", data: formData, dataType: "json", success: function (res) {
             getAllCustomers();
             alert(res.message);
         }, error: function (error) {
@@ -46,7 +46,7 @@ $("#updateCustomer").on('click', function () {
     }
 
     $.ajax({
-        url: baseURL + "update_customer",
+        url: baseURL + "/customer/update_customer",
         method: "put",
         contentType: "application/json",
         data: JSON.stringify(customerObj),
@@ -64,7 +64,7 @@ $("#updateCustomer").on('click', function () {
 
 $("#deleteCustomer").on('click', function () {
     $.ajax({
-        url: baseURL + "?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
+        url: baseURL + "/customer/?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
             clearTextFields();
             getAllCustomers();
             alert(resp.message);
@@ -77,7 +77,7 @@ $("#deleteCustomer").on('click', function () {
 function getAllCustomers() {
     $("#customerTableBody").empty();
     $.ajax({
-        url: baseURL + "get_all", success: function (res) {
+        url: baseURL + "/customer/get_all", success: function (res) {
             for (let c of res.data) {
 
                 let id = c.id;
@@ -113,7 +113,7 @@ function getAllCustomers() {
 function genarateID() {
     $("#customerTableBody").empty();
     $.ajax({
-        url: baseURL + "?test=", success: function (res) {
+        url: baseURL + "/customer/?test=", success: function (res) {
             $('#id').val(res.data.id);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -167,4 +167,72 @@ function clearTextFields() {
     $('#drivingLicenseNo').val();
     $('#role').val();
     $('#userId').val();
+}
+
+loadAllDriversToCombo();
+loadAllCustomersToCombo();
+loadAllVehiclesToCombo();
+function loadAllCustomersToCombo() {
+    $('#customer').empty();
+    $.ajax({
+        url: baseURL + "/bookings/get_all_customers", method: "GET", dataType: "json", success: function (res) {
+            for (let customer of res.data) {
+                $("#customer").append(`<option>${customer.id}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
+$('#customer').on('click', function () {
+    $.ajax({
+        url: baseURL + "/bookings/get_all_customers", method: "GET", dataType: "json", success: function (res) {
+            for (let customer of res.data) {
+                if (customer.id === $('#customer').val()) {
+                    $("#customerName").val(customer.name.firstName);
+                }
+            }
+        }
+    });
+});
+
+function loadAllDriversToCombo() {
+    $('#driverId').empty();
+
+    $.ajax({
+        url: baseURL + "/bookings/get_all_drivers", method: "GET", dataType: "json", success: function (res) {
+            for (let driver of res.data) {
+                $("#driverId").append(`<option>${driver.id}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
+$('#driverId').on('click', function () {
+    $.ajax({
+        url: baseURL + "/bookings/get_all_drivers", method: "GET", dataType: "json", success: function (res) {
+            for (let driver of res.data) {
+                if (driver.id === $('#driverId').val()) {
+                    $("#driverName").val(driver.name.firstName);
+                }
+            }
+        }
+    });
+});
+
+function loadAllVehiclesToCombo() {
+    $('#vehicleId').empty();
+    $.ajax({
+        url: baseURL + "/bookings/get_all_vehicles", method: "GET", dataType: "json", success: function (res) {
+            for (let vehicle of res.data) {
+                $("#vehicleId").append(`<option>${vehicle.vehicleId}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
 }

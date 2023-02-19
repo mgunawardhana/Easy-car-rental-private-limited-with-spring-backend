@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
+import lk.ijse.dto.VehicleDTO;
 import lk.ijse.service.BookingService;
 import lk.ijse.service.CustomerService;
 import lk.ijse.service.DriverService;
@@ -34,11 +35,15 @@ public class BookingController {
     }
 
     @GetMapping("/get_all_drivers")
-    public ResponseUtil getAllItemsInToTheCombo(@ModelAttribute DriverDTO driverDTO) {
+    public ResponseUtil getAllDriversInToTheCombo(@ModelAttribute DriverDTO driverDTO) {
         System.out.println(bookingService.loadAllItemsInTheCombo());
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllItemsInTheCombo());
     }
 
-
+    @GetMapping("/get_all_vehicles")
+    public ResponseUtil getAllVehiclesInToTheCombo(@ModelAttribute VehicleDTO vehicleDTO) {
+        System.out.println(bookingService.loadAllVehiclesInToTheCombo());
+        return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllVehiclesInToTheCombo());
+    }
 
 }
