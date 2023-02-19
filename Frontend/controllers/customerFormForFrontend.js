@@ -42,3 +42,15 @@ function loadAllDriversToCombo() {
         }
     });
 }
+
+$('#driverId').on('click', function () {
+    $.ajax({
+        url: baseURL + "/get_all_drivers", method: "GET", dataType: "json", success: function (res) {
+            for (let driver of res.data) {
+                if (driver.id === $('#driverId').val()) {
+                    $("#driverName").val(driver.name.firstName);
+                }
+            }
+        }
+    });
+});
