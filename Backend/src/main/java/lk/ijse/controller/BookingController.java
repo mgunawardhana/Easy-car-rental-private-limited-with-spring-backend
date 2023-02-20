@@ -1,5 +1,6 @@
 package lk.ijse.controller;
 
+import lk.ijse.dto.BookingDTO;
 import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
 import lk.ijse.dto.VehicleDTO;
@@ -45,5 +46,13 @@ public class BookingController {
         System.out.println(bookingService.loadAllVehiclesInToTheCombo());
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllVehiclesInToTheCombo());
     }
+
+    @PostMapping(value = "/place_bookings",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveBooking(@ModelAttribute BookingDTO bookingDTO) {
+        System.out.println(bookingDTO.toString());
+        bookingService.placeBooking(bookingDTO);
+        return new ResponseUtil("OK", "Successfully Registered !", "");
+    }
+
 
 }

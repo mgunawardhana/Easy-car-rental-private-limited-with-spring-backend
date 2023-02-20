@@ -9,10 +9,15 @@ $("#saveCustomer").on('click', function () {
 function saveCustomer() {
     let formData = $("#CustomerFormController").serialize();
     $.ajax({
-        url: baseURL + "/customer/save_customer", method: "post", data: formData, dataType: "json", success: function (res) {
+        url: baseURL + "/customer/save_customer",
+        method: "post",
+        data: formData,
+        dataType: "json",
+        success: function (res) {
             getAllCustomers();
             alert(res.message);
-        }, error: function (error) {
+        },
+        error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
             alert(errorMessage.message);
         }
@@ -64,11 +69,15 @@ $("#updateCustomer").on('click', function () {
 
 $("#deleteCustomer").on('click', function () {
     $.ajax({
-        url: baseURL + "/customer/?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
+        url: baseURL + "/customer/?code=" + $("#id").val(),
+        method: "delete",
+        dataType: "json",
+        success: function (resp) {
             clearTextFields();
             getAllCustomers();
             alert(resp.message);
-        }, error: function (error) {
+        },
+        error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
     });
@@ -94,11 +103,7 @@ function getAllCustomers() {
                 let password = c.user.password;
 
 
-                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>"
-                    + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>"
-                    + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_name + "</td>"
-                    + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>"
-                    + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_name + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
                 $("#customerTableBody").append(row);
             }
             bindRowClickEvents();
@@ -172,6 +177,7 @@ function clearTextFields() {
 loadAllDriversToCombo();
 loadAllCustomersToCombo();
 loadAllVehiclesToCombo();
+
 function loadAllCustomersToCombo() {
     $('#customer').empty();
     $.ajax({
@@ -185,6 +191,7 @@ function loadAllCustomersToCombo() {
         }
     });
 }
+
 $('#customer').on('click', function () {
     $.ajax({
         url: baseURL + "/bookings/get_all_customers", method: "GET", dataType: "json", success: function (res) {
@@ -211,6 +218,7 @@ function loadAllDriversToCombo() {
         }
     });
 }
+
 $('#driverId').on('click', function () {
     $.ajax({
         url: baseURL + "/bookings/get_all_drivers", method: "GET", dataType: "json", success: function (res) {
@@ -236,3 +244,121 @@ function loadAllVehiclesToCombo() {
         }
     });
 }
+
+/*
+ DTO(--------------------------------------------
+ bookingId=R00-006,
+  pickUpDate=2023-02-21,
+  pickUpTime=06:39,
+  returnDate=2023-02-21,
+   DriverRequestType=RequestType.YES,
+   customer=CustomerDTO(----------------------------------
+   id=C00-001, nic=null, name=null, address=null,
+    drivingLicenseNo=null, email=null, contactNo=null, user=null)
+    , pickUpLocation=null,
+    bookingDetails=[],----------------------
+     driverSchedules=[]--------------------------------------------
+*/
+/*$("#placeBookingBtn").on('click', function () {
+    let formData = $("#placeBooking").serialize();
+    $.ajax({
+        url: baseURL + "/bookings/place_bookings",
+        method: "post",
+        data: formData,
+        dataType: "json",
+        success: function (res) {
+            // getAllCustomers();
+
+            var bk_details = {
+                bookingId: "D00-001",
+                bookingDate: "2023-02-20",
+                pickUpDate: "2023-02-22",
+                pickUpTime: "05:30:00",
+                returnDate: "2023-02-24",
+                returnTime: "05:30:00",
+                DriverRequestType: [{type: "YES"}, {type: "NO"}],
+                customer: {
+                    id: "R00-001", name: {firstName: "maneesha", lastName: "maneesha"}
+                },
+                "driverScheduleList": [],
+                "bookingDetails": [{
+                    vehicleId: "V00-001", bookingId: "D00-001", vehicle: {
+                        vehicleId: "V00-001", refundableDamagedFee: 2000
+                    }, "booking": {
+                        bookingId: "D00-001",
+                        bookingDate: "2023-02-20",
+                        pickUpDate: "2023-02-22",
+                        pickUpTime: "05:30:00",
+                        returnDate: "2023-02-24",
+                        returnTime: "05:30:00",
+                        DriverRequestType: [{type: "YES"}, {type: "NO"}],
+                        customer: {
+                            id: "R00-001", name: {
+                                firstName: "maneesha", lastName: "maneesha"
+                            }
+                        },
+                        driverScheduleList: []
+                    }
+                }]
+
+            }
+
+           /!* alert(res.message);*!/
+        },
+    /!*    error: function (error) {
+            var errorMessage = JSON.parse(error.responseText);
+            alert(errorMessage.message);
+        }*!/
+    });
+});*/
+$("#placeBookingBtn").on('click', function () {
+    var bk_details = {
+        bookingId: "D00-001",
+        bookingDate: "2023-02-20",
+        pickUpDate: "2023-02-22",
+        pickUpTime: "05:30:00",
+        returnDate: "2023-02-24",
+        returnTime: "05:30:00",
+        DriverRequestType: [{type: "YES"}, {type: "NO"}],
+        customer: {
+            id: "R00-001", name: {firstName: "maneesha", lastName: "maneesha"}
+        },
+        "driverScheduleList": [],
+        "bookingDetails": [{
+            vehicleId: "V00-001", bookingId: "D00-001", vehicle: {
+                vehicleId: "V00-001", refundableDamagedFee: 2000
+            }, "booking": {
+                bookingId: "D00-001",
+                bookingDate: "2023-02-20",
+                pickUpDate: "2023-02-22",
+                pickUpTime: "05:30:00",
+                returnDate: "2023-02-24",
+                returnTime: "05:30:00",
+                DriverRequestType: [{type: "YES"}, {type: "NO"}],
+                customer: {
+                    id: "R00-001", name: {
+                        firstName: "maneesha", lastName: "maneesha"
+                    }
+                },
+                driverScheduleList: []
+            }
+        }]
+
+    }
+
+    $.ajax({
+        url: baseURL + "/bookings/place_bookings",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(bk_details),
+        dataType: "json",
+        success: function (res) {
+            clearTextFields();
+            getAllCustomers();
+            alert(res.message);
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});

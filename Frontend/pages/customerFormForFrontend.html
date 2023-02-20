@@ -145,8 +145,8 @@
 
             <div class="modal-content">
 
-                <div class="modal-header" style="background: #daa406">
-                    <h5 class="modal-title" id="orderDetailLabel">Order Detail Form</h5>
+                <div class="modal-header" style="background: #ffa502">
+                    <h5 class="modal-title" id="orderDetailLabel" style="color: white">Order Detail Form</h5>
                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
                             type="button"></button>
                 </div>
@@ -158,82 +158,104 @@
                                 <div class="card-body">
                                     <form id="placeBooking">
                                         <div class="row form-group">
-                                            <form id="paymentForm">
-                                                <div class="row form-group">
-
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Rent Id</label>
-                                                            <input class="form-control" id="bookingId" name="bookingId" type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Driver Id</label>
-                                                            <select class="form-control" id="driverId" name="user.id"></select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Driver Name</label>
-                                                            <div>
-                                                                <input class="form-control" disabled id="driverName" name="user.name">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Customer Id</label>
-                                                            <select class="form-control" id="customer" name="customer.id">
-                                                                <option>Select Customer</option>
-
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Customer Name</label>
-                                                            <!--                                            <input class="form-control" id="#" name="name.lastName" type="text">-->
-                                                            <input class="form-control" disabled id="customerName" name="name.firstName" type="text">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Vehicle Id</label>
-                                                            <select class="form-control" id="vehicleId" name="bookingDetails.vehicleId">
-                                                                <option>Select Vehicle</option>
-
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Refundable Fee</label>
-                                                            <input class="form-control" id="#" name="contactNo" type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>PickUp Date</label>
-                                                            <input class="form-control" id="pickUpDate" name="pickUpDate" type="date">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4 col-sm-4">
-                                                        <div class="form-group">
-                                                            <label>Return Date</label>
-                                                            <input class="form-control" id="returnDate" name="returnDate" type="date">
-                                                        </div>
-                                                    </div>
-                                                    <button class=" col-2 col-sm-2 btn btn-primary bg-gradient-faded-dark-vertical"
-                                                            id="placeOrder"
-                                                            style="color: #ffffff;position: center !important;" type="button">Save
-                                                    </button>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Rent Id</label>
+                                                    <input class="form-control" name="bookingId"
+                                                           type="text">
                                                 </div>
-                                                <br>
-                                            </form>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Driver Id</label>
+                                                    <select class="form-control" id="driverId"
+                                                            name="driverSchedules.driver.id"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Driver Name</label>
+                                                    <div>
+                                                        <input class="form-control" disabled id="driverName"
+                                                               name="driver.name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Customer Id</label>
+                                                    <select class="form-control" id="customer" name="customer.id">
+                                                        <option>Select Customer</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Customer Name</label>
+                                                    <!--                                            <input class="form-control" id="#" name="name.lastName" type="text">-->
+                                                    <input class="form-control" disabled id="customerName"
+                                                           name="name.firstName" type="text">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Vehicle Id</label>
+                                                    <select class="form-control" id="vehicleId"
+                                                            name="bookingDetails.vehicleId" >
+                                                        <option>Select Vehicle</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Refundable Fee</label>
+                                                    <input class="form-control" id="#" name="contactNo" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>PickUp Date</label>
+                                                    <input class="form-control" dataformatas="yyyy-mm-dd" id="pickUpDate"  name="pickUpDate"
+                                                           type="date">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Request Type</label>
+                                                    <select class="form-control" name="DriverRequestType">
+                                                        <option>Select Type</option>
+                                                        <option>YES</option>
+                                                        <option>NO</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Return Date</label>
+                                                    <input class="form-control" dataformatas="yyyy-mm-dd" id="returnDate" name="returnDate"
+                                                           type="date">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Pick up Date</label>
+                                                    <input class="form-control" dataformatas="HH:mm:ss" id="pickUpTime" name="pickUpTime"
+                                                           type="time">
+                                                </div>
+                                            </div>
+                                            <div style="padding-top: 5px">
+                                                <button class=" col-2 col-sm-2 btn btn-primary bg-gradient-faded-dark-vertical"
+                                                        id="placeBookingBtn"
+                                                        style="color: #ffffff;position: center !important;"
+                                                        type="button">Place Booking
+                                                </button>
+                                            </div>
+
                                         </div>
                                     </form>
                                 </div>
@@ -255,9 +277,9 @@
 <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
 <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
 <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
-<!--<script crossorigin="anonymous"-->
-<!--        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"-->
-<!--        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">-->
-<!--</script>-->
+<script crossorigin="anonymous"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+</script>
 </body>
 </html>

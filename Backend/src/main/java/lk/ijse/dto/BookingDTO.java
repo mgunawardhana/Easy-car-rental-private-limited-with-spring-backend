@@ -18,12 +18,19 @@ import java.util.List;
 public class BookingDTO {
 
     private String bookingId;
+//    @JsonFormat(pattern="yyyy-MM-dd")
+//    private LocalDate pickUpDate;//TODO
+//    @JsonFormat(pattern="HH:mm:ss")
+//    private LocalTime pickUpTime;
+//    @JsonFormat(pattern="yyyy-MM-dd")
+//    private LocalDate returnDate;//TODO
+
     @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate pickUpDate;//TODO
+    private String pickUpDate;//TODO
     @JsonFormat(pattern="HH:mm:ss")
-    private LocalTime pickUpTime;
+    private String pickUpTime;//TODO
     @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate returnDate;//TODO
+    private String returnDate;//TODO
     private RequestType DriverRequestType;
     private CustomerDTO customer;
     private String pickUpLocation;
