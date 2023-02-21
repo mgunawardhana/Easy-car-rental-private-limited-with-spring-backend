@@ -1,8 +1,6 @@
 package lk.ijse.controller;
 
-import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
-import lk.ijse.service.CustomerService;
 import lk.ijse.service.DriverService;
 import lk.ijse.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;

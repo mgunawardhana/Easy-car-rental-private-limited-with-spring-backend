@@ -5,12 +5,8 @@ import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
 import lk.ijse.dto.VehicleDTO;
 import lk.ijse.entity.Booking;
-import lk.ijse.entity.Customer;
-import lk.ijse.enums.RequestType;
 import lk.ijse.repo.*;
 import lk.ijse.service.BookingService;
-import lk.ijse.service.VehicleService;
-import lk.ijse.util.ResponseUtil;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @Transactional
@@ -44,26 +39,7 @@ public class BookingServiceImpl implements BookingService {
             System.out.println(bookingDTO.toString());
             bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
         }
-/*
-        if (!bookingRepo.existsById(bookingDTO.getBookingId())) {
-            if(customerRepo.existsById(bookingDTO.getCustomer().getId())){
-                if (!bookingDTO.getBookingDetails().isEmpty()){
-                    if (bookingDTO.getDriverRequestType() == RequestType.YES){
-                        if (!bookingDTO.getDriverSchedules().isEmpty()) {
-                            bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
-                        }
-                    }else {
-                        bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
-                    }
-                }else {
-                    throw new RuntimeException("No vehicles in your booking..!");
-                }
-            }else {
-                throw new RuntimeException("Customer Not Found Add your details here ..!");
-            }
-        }else {
-            throw new RuntimeException("Booking already exists with this Id Please select a different one!");
-        }*/
+
     }
 
     @Override

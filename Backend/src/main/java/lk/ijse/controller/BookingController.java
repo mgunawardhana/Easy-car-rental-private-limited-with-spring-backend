@@ -8,13 +8,10 @@ import lk.ijse.service.BookingService;
 import lk.ijse.service.CustomerService;
 import lk.ijse.service.DriverService;
 import lk.ijse.util.ResponseUtil;
-import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -47,12 +44,15 @@ public class BookingController {
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllVehiclesInToTheCombo());
     }
 
-    @PostMapping(value = "/place_bookings",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveBooking(@ModelAttribute BookingDTO bookingDTO) {
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/place_bookings",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveBooking(@ModelAttribute BookingDTO bookingDTO){
         System.out.println(bookingDTO.toString());
         bookingService.placeBooking(bookingDTO);
-        return new ResponseUtil("OK", "Successfully Registered !", "");
+        return new ResponseUtil("Ok","Saved",null);
     }
+
+
 
 
 }

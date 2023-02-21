@@ -1,5 +1,6 @@
 package lk.ijse.entity;
 
+
 import lk.ijse.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;

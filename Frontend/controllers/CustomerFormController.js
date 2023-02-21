@@ -245,120 +245,80 @@ function loadAllVehiclesToCombo() {
     });
 }
 
-/*
- DTO(--------------------------------------------
- bookingId=R00-006,
-  pickUpDate=2023-02-21,
-  pickUpTime=06:39,
-  returnDate=2023-02-21,
-   DriverRequestType=RequestType.YES,
-   customer=CustomerDTO(----------------------------------
-   id=C00-001, nic=null, name=null, address=null,
-    drivingLicenseNo=null, email=null, contactNo=null, user=null)
-    , pickUpLocation=null,
-    bookingDetails=[],----------------------
-     driverSchedules=[]--------------------------------------------
-*/
-/*$("#placeBookingBtn").on('click', function () {
+// $('#placeBookingBtn').on('click', function () {
+//     let formData = $("#placeBooking").serialize();
+//     var bk_details = {
+//         bookingId: "B00-002",
+//         pickUpDate: "2022-2-2",
+//         pickUpTime: "12:12:12",
+//         returnDate: "2022-2-2",
+//         DriverRequestType: "YES",
+//         customer: {
+//             id: "C00-001",
+//             nic: "12345",
+//             name: {firstName: "maneesha", lastName: "gunawardhana"},
+//             address: "galle",
+//             drivingLicenseNo: "12345",
+//             email: "@gmail.com",
+//             contactNo: "12345",
+//             user: {userId: 2, userName: "manees", password: "1234", role: "CUSTOMER"},
+//         },
+//         pickUpLocation: "Galle",
+//         bookingDetails: {vehicleId: "V00-001", bookingId: "B00-002"},
+//         driverSchedules: {driverId: "D00-001", bookingId: "B00-002"},
+//     }
+//     $.ajax({
+//         url: baseURL + "/bookings/place_bookings",
+//         method: "post",
+//         data: bk_details,
+//         dataType: "json",
+//         success: function (res) {
+//             alert(res.message);
+//         },
+//         error: function (error) {
+//             var errorMessage = JSON.parse(error.responseText);
+//             alert(errorMessage.message);
+//         }
+//     });
+// });
+//
+//
+// $('#placeBookingBtn').on('click', function () {
+//     let formData = {}
+//
+//     let a = $("#placeBooking").serialize();
+//
+//     $.ajax({
+//         url: baseURL + "/bookings/place_bookings", method: "post", // contentType: "application/json",
+//         data: a, dataType: "json", success: function (res) {
+//             alert(res.message);
+//         }, error: function (error) {
+//             var errorMessage = JSON.parse(error.responseText);
+//             alert(errorMessage.message);
+//         }
+//     });
+// });
+
+$("#placeBookingBtn").on('click', function () {
     let formData = $("#placeBooking").serialize();
+    formData.append({
+        bookingDetails:{
+
+        },
+
+    })
     $.ajax({
         url: baseURL + "/bookings/place_bookings",
         method: "post",
         data: formData,
         dataType: "json",
         success: function (res) {
-            // getAllCustomers();
-
-            var bk_details = {
-                bookingId: "D00-001",
-                bookingDate: "2023-02-20",
-                pickUpDate: "2023-02-22",
-                pickUpTime: "05:30:00",
-                returnDate: "2023-02-24",
-                returnTime: "05:30:00",
-                DriverRequestType: [{type: "YES"}, {type: "NO"}],
-                customer: {
-                    id: "R00-001", name: {firstName: "maneesha", lastName: "maneesha"}
-                },
-                "driverScheduleList": [],
-                "bookingDetails": [{
-                    vehicleId: "V00-001", bookingId: "D00-001", vehicle: {
-                        vehicleId: "V00-001", refundableDamagedFee: 2000
-                    }, "booking": {
-                        bookingId: "D00-001",
-                        bookingDate: "2023-02-20",
-                        pickUpDate: "2023-02-22",
-                        pickUpTime: "05:30:00",
-                        returnDate: "2023-02-24",
-                        returnTime: "05:30:00",
-                        DriverRequestType: [{type: "YES"}, {type: "NO"}],
-                        customer: {
-                            id: "R00-001", name: {
-                                firstName: "maneesha", lastName: "maneesha"
-                            }
-                        },
-                        driverScheduleList: []
-                    }
-                }]
-
-            }
-
-           /!* alert(res.message);*!/
-        },
-    /!*    error: function (error) {
-            var errorMessage = JSON.parse(error.responseText);
-            alert(errorMessage.message);
-        }*!/
-    });
-});*/
-$("#placeBookingBtn").on('click', function () {
-    var bk_details = {
-        bookingId: "D00-001",
-        bookingDate: "2023-02-20",
-        pickUpDate: "2023-02-22",
-        pickUpTime: "05:30:00",
-        returnDate: "2023-02-24",
-        returnTime: "05:30:00",
-        DriverRequestType: [{type: "YES"}, {type: "NO"}],
-        customer: {
-            id: "R00-001", name: {firstName: "maneesha", lastName: "maneesha"}
-        },
-        "driverScheduleList": [],
-        "bookingDetails": [{
-            vehicleId: "V00-001", bookingId: "D00-001", vehicle: {
-                vehicleId: "V00-001", refundableDamagedFee: 2000
-            }, "booking": {
-                bookingId: "D00-001",
-                bookingDate: "2023-02-20",
-                pickUpDate: "2023-02-22",
-                pickUpTime: "05:30:00",
-                returnDate: "2023-02-24",
-                returnTime: "05:30:00",
-                DriverRequestType: [{type: "YES"}, {type: "NO"}],
-                customer: {
-                    id: "R00-001", name: {
-                        firstName: "maneesha", lastName: "maneesha"
-                    }
-                },
-                driverScheduleList: []
-            }
-        }]
-
-    }
-
-    $.ajax({
-        url: baseURL + "/bookings/place_bookings",
-        method: "post",
-        contentType: "application/json",
-        data: JSON.stringify(bk_details),
-        dataType: "json",
-        success: function (res) {
-            clearTextFields();
             getAllCustomers();
             alert(res.message);
         },
         error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+            var errorMessage = JSON.parse(error.responseText);
+            alert(errorMessage.message);
         }
     });
 });

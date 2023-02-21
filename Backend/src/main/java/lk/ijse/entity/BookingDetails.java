@@ -7,14 +7,13 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 @ToString
 @IdClass(BookingDetails_PK.class)
-public class BookingDetails {
+public class  BookingDetails {
     @Id
     private String vehicleId;
     @Id

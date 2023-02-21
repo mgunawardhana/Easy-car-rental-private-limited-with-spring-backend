@@ -1,6 +1,5 @@
 package lk.ijse.dto;
 
-
 import lk.ijse.embeded.Mileage;
 import lk.ijse.embeded.PriceRate;
 import lk.ijse.enums.*;
@@ -8,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,11 +27,11 @@ public class VehicleDTO {
 
     private TransmissionType transmissionType;
     private double refundableDamagedFee;
-    private int vehicleMileage;//TODO checkout here
+    private int vehicleMileage;
     private PriceRate vehiclePriceRate;
     private Mileage freeMileage;
     private int lastServiceMileage;
     private double extraKmPer;
     private AvailabilityType vehicleAvailability;
-    private RequestType needMaintenance;//TODO checkout here
+    private RequestType needMaintenance;
 }

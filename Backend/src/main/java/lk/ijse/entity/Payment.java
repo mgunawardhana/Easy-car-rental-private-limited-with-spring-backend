@@ -20,7 +20,7 @@ public class Payment {
     @Column(name = "payment_id")
     private String paymentId;
     @Column(name = "date")
-    private LocalDate paymentDate;
+    private String paymentDate;
     @Column(name = "invoice_no")
     private String invoiceNo;
     @Column(name = "amount")

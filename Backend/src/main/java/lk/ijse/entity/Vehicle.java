@@ -12,6 +12,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString

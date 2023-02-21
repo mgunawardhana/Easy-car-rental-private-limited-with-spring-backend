@@ -11,8 +11,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -22,20 +20,12 @@ public class Booking {
 
     @Id
     private String bookingId;
-//    @Column(name = "pick_up_date")
-//    private LocalDate pickUpDate;//TODO:
-//    @Column(name = "pick_up_time")
-//    private LocalTime pickUpTime;
-//    @Column(name = "return_date")
-//    private LocalDate returnDate;//TODO:
-
     @Column(name = "pick_up_date")
-    private String pickUpDate;//TODO:
+    private String pickUpDate;
     @Column(name = "pick_up_time")
     private String pickUpTime;
     @Column(name = "return_date")
-    private String returnDate;//TODO:
-
+    private String returnDate;
     @Column(name = "pick_up_location")
     private String pickUpLocation;
     @Enumerated(EnumType.STRING)

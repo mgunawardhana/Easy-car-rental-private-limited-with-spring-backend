@@ -1,7 +1,6 @@
 package lk.ijse.service.impl;
 
 import lk.ijse.dto.DriverDTO;
-import lk.ijse.entity.Customer;
 import lk.ijse.entity.Driver;
 import lk.ijse.repo.DriverRepo;
 import lk.ijse.service.DriverService;

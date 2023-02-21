@@ -19,18 +19,18 @@ public class BookingDTO {
 
     private String bookingId;
 //    @JsonFormat(pattern="yyyy-MM-dd")
-//    private LocalDate pickUpDate;//TODO
+//    private LocalDate pickUpDate;
 //    @JsonFormat(pattern="HH:mm:ss")
 //    private LocalTime pickUpTime;
 //    @JsonFormat(pattern="yyyy-MM-dd")
-//    private LocalDate returnDate;//TODO
+//    private LocalDate returnDate;
 
     @JsonFormat(pattern="yyyy-MM-dd")
-    private String pickUpDate;//TODO
+    private String pickUpDate;
     @JsonFormat(pattern="HH:mm:ss")
-    private String pickUpTime;//TODO
+    private String pickUpTime;
     @JsonFormat(pattern="yyyy-MM-dd")
-    private String returnDate;//TODO
+    private String returnDate;
     private RequestType DriverRequestType;
     private CustomerDTO customer;
     private String pickUpLocation;

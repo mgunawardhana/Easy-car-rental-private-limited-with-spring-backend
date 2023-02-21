@@ -17,7 +17,7 @@ public class PaymentDTO {
 
     private String paymentId;
     @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate paymentDate;
+    private String paymentDate;
     private String invoiceNo;
     private double amount;
     private PaymentType paymentType;

@@ -1,6 +1,5 @@
 package lk.ijse.entity;
 
-
 import lk.ijse.embeded.Name;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,15 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
 @Entity
 public class Admin {
-
     @Id
     @Column(name = "admin_id")
     private String adminId;
@@ -33,4 +29,5 @@ public class Admin {
     private String adminContact;
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
+
 }

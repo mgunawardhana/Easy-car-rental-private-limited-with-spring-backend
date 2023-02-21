@@ -1,11 +1,7 @@
 package lk.ijse.service.impl;
 
-import lk.ijse.dto.DriverDTO;
 import lk.ijse.dto.VehicleDTO;
-import lk.ijse.entity.Customer;
-import lk.ijse.entity.Driver;
 import lk.ijse.entity.Vehicle;
-import lk.ijse.repo.CustomerRepo;
 import lk.ijse.repo.VehicleRepo;
 import lk.ijse.service.VehicleService;
 import org.modelmapper.ModelMapper;
