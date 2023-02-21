@@ -31,6 +31,7 @@ public class BookingServiceImpl implements BookingService {
     @Autowired
     private BookingRepo bookingRepo;
 
+
     @Override
     public void placeBooking(BookingDTO bookingDTO) {
         if (bookingRepo.existsById(bookingDTO.getBookingId())) {

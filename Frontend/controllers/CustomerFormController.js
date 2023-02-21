@@ -244,69 +244,9 @@ function loadAllVehiclesToCombo() {
         }
     });
 }
-
-// $('#placeBookingBtn').on('click', function () {
-//     let formData = $("#placeBooking").serialize();
-//     var bk_details = {
-//         bookingId: "B00-002",
-//         pickUpDate: "2022-2-2",
-//         pickUpTime: "12:12:12",
-//         returnDate: "2022-2-2",
-//         DriverRequestType: "YES",
-//         customer: {
-//             id: "C00-001",
-//             nic: "12345",
-//             name: {firstName: "maneesha", lastName: "gunawardhana"},
-//             address: "galle",
-//             drivingLicenseNo: "12345",
-//             email: "@gmail.com",
-//             contactNo: "12345",
-//             user: {userId: 2, userName: "manees", password: "1234", role: "CUSTOMER"},
-//         },
-//         pickUpLocation: "Galle",
-//         bookingDetails: {vehicleId: "V00-001", bookingId: "B00-002"},
-//         driverSchedules: {driverId: "D00-001", bookingId: "B00-002"},
-//     }
-//     $.ajax({
-//         url: baseURL + "/bookings/place_bookings",
-//         method: "post",
-//         data: bk_details,
-//         dataType: "json",
-//         success: function (res) {
-//             alert(res.message);
-//         },
-//         error: function (error) {
-//             var errorMessage = JSON.parse(error.responseText);
-//             alert(errorMessage.message);
-//         }
-//     });
-// });
-//
-//
-// $('#placeBookingBtn').on('click', function () {
-//     let formData = {}
-//
-//     let a = $("#placeBooking").serialize();
-//
-//     $.ajax({
-//         url: baseURL + "/bookings/place_bookings", method: "post", // contentType: "application/json",
-//         data: a, dataType: "json", success: function (res) {
-//             alert(res.message);
-//         }, error: function (error) {
-//             var errorMessage = JSON.parse(error.responseText);
-//             alert(errorMessage.message);
-//         }
-//     });
-// });
-
 $("#placeBookingBtn").on('click', function () {
     let formData = $("#placeBooking").serialize();
-    formData.append({
-        bookingDetails:{
 
-        },
-
-    })
     $.ajax({
         url: baseURL + "/bookings/place_bookings",
         method: "post",
