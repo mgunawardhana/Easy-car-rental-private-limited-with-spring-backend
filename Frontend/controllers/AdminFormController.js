@@ -48,7 +48,7 @@ function getAllAdmins() {
                 let role = c.user.role;
                 let userId = c.user.userId;
 
-                let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>"+ "<td>" + role + "</td>" + "<td>" + userId + "</td>"+ "</tr>";
+                let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>" + "<td>" + role + "</td>" + "<td>" + userId + "</td>" + "</tr>";
                 $("#adminTableBody").append(row);
             }
             bindRowClickEventsForAdminTable();
@@ -71,7 +71,7 @@ $("#updateAdmin").on('click', function () {
     let nic = $("#adminNic").val();
     let id = $("#adminId").val();
     let role = $("#role").val();
-    let userId =  $("#userId").val();
+    let userId = $("#userId").val();
 
     // var adminObj = {
     //     name: {firstName: firstName, lastName: lastName},
@@ -88,7 +88,7 @@ $("#updateAdmin").on('click', function () {
         adminAddress: address,
         adminContact: contact,
         adminEmail: email,
-        user: {username: username, password: password,role:role,userId:userId},
+        user: {username: username, password: password, role: role, userId: userId},
         adminNic: nic,
         adminId: id
     }
@@ -127,3 +127,21 @@ function bindRowClickEventsForAdminTable() {
         $("#userId").val($(this).children(":eq(10)").text());
     });
 }
+
+
+$('#firstName,#lastName,#adminAddress,#adminContact,#adminEmail,#userName,#password,#adminNic,#adminId,#userId').on('keydown', function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+})
+
+validator('#firstName', /^[A-z]{3,30}$/, "Your input can't be validated", '#firstname_label', '#lastName');
+validator('#lastName', /^[A-z]{3,30}$/, "Your input can't be validated", '#lastname_label', '#adminAddress');
+validator('#adminAddress', /^[A-z]{3,30}$/, "Your input can't be validated", '#address_label', '#adminContact');
+validator('#adminContact', /^(07([1245678])|091)(-)[0-9]{7}$/, "Your input can't be validated", '#adminContact_label', '#adminEmail');
+validator('#adminEmail', /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, "Your input can't be validated", '#email_label', '#userName');
+validator('#userName', /^[A-z]{3,30}$/, "Your input can't be validated", '#username_label', '#password');
+validator('#password', /^[0-9]{3,30}$/, "Your input can't be validated", '#password_label', '#adminNic');
+validator('#adminNic', /^[0-9]{12}$/, "Your input can't be validated", '#admin_nic_label', '#adminId');
+validator('#adminId', /^A00-00[0-9]{1,5}$/, "Your input can't be validated", '#admin_id_label', '#userId');
+validator('#userId', /^[0-9]{1,5}$/, "Your input can't be validated", '#user_id_label', '#');

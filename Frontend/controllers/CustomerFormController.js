@@ -245,6 +245,7 @@ function loadAllVehiclesToCombo() {
     });
 }
 
+
 $("#placeBookingBtn").on('click', function () {
     let formData = $("#placeBooking").serialize();
     console.log(formData)
@@ -294,15 +295,17 @@ $("#placeBookingBtn").on('click', function () {
 //         pickUpTime: pickup_time,
 //         returnDate: return_date,
 //         DriverRequestType: request_type,
-//         customer: {
+//         customer: [
 //             id: customer_id, name: {
 //                 firstName: customer_name, lastName: customer_name
 //             }
-//         },
+//         ],
 //         pickUpLocation: pickup_location,
 //         driverSchedules: {driverId: driver_id, bookingId: reg_id},
 //         bookingDetails: {vehicleId: vehicle_id, bookingId: reg_id},
 //     }
+//
+//     console.log(place_booking);
 //
 //     $.ajax({
 //         url: baseURL + "/bookings/place_bookings",
@@ -318,3 +321,5 @@ $("#placeBookingBtn").on('click', function () {
 //         }
 //     });
 // });
+
+

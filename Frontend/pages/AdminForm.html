@@ -386,42 +386,49 @@
                                     <div class="form-group">
                                         <label>First Name</label>
                                         <input class="form-control" id="firstName" name="adminName.firstName" type="text">
+                                        <p><small class="text-danger fw-bold" id="firstname_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Last Name</label>
                                         <input class="form-control" name="adminName.lastName"  id="lastName" type="text">
+                                        <p><small class="text-danger fw-bold" id="lastname_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Address</label>
                                         <input class="form-control" id="adminAddress" name="adminAddress" type="text">
+                                        <p><small class="text-danger fw-bold" id="address_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Contact</label>
                                         <input class="form-control" id="adminContact" name="adminContact" type="text">
+                                        <p><small class="text-danger fw-bold" id="adminContact_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input class="form-control" id="adminEmail" name="adminEmail" type="text">
+                                        <p><small class="text-danger fw-bold" id="email_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>User Name</label>
                                         <input class="form-control" id="userName" name="user.userName" type="text">
+                                        <p><small class="text-danger fw-bold" id="username_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input class="form-control" id="password" name="user.password" type="text">
+                                        <p><small class="text-danger fw-bold" id="password_label"></small></p>
                                     </div>
                                 </div>
                                 <!--  <div class="col-12 col-sm-6">
@@ -434,12 +441,14 @@
                                     <div class="form-group">
                                         <label>NIC</label>
                                         <input class="form-control" id="adminNic" name="adminNic" type="text">
+                                        <p><small class="text-danger fw-bold" id="admin_nic_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Admin Id</label>
                                         <input class="form-control" id="adminId" name="adminId" type="text">
+                                        <p><small class="text-danger fw-bold" id="admin_id_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -455,6 +464,7 @@
                                     <div class="form-group">
                                         <label>User ID</label>
                                         <input class="form-control" id="userId" disabled type="text">
+                                        <p><small class="text-danger fw-bold" id="user_id_label"></small></p>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -658,6 +668,8 @@
 
 
 <script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../controllers/util.js"></script>
+
 <script src="../controllers/AdminFormController.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
 <script src="../assets/js/core/bootstrap.min.js"></script>

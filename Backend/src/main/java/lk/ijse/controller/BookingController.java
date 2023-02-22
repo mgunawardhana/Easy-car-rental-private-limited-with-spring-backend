@@ -47,7 +47,7 @@ public class BookingController {
 
     @PostMapping(path = "/place_bookings")
     public ResponseUtil saveBooking(@ModelAttribute BookingDTO bookingDTO){
-        System.out.println(bookingDTO.toString());
+        System.out.println("out put "+bookingDTO.toString());
         bookingService.placeBooking(bookingDTO);
         return new ResponseUtil("Ok","Saved",null);
     }
