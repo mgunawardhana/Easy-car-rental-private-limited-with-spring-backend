@@ -67,3 +67,28 @@ var bk_details = {
 //     driverSchedules:{},
 // }
 //
+// let reg_id = $("#bookingId").val();
+// let driver_id = $("#driverId").val();
+// let customer_id = $("#customer").val();
+// let customer_name = $("#customerName").val();
+// let vehicle_id = $("#vehicleId").val();
+// let pickup_date = $("#pickUpDate").val();
+// let request_type = $("#DriverRequestType").val();
+// let pickup_location = $("#pickUpLocation").val();
+// let return_date = $("#returnDate").val();
+// let pickup_time = $("#pickUpTime").val();
+// let formData={
+//     bookingId: reg_id,
+//     pickUpDate: pickup_date,
+//     pickUpTime: pickup_time,
+//     returnDate: return_date,
+//     DriverRequestType: request_type,
+//     customer: {
+//         id: customer_id, name: {
+//             firstName: customer_name, lastName: customer_name
+//         }
+//     },
+//     pickUpLocation: pickup_location,
+//     driverSchedules: {driverId: driver_id, bookingId: reg_id},
+//     bookingDetails: {vehicleId: vehicle_id, bookingId: reg_id},
+// }

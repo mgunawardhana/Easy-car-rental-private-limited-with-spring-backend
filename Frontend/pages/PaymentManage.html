@@ -395,13 +395,13 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Date</label>
-                                        <input class="form-control" id="date" name="date" type="text">
+                                        <input class="form-control" id="date" name="booking.returnDate" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Booking ID</label>
-                                        <input class="form-control" id="bookingId" name="bookingId" type="text">
+                                        <input class="form-control" id="bookingId" name="booking.bookingId" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -431,10 +431,11 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Payment Type</label>
-                                        <select class="form-control" id="payment" name="payment">
+                                        <select class="form-control" id="payment" name="paymentType">
                                             <option>Select Type</option>
-                                            <option>RENT ( with damage )</option>
-                                            <option>RENT ( without damage )</option>
+                                            <option>DAMAGE</option>
+                                            <option>RENT</option>
+                                            <option>OTHER</option>
                                         </select>
                                     </div>
                                 </div>
@@ -629,7 +630,7 @@
 
 
 <script src="../js/jquery-3.6.1.min.js"></script>
-<script src="../controllers/AdminFormController.js"></script>
+<script src="../controllers/PaymentFormController.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
 <script src="../assets/js/core/bootstrap.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>

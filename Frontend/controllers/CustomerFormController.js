@@ -244,9 +244,10 @@ function loadAllVehiclesToCombo() {
         }
     });
 }
+
 $("#placeBookingBtn").on('click', function () {
     let formData = $("#placeBooking").serialize();
-
+    console.log(formData)
     $.ajax({
         url: baseURL + "/bookings/place_bookings",
         method: "post",
@@ -262,3 +263,59 @@ $("#placeBookingBtn").on('click', function () {
         }
     });
 });
+
+// bookingId: R00-007
+// driverSchedules.driverId: D00-001
+// customer.id: R00-001
+// bookingDetails.vehicleId: V00-001
+// contactNo: 12000.00
+// pickUpDate: 2023-02-22
+// DriverRequestType: YES
+// pickUpLocation: Hapugala
+// returnDate: 2023-02-22
+// pickUpTime: 12:55
+//
+// $("#placeBookingBtn").on('click', function () {
+//
+//     let reg_id = $("#bookingId").val();
+//     let driver_id = $("#driverId").val();
+//     let customer_id = $("#customer").val();
+//     let customer_name = $("#customerName").val();
+//     let vehicle_id = $("#vehicleId").val();
+//     let pickup_date = $("#pickUpDate").val();
+//     let request_type = $("#DriverRequestType").val();
+//     let pickup_location = $("#pickUpLocation").val();
+//     let return_date = $("#returnDate").val();
+//     let pickup_time = $("#pickUpTime").val();
+//
+//
+//     var place_booking = {
+//         bookingId: reg_id,
+//         pickUpDate: pickup_date,
+//         pickUpTime: pickup_time,
+//         returnDate: return_date,
+//         DriverRequestType: request_type,
+//         customer: {
+//             id: customer_id, name: {
+//                 firstName: customer_name, lastName: customer_name
+//             }
+//         },
+//         pickUpLocation: pickup_location,
+//         driverSchedules: {driverId: driver_id, bookingId: reg_id},
+//         bookingDetails: {vehicleId: vehicle_id, bookingId: reg_id},
+//     }
+//
+//     $.ajax({
+//         url: baseURL + "/bookings/place_bookings",
+//         method: "post",
+//         contentType: "application/json",
+//         data: JSON.stringify(place_booking),
+//         dataType: "json",
+//         success: function (res) {
+//             alert(res.message);
+//         },
+//         error: function (error) {
+//             alert(JSON.parse(error.responseText).message);
+//         }
+//     });
+// });
