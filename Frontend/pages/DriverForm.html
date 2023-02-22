@@ -378,18 +378,24 @@
                                     <div class="form-group">
                                         <label>Driver ID</label>
                                         <input class="form-control" id="id" name="id" type="text">
+                                        <p><small class="text-danger fw-bold" id="driver_id_label"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Address</label>
                                         <input class="form-control" id="address" name="address" type="text">
+                                        <p><small class="text-danger fw-bold" id="address_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Contact</label>
                                         <input class="form-control" id="contactNo" name="contactNo" type="text">
+                                        <p><small class="text-danger fw-bold" id="contact_lbl"></small></p>
+
                                     </div>
                                 </div>
 
@@ -407,37 +413,50 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Licence No</label>
-                                        <input class="form-control" id="drivingLicenseNo" name="drivingLicenseNo" type="text">
+                                        <input class="form-control" id="drivingLicenseNo" name="drivingLicenseNo"
+                                               type="text">
+                                        <p><small class="text-danger fw-bold" id="licence_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input class="form-control" id="email" name="email" type="text">
+                                        <p><small class="text-danger fw-bold" id="eemail_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>First Name</label>
                                         <input class="form-control" id="firstName" name="name.firstName" type="text">
+                                        <p><small class="text-danger fw-bold" id="f_name_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>Last Name</label>
                                         <input class="form-control" id="lastName" name="name.lastName" type="text">
+                                        <p><small class="text-danger fw-bold" id="l_name_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>User Name</label><!--user_name user.userName-->
                                         <input class="form-control" id="userName" name="user.userName" type="text">
+                                        <p><small class="text-danger fw-bold" id="userName_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>User Id</label>
-                                        <input class="form-control" disabled id="userId"  type="text">
+                                        <input class="form-control" disabled id="userId" type="text">
+                                        <p><small class="text-danger fw-bold" id="user_id_lbl"></small></p>
+
                                     </div>
                                 </div>
 
@@ -445,12 +464,16 @@
                                     <div class="form-group">
                                         <label>password</label>
                                         <input class="form-control" id="password" name="user.password" type="text">
+                                        <p><small class="text-danger fw-bold" id="password_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label>NIC</label>
                                         <input class="form-control" id="nic" name="nic" type="text">
+                                        <p><small class="text-danger fw-bold" id="nic_lbl"></small></p>
+
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -458,8 +481,6 @@
                                         <label>Type</label>
                                         <select class="form-control" id="role" name="user.role">
                                             <option>Select Type</option>
-                                            <option>CUSTOMER</option>
-                                            <option>ADMIN</option>
                                             <option>DRIVER</option>
                                         </select>
                                     </div>
@@ -467,9 +488,12 @@
 
 
                                 <div class="col-12">
-                                    <button class="btn btn-primary bg-success" id="saveDriver" type="button">Save</button>
-                                    <button class="btn btn-primary bg-warning" id="updateDriver" type="button">Update</button>
-                                    <button class="btn btn-primary bg-danger" id="deleteDriver" type="button">Delete</button>
+                                    <button class="btn btn-primary bg-success" id="saveDriver" type="button">Save
+                                    </button>
+                                    <button class="btn btn-primary bg-warning" id="updateDriver" type="button">Update
+                                    </button>
+                                    <button class="btn btn-primary bg-danger" id="deleteDriver" type="button">Delete
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -558,7 +582,7 @@
                         <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                             <li class="nav-item">
                                 <a class="nav-link text-muted" href="" target="_blank">Creative
-                                   </a>
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-muted" href=""
