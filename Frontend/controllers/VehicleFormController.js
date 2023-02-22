@@ -155,3 +155,24 @@ $("#deleteVehicle").on('click', function () {
         }
     });
 });
+
+
+$('#vehicleId#numberOfPassenger,#extraKmPer,#registrationNo,#vehicleColour,#dailyRate,#monthlyRate,#vehicleAvailability,#vehicleBrand,#transmissionType,#dailyMileage,#monthlyMileage,#fuelType,#refundableDamagedFee,#vehicleType,#dailyMileage1,#lastServiceMileage').on('keydown', function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+})
+
+validator('#vehicleId', /^V00-00[0-9]{1,5}$/, "Your input can't be validated", '#reg_id', '#numberOfPassenger');
+validator('#numberOfPassenger', /^[0-9]{1,2}$/, "Your input can't be validated", '#f_name', '#extraKmPer');
+validator('#extraKmPer', /^[0-9]{3,10}$/, "Your input can't be validated", '#l_name', '#registrationNo');
+validator('#registrationNo', /^[A-z]{3,10}$/, "Your input can't be validated", '#address_lbl', '#vehicleColour');
+validator('#vehicleColour', /^[A-z]{3,10}$/, "Your input can't be validated", '#email_lbl', '#dailyRate');
+validator('#dailyRate', /^[0-9]{3,30}$/, "Your input can't be validated", '#contact_lbl', '#monthlyRate');
+validator('#monthlyRate', /^[0-9]{3,30}$/, "Your input can't be validated", '#userName_lbl', '#vehicleBrand');
+validator('#vehicleBrand', /^[A-z]{12}$/, "Your input can't be validated", '#userId_lbl', '#dailyMileage');
+validator('#dailyMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '#password_lbl', '#monthlyMileage');
+validator('#monthlyMileage', /^[0-9]{3,20}$/, "Your input can't be validated", '#nic_lbl', '#refundableDamagedFee');
+validator('#refundableDamagedFee', /^[0-9]{3,30}$/, "Your input can't be validated", '#reg_id', '#dailyMileage1');
+validator('#dailyMileage1', /^[0-9]{3,30}$/, "Your input can't be validated", '#f_name', '#vehicleMileage');
+validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '#l_name', '#');
