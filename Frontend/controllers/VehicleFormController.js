@@ -163,16 +163,16 @@ $('#vehicleId#numberOfPassenger,#extraKmPer,#registrationNo,#vehicleColour,#dail
     }
 })
 
-validator('#vehicleId', /^V00-00[0-9]{1,5}$/, "Your input can't be validated", '#vehicleId', '#numberOfPassenger');
-validator('#numberOfPassenger', /^[0-9]{1,2}$/, "Your input can't be validated", '#numberOfPassenger', '#extraKmPer');
-validator('#extraKmPer', /^[0-9]{3,10}$/, "Your input can't be validated", '#extraKmPer', '#registrationNo');
-validator('#registrationNo', /^[A-z]{3,10}$/, "Your input can't be validated", '#registrationNo', '#vehicleColour');
-validator('#vehicleColour', /^[A-z]{3,10}$/, "Your input can't be validated", '#vehicleColour', '#dailyRate');
-validator('#dailyRate', /^[0-9]{3,30}$/, "Your input can't be validated", '#dailyRate', '#monthlyRate');
-validator('#monthlyRate', /^[0-9]{3,30}$/, "Your input can't be validated", '#monthlyRate', '#vehicleBrand');
-validator('#vehicleBrand', /^[A-z]{12}$/, "Your input can't be validated", '#vehicleBrand', '#dailyMileage');
-validator('#dailyMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '#dailyMileage', '#monthlyMileage');
-validator('#monthlyMileage', /^[0-9]{3,20}$/, "Your input can't be validated", '#monthlyMileage', '#refundableDamagedFee');
-validator('#refundableDamagedFee', /^[0-9]{3,30}$/, "Your input can't be validated", '#refundableDamagedFee', '#dailyMileage1');
-validator('#dailyMileage1', /^[0-9]{3,30}$/, "Your input can't be validated", '#dailyMileage1', '#vehicleMileage');
-validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '#vehicleMileage', '#');
+validator('#vehicleId', /^V00-00[0-9]{1,5}$/, "Your input can't be validated", '#vehicleId_lbl', '#numberOfPassenger');
+validator('#numberOfPassenger', /^[0-9]{1,2}$/, "Your input can't be validated", '#no_of_passenger_lbl', '#extraKmPer');
+validator('#extraKmPer', /^[0-9]{3,10}$/, "Your input can't be validated", '#extra_km_per', '#registrationNo');
+validator('#registrationNo', /^REG-00[0-9]{1,5}$/, "Your input can't be validated", '#reg_no_lbl', '#vehicleColour');
+validator('#vehicleColour', /^[A-z]{3,10}$/, "Your input can't be validated", '#col_lbl', '#dailyRate');
+validator('#dailyRate', /^[0-9]{3,30}$/, "Your input can't be validated", '#daily_amount_lbl', '#monthlyRate');
+validator('#monthlyRate', /^[0-9]{3,30}$/, "Your input can't be validated", '#monthly_amount_lbl', '#vehicleBrand');
+validator('#vehicleBrand', /^[A-z]{2,12}$/, "Your input can't be validated", '#brand_lbl', '#dailyMileage');
+validator('#dailyMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '#daily_km_lbl', '#monthlyMileage');
+validator('#monthlyMileage', /^[0-9]{3,20}$/, "Your input can't be validated", '#monthly_km_lbl', '#refundableDamagedFee');
+validator('#refundableDamagedFee', /^[0-9]{3,30}$/, "Your input can't be validated", '#damage_lbl', '#dailyMileage1');
+validator('#dailyMileage1', /^[0-9]{3,30}$/, "Your input can't be validated", '#service_mileage_lbl', '#vehicleMileage');
+validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '#last_service_lbl', '#');
