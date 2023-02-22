@@ -16,5 +16,6 @@ public interface CustomerService {
 
     String generateCustomerIds();
 
+    long countCustomer();
 
 }

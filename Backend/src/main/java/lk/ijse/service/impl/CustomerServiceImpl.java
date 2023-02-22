@@ -73,4 +73,9 @@ public class CustomerServiceImpl implements CustomerService {
             return "C00-001";
         }
     }
+
+    @Override
+    public long countCustomer() {
+        return customerRepo.count();
+    }
 }
