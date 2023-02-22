@@ -71,7 +71,6 @@ public class CustomerServiceImpl implements CustomerService {
             }
         } else {
             return "C00-001";
-
         }
     }
 }

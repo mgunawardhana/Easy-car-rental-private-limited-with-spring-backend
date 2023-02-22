@@ -18,7 +18,7 @@ public class PaymentFormController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = "save_payment",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO){
+    public ResponseUtil savePayment(@ModelAttribute PaymentDTO paymentDTO){
         System.out.println(paymentDTO.toString());
         paymentService.savePayment(paymentDTO);
         return new ResponseUtil("OK","Saved",null);

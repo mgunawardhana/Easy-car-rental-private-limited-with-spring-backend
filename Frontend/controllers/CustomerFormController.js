@@ -254,7 +254,6 @@ $("#placeBookingBtn").on('click', function () {
         data: formData,
         dataType: "json",
         success: function (res) {
-            getAllCustomers();
             alert(res.message);
         },
         error: function (error) {

@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 import lk.ijse.dto.AdminDTO;
+import lk.ijse.dto.CustomerDTO;
 import lk.ijse.service.AdminService;
 import lk.ijse.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +21,12 @@ public class AdminFormController {
     @Autowired
     public AdminService adminService;
 
-    @PostMapping(value = "save_admin", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "save_admin",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveAdmin(@ModelAttribute AdminDTO adminDTO) {
         adminService.saveAdmin(adminDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
+
 
     @DeleteMapping()
     public ResponseUtil deleteAdmin(String code) {

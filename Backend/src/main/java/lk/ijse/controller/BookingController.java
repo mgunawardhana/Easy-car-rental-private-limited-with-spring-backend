@@ -44,9 +44,9 @@ public class BookingController {
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllVehiclesInToTheCombo());
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(path = "/place_bookings",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveBooking(@RequestBody BookingDTO bookingDTO){
+
+    @PostMapping(path = "/place_bookings")
+    public ResponseUtil saveBooking(@ModelAttribute BookingDTO bookingDTO){
         System.out.println(bookingDTO.toString());
         bookingService.placeBooking(bookingDTO);
         return new ResponseUtil("Ok","Saved",null);

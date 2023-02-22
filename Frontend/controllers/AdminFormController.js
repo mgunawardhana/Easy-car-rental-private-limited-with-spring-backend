@@ -73,14 +73,24 @@ $("#updateAdmin").on('click', function () {
     let role = $("#role").val();
     let userId =  $("#userId").val();
 
+    // var adminObj = {
+    //     name: {firstName: firstName, lastName: lastName},
+    //     address: address,
+    //     contact: contact,
+    //     email: email,
+    //     user: {username: username, password: password,role:role,userId:userId},
+    //     nic: nic,
+    //     id: id
+    // }
+
     var adminObj = {
-        name: {firstName: firstName, lastName: lastName},
-        address: address,
-        contact: contact,
-        email: email,
+        adminName: {firstName: firstName, lastName: lastName},
+        adminAddress: address,
+        adminContact: contact,
+        adminEmail: email,
         user: {username: username, password: password,role:role,userId:userId},
-        nic: nic,
-        id: id
+        adminNic: nic,
+        adminId: id
     }
 
     $.ajax({

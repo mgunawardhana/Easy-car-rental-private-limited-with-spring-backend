@@ -1,7 +1,9 @@
 package lk.ijse.service.impl;
 
 import lk.ijse.dto.AdminDTO;
+import lk.ijse.dto.CustomerDTO;
 import lk.ijse.entity.Admin;
+import lk.ijse.entity.Customer;
 import lk.ijse.repo.AdminRepo;
 import lk.ijse.service.AdminService;
 import org.modelmapper.ModelMapper;
@@ -29,6 +31,7 @@ public class AdminServiceImpl implements AdminService {
             adminRepo.save(modelMapper.map(adminDTO, Admin.class));
         }
     }
+
 
     @Override
     public void updateAdmin(AdminDTO adminDTO) {
