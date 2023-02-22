@@ -1,5 +1,6 @@
 package lk.ijse.controller;
 
+import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.PaymentDTO;
 import lk.ijse.service.PaymentService;
 import lk.ijse.util.ResponseUtil;
@@ -16,8 +17,9 @@ public class PaymentFormController {
     PaymentService paymentService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "save_payment",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO){
+        System.out.println(paymentDTO.toString());
         paymentService.savePayment(paymentDTO);
         return new ResponseUtil("OK","Saved",null);
     }
