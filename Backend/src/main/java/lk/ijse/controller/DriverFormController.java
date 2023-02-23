@@ -39,4 +39,10 @@ public class DriverFormController {
         driverService.updateDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully updated ! " + driverDTO.getId(), "");
     }
+
+    @GetMapping(path ="/driverCount/{count}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil countDrivers(@PathVariable String count){
+        return new ResponseUtil("Ok", "", driverService.countDrivers());
+    }
+
 }
