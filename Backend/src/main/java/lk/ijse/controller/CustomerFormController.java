@@ -49,7 +49,7 @@ public class CustomerFormController {
 
     @GetMapping(path ="/customerCount/{count}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil countCustomers(@PathVariable String count){
-        System.out.println(count);
+//        System.out.println(count);
         return new ResponseUtil("Ok", "Ok", customerService.countCustomer());
     }
 

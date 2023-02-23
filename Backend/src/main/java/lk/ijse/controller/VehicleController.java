@@ -40,4 +40,10 @@ public class VehicleController {
         return new ResponseUtil("OK", "Successfully updated ! " + vehicleDTO.getVehicleId(), "");
     }
 
+    @GetMapping(path ="/vehicleCount/{count}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil countVehicles(@PathVariable String count){
+        return new ResponseUtil("Ok", "", vehicleService.countVehicle());
+    }
+
+
 }

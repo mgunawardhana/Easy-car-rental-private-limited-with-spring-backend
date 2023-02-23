@@ -53,4 +53,9 @@ public class VehicleServiceImpl implements VehicleService {
         return modelMapper.map(vehicleRepo.findAll(), new TypeToken<ArrayList<VehicleDTO>>() {
         }.getType());
     }
+
+    @Override
+    public long countVehicle() {
+        return vehicleRepo.count();
+    }
 }

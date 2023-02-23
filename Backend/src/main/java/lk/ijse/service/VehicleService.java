@@ -9,4 +9,5 @@ public interface VehicleService {
     void deleteVehicle(String code);
     void updateVehicle(VehicleDTO driverDTO);
     List<VehicleDTO> getAllVehicle();
+    long countVehicle();
 }
