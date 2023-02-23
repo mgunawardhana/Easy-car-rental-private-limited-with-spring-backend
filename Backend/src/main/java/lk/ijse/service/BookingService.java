@@ -17,6 +17,7 @@ public interface BookingService {
 
     public ArrayList<VehicleDTO> loadAllVehiclesInToTheCombo();
 
+    long countBooking();
 
 
 

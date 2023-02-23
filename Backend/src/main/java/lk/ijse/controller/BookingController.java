@@ -52,7 +52,10 @@ public class BookingController {
         return new ResponseUtil("Ok","Saved",null);
     }
 
-
+    @GetMapping(path ="/bookingCount/{count}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil countBooking(@PathVariable String count){
+        return new ResponseUtil("Ok", "", bookingService.countBooking());
+    }
 
 
 
