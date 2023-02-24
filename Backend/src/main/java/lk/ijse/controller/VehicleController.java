@@ -37,7 +37,7 @@ public class VehicleController {
     @PutMapping(value = "update")
     public ResponseUtil updateDriver(@RequestBody VehicleDTO vehicleDTO) {
         vehicleService.updateVehicle(vehicleDTO);
-        return new ResponseUtil("OK", "Successfully updated ! " + vehicleDTO.getVehicleId(), "");
+        return new ResponseUtil("OK", "Successfully updated ! " + vehicleDTO.getVehicleID(), "");
     }
 
     @GetMapping(path ="/vehicleCount/{count}",produces = MediaType.APPLICATION_JSON_VALUE)

@@ -13,6 +13,8 @@ import java.io.Serializable;
 @ToString
 public class BookingDetails_PK implements Serializable {
 
-    private String vehicleId;
-    private String bookingId;
+    private String vehicleID;
+    private String bookingID;
+//    private String vehicleId;
+//    private String bookingId;
 }

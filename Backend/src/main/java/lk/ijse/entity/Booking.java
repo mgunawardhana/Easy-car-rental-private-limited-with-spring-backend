@@ -19,7 +19,7 @@ import java.util.List;
 public class Booking {
 
     @Id
-    private String bookingId;
+    private String bookingID;
     @Column(name = "pick_up_date")
     private String pickUpDate;
     @Column(name = "pick_up_time")
@@ -39,9 +39,7 @@ public class Booking {
     @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
     private List<BookingDetails> bookingDetails;
 
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "bookingDTO",cascade = CascadeType.ALL)
     private List<DriverSchedule> driverSchedules;
-
-
 
 }

@@ -1,7 +1,6 @@
 package lk.ijse.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import lk.ijse.embeded.Mileage;
 import lk.ijse.embeded.PriceRate;
 import lk.ijse.enums.*;
@@ -17,11 +16,18 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
+/** this annotations can allows Jackson to ignore
+ the garbage created by Hibernate, so it can manage
+ the lazy loading of data as referred before*/
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Vehicle {
 
+//    @Id
+//    private String vehicleId;
+
     @Id
-    private String vehicleId;
+    private String vehicleID;
     @Column(name = "registration_no")
     private String registrationNo;
     @Column(name = "brand")

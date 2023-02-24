@@ -236,7 +236,7 @@ function loadAllVehiclesToCombo() {
     $.ajax({
         url: baseURL + "/bookings/get_all_vehicles", method: "GET", dataType: "json", success: function (res) {
             for (let vehicle of res.data) {
-                $("#vehicleId").append(`<option>${vehicle.vehicleId}</option>`);
+                $("#vehicleId").append(`<option>${vehicle.vehicleID}</option>`);
             }
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -246,24 +246,65 @@ function loadAllVehiclesToCombo() {
 }
 
 
+// $("#placeBookingBtn").on('click', function () {
+//     let formData = $("#placeBooking").serialize();
+//     console.log(formData)
+//     $.ajax({
+//         url: baseURL + "/bookings/place_bookings",
+//         method: "post",
+//         data: formData,
+//         dataType: "json",
+//         success: function (res) {
+//             alert(res.message);
+//         },
+//         error: function (error) {
+//             var errorMessage = JSON.parse(error.responseText);
+//             alert(errorMessage.message);
+//         }
+//     });
+// });
+
 $("#placeBookingBtn").on('click', function () {
-    let formData = $("#placeBooking").serialize();
-    console.log(formData)
+    let bookingID= $("#bookingId").val();//
+    let rentID = $("#rentID").val();//
+    let driverID= $("#driverId").val();//
+    let driverName = $("#driverName").val(); //
+    let customer = $("#customer").val(); //
+    let customerName = $("#customerName").val(); //
+    let vehicleID = $("#vehicleId").val(); //
+    let pickupDate = $("#pickUpDate").val(); //
+    let driverRequest = $("#DriverRequestType").val(); //
+    let pickUpLocation = $("#pickUpLocation").val();  //
+    let returnDate = $("#returnDate").val(); //
+    let pickupTime = $("#pickUpTime").val(); //
+
+
+    var booking = {
+        bookingID:bookingID,
+        pickUpDate:pickupDate,
+        pickUpTime:pickupTime,
+        returnDate:returnDate,
+        driverRequestType:driverRequest,
+        customer: {id:customer},
+        pickUpLocation:pickUpLocation,
+        bookingDetails:[{vehicleID:vehicleID,bookingID:bookingID}],
+        driverSchedules:[{driverID:driverID,bookingID:bookingID}],
+    }
+
     $.ajax({
         url: baseURL + "/bookings/place_bookings",
         method: "post",
-        data: formData,
+        contentType: "application/json",
+        data: JSON.stringify(booking),
         dataType: "json",
         success: function (res) {
             alert(res.message);
         },
         error: function (error) {
-            var errorMessage = JSON.parse(error.responseText);
-            alert(errorMessage.message);
+            alert(JSON.parse(error.responseText).message);
         }
     });
 });
-
 
 
 $(' #id,#firstName,#lastName,#address,#email,#contactNo,#userName,#userId,#password,#nic,#drivingLicenseNo').on('keydown', function (e) {
@@ -283,64 +324,4 @@ validator('#userId', /^[0-9]{12}$/, "Your input can't be validated", '#admin_nic
 validator('#password', /^[0-9]{4}$/, "Your input can't be validated", '#admin_id_label', '#drivingLicenseNo');
 validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#user_id_label', '#drivingLicenseNo');
 validator('#drivingLicenseNo', /^[0-9]{1,10}$/, "Your input can't be validated", '#user_id_label', '#nic');
-
-
-// bookingId: R00-007
-// driverSchedules.driverId: D00-001
-// customer.id: R00-001
-// bookingDetails.vehicleId: V00-001
-// contactNo: 12000.00
-// pickUpDate: 2023-02-22
-// DriverRequestType: YES
-// pickUpLocation: Hapugala
-// returnDate: 2023-02-22
-// pickUpTime: 12:55
-//
-// $("#placeBookingBtn").on('click', function () {
-//
-//     let reg_id = $("#bookingId").val();
-//     let driver_id = $("#driverId").val();
-//     let customer_id = $("#customer").val();
-//     let customer_name = $("#customerName").val();
-//     let vehicle_id = $("#vehicleId").val();
-//     let pickup_date = $("#pickUpDate").val();
-//     let request_type = $("#DriverRequestType").val();
-//     let pickup_location = $("#pickUpLocation").val();
-//     let return_date = $("#returnDate").val();
-//     let pickup_time = $("#pickUpTime").val();
-//
-//
-//     var place_booking = {
-//         bookingId: reg_id,
-//         pickUpDate: pickup_date,
-//         pickUpTime: pickup_time,
-//         returnDate: return_date,
-//         DriverRequestType: request_type,
-//         customer: [
-//             id: customer_id, name: {
-//                 firstName: customer_name, lastName: customer_name
-//             }
-//         ],
-//         pickUpLocation: pickup_location,
-//         driverSchedules: {driverId: driver_id, bookingId: reg_id},
-//         bookingDetails: {vehicleId: vehicle_id, bookingId: reg_id},
-//     }
-//
-//     console.log(place_booking);
-//
-//     $.ajax({
-//         url: baseURL + "/bookings/place_bookings",
-//         method: "post",
-//         contentType: "application/json",
-//         data: JSON.stringify(place_booking),
-//         dataType: "json",
-//         success: function (res) {
-//             alert(res.message);
-//         },
-//         error: function (error) {
-//             alert(JSON.parse(error.responseText).message);
-//         }
-//     });
-// });
-
 

@@ -1,8 +1,11 @@
 package lk.ijse.service.impl;
 
+import lk.ijse.dto.BookingDTO;
 import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.PaymentDTO;
+import lk.ijse.entity.Booking;
 import lk.ijse.entity.Payment;
+import lk.ijse.repo.BookingRepo;
 import lk.ijse.repo.PaymentRepo;
 import lk.ijse.service.PaymentService;
 import net.bytebuddy.matcher.StringMatcher;
@@ -25,8 +28,8 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     PaymentRepo paymentRepo;
 
-
-
+    @Autowired
+    BookingRepo bookingRepo;
 
     @Override
     public void savePayment(PaymentDTO paymentDTO) {
@@ -46,15 +49,23 @@ public class PaymentServiceImpl implements PaymentService {
     public void updatePayment(PaymentDTO paymentDTO) {
 
     }
+    @Override
+    public ArrayList<BookingDTO> loadAllBookingDetails() {
+        System.out.println(bookingRepo.findAll());
+        return modelMapper.map(bookingRepo.findAll(), new TypeToken<ArrayList<BookingDTO>>() {
+        }.getType());
+    }
 
     @Override
     public PaymentDTO searchPayment(String id) {
         return null;
     }
 
+
     @Override
     public List<PaymentDTO> getAllPayment() {
         return modelMapper.map(paymentRepo.findAll(), new TypeToken<ArrayList<PaymentDTO>>() {
         }.getType());
     }
+
 }

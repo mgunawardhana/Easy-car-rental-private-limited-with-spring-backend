@@ -13,8 +13,8 @@ import lombok.ToString;
 @ToString
 public class DriverScheduleDTO {
 
-    private String driverId;
-    private String bookingId;
-    private DriverDTO driver;
-    private BookingDTO booking;
+    private String driverID;
+    private String bookingID;
+    private DriverDTO driverDTO;
+    private BookingDTO bookingDTO;
 }

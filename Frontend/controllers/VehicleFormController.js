@@ -27,7 +27,7 @@ function getAllVehicle() {
         url: baseURL + "get_all", success: function (res) {
             for (let c of res.data) {
 
-                let vehicleId = c.vehicleId;
+                let vehicleId = c.vehicleID;
                 let registrationNo = c.registrationNo;
                 let brand = c.vehicleBrand;
                 let vehicleType = c.vehicleType;
@@ -81,7 +81,7 @@ $("#updateVehicle").on('click', function () {
 
 
     var vehicleObj = {
-        vehicleId: vehicleId,
+        vehicleID: vehicleId,
         numberOfPassenger: numberOfPassenger,
         extraKmPer: extraKmPer,
         registrationNo: registrationNo,
@@ -176,3 +176,64 @@ validator('#monthlyMileage', /^[0-9]{3,20}$/, "Your input can't be validated", '
 validator('#refundableDamagedFee', /^[0-9]{3,30}$/, "Your input can't be validated", '#damage_lbl', '#dailyMileage1');
 validator('#dailyMileage1', /^[0-9]{3,30}$/, "Your input can't be validated", '#service_mileage_lbl', '#vehicleMileage');
 validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '#last_service_lbl', '#');
+
+$('#car1').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            $('#frontImg').css({
+                "background": `url(${reader.result})`,
+                "background-size": "cover",
+                "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+
+$('#car2').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            $('#backImg').css({
+                "background": `url(${reader.result})`,
+                "background-size": "cover",
+                "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+
+$('#car3').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            $('#sideImg').css({
+                "background": `url(${reader.result})`,
+                "background-size": "cover",
+                "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+
+$('#car4').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            $('#innerImg').css({
+                "background": `url(${reader.result})`,
+                "background-size": "cover",
+                "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+

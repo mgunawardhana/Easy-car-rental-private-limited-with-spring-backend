@@ -12,8 +12,8 @@ import lombok.ToString;
 @ToString
 public class BookingDetailsDTO {
 
-    private String vehicleId;
-    private String bookingId;
+    private String vehicleID;
+    private String bookingID;
     private VehicleDTO vehicle;
     private BookingDTO booking;
 

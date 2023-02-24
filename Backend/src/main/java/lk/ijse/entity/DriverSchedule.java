@@ -17,19 +17,19 @@ import javax.persistence.*;
 public class DriverSchedule {
 
     @Id
-    @Column(name = "driver_id")
-    private String driverId;
+    @Column(name = "driverID")
+    private String driverID;
     @Id
-    @Column(name = "booking_id")
-    private String bookingId;
+    @Column(name = "bookingID")
+    private String bookingID;
 
 
     @ManyToOne
-    @JoinColumn(name = "driverId",referencedColumnName = "id",insertable = false,updatable = false)
-    private Driver driver;
+    @JoinColumn(name = "driverID",referencedColumnName = "id",insertable = false,updatable = false)
+    private Driver driverDTO;
 
     @ManyToOne
-    @JoinColumn(name = "bookingId",referencedColumnName = "bookingId",insertable = false,updatable = false)
-    private Booking booking;
+    @JoinColumn(name = "bookingID",referencedColumnName = "bookingID",insertable = false,updatable = false)
+    private Booking bookingDTO;
 
 }

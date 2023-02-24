@@ -11,6 +11,6 @@ import java.io.Serializable;
 @Data
 public class DriverSchedule_PK implements Serializable {
 
-    private String driverId;
-    private String bookingId;
+    private String driverID;
+    private String bookingID;
 }

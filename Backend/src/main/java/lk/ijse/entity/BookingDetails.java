@@ -14,16 +14,24 @@ import javax.persistence.*;
 @ToString
 @IdClass(BookingDetails_PK.class)
 public class  BookingDetails {
+//    @Id
+//    private String vehicleId;
+//    @Id
+//    private String bookingId;
+
+
     @Id
-    private String vehicleId;
+    private String vehicleID;
     @Id
-    private String bookingId;
+    private String bookingID;
+
+
 
     @ManyToOne
-    @JoinColumn(name = "vehicleId",referencedColumnName = "vehicleId",insertable = false, updatable = false)
+    @JoinColumn(name = "vehicleID",referencedColumnName = "vehicleID",insertable = false, updatable = false)
     private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "bookingId",referencedColumnName = "bookingId",insertable = false, updatable = false)
+    @JoinColumn(name = "bookingID",referencedColumnName = "bookingID",insertable = false, updatable = false)
     private Booking booking;
 }

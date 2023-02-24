@@ -32,7 +32,7 @@ function getAllPaymentDetails() {
                 let payment_id = c.paymentId;
                 let invoice_no = c.invoiceNo;
                 let date = c.booking.returnDate;
-                let booking_id = c.booking.bookingId;
+                let booking_id = c.booking.bookingID;
                 let payment_type = c.paymentType;
                 let amount = c.amount;
 
@@ -48,3 +48,40 @@ function getAllPaymentDetails() {
     });
 }
 
+
+// bookingId
+// driver_req
+// pick_up_date
+// pick_up_location
+// pickup_time
+// return_date
+// customer_id
+loadAllCustomersToCombo();
+function loadAllCustomersToCombo() {
+    $.ajax({
+        url: baseURL + "/payment/get_all_bookings", method: "GET", dataType: "json", success: function (res) {
+            for (let booking of res.data) {
+                $("#bookingId").append(`<option>${booking.bookingID}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
+$('#bookingId').on('click', function () {
+    $.ajax({
+        url: baseURL + "/payment/get_all_bookings", method: "GET", dataType: "json", success: function (res) {
+            for (let booking of res.data) {
+                if (booking.bookingID === $('#bookingId').val()) {
+                    $("#driver_req").val(booking.driverRequestType);
+                    $("#pick_up_date").val(booking.pickUpDate);
+                    $("#pick_up_location").val(booking.pickUpLocation);
+                    $("#pickup_time").val(booking.pickUpTime);
+                    $("#return_date").val(booking.returnDate);
+                    $("#customer_id").val(booking.customer.id);
+                }
+            }
+        }
+    });
+});

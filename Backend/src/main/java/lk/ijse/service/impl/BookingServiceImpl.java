@@ -34,13 +34,16 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void placeBooking(BookingDTO bookingDTO) {
-        if (bookingRepo.existsById(bookingDTO.getBookingId())) {
+        if (bookingRepo.existsById(bookingDTO.getBookingID())) {
             throw new RuntimeException("already booked try another !");
         } else {
             System.out.println(bookingDTO.toString());
-            bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
+            Booking bb=modelMapper.map(bookingDTO, Booking.class);
+            System.out.println("+++++++++++++++++++++");
+            System.out.println(bb.toString());
+            System.out.println("+++++++++++++++++++++");
+            bookingRepo.save(bb);
         }
-
     }
 
     @Override
