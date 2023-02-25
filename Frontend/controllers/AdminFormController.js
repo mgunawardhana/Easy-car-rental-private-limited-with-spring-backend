@@ -57,8 +57,19 @@ function getAllAdmins() {
             alert(message);
         }
     });
+    genarateAdminID();
 }
 
+function genarateAdminID() {
+    $.ajax({
+        url: baseURL + "?test=", success: function (res) {
+            $('#adminId').val(res.data);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
 $("#updateAdmin").on('click', function () {
 
     let firstName = $("#firstName").val();
@@ -110,6 +121,8 @@ $("#updateAdmin").on('click', function () {
     });
 
 });
+
+
 
 
 function bindRowClickEventsForAdminTable() {

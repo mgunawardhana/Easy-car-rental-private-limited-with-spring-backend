@@ -45,6 +45,10 @@ public class AdminFormController {
         return new ResponseUtil("OK", "Successful", adminService.getAllAdmin());
     }
 
-
+    @GetMapping(params = {"test"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateCustomersIds(@RequestParam String test) {
+        System.out.println(test);
+        return new ResponseUtil("Ok", "", adminService.generateAdminIds());
+    }
 
 }
