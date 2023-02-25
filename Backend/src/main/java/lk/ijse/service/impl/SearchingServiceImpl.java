@@ -49,6 +49,11 @@ public class SearchingServiceImpl implements SearchingService {
             }.getType());
         }
         throw new RuntimeException("No Search a Result");
+    }
 
+    @Override
+    public List<VehicleDTO> getVehicleByBrand(String brand) {
+        return modelMapper.map(vehicleRepo.findAllByVehicleBrand(brand), new TypeToken<List<VehicleDTO>>() {
+        }.getType());
     }
 }

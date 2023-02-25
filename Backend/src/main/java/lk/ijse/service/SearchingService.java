@@ -13,4 +13,6 @@ public interface SearchingService {
 
     List<VehicleDTO> getPriceRate(PriceRate price_rate);
 
+    List<VehicleDTO> getVehicleByBrand(String brand);
+
 }
