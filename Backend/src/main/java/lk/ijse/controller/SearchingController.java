@@ -1,5 +1,6 @@
 package lk.ijse.controller;
 
+import lk.ijse.embeded.PriceRate;
 import lk.ijse.enums.FuelType;
 import lk.ijse.service.SearchingService;
 import lk.ijse.util.ResponseUtil;
@@ -22,5 +23,12 @@ public class SearchingController {
     public ResponseUtil sortVehicleFuelType(@RequestParam FuelType fuel_type) {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getAllFuelType(fuel_type));
     }
+
+    @GetMapping(params = {"price_rate"})
+    public ResponseUtil sortVehiclePriceRate(@RequestParam PriceRate price_rate) {
+        return new ResponseUtil("Ok", "Your request Success", searchingService.getPriceRate(price_rate));
+    }
+
+
 
 }

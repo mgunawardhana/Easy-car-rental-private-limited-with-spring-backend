@@ -1,6 +1,7 @@
 package lk.ijse.service.impl;
 
 import lk.ijse.dto.VehicleDTO;
+import lk.ijse.embeded.PriceRate;
 import lk.ijse.enums.FuelType;
 import lk.ijse.repo.VehicleRepo;
 import lk.ijse.service.SearchingService;
@@ -39,5 +40,15 @@ public class SearchingServiceImpl implements SearchingService {
             }.getType());
         }
         throw new RuntimeException("No Search a Result");
+    }
+
+    @Override
+    public List<VehicleDTO> getPriceRate(PriceRate price_rate) {
+        if (!vehicleRepo.findAllByVehiclePriceRate(price_rate).isEmpty()) {
+            return modelMapper.map(vehicleRepo.findAllByVehiclePriceRate(price_rate), new TypeToken<List<VehicleDTO>>() {
+            }.getType());
+        }
+        throw new RuntimeException("No Search a Result");
+
     }
 }
