@@ -62,5 +62,10 @@ public class DriverServiceImpl implements DriverService {
         return driverRepo.count();
     }
 
+    @Override
+    public String generateDriverIds() {
+        return null;
+    }
+
 
 }
