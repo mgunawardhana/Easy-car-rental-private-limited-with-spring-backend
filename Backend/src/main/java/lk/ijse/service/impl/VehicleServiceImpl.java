@@ -20,6 +20,7 @@ public class VehicleServiceImpl implements VehicleService {
     VehicleRepo vehicleRepo;
     @Autowired
     ModelMapper modelMapper;
+
     @Override
     public void saveVehicle(VehicleDTO vehicleDTO) {
         if (vehicleRepo.existsById(vehicleDTO.getVehicleID())) {
@@ -63,8 +64,7 @@ public class VehicleServiceImpl implements VehicleService {
     public String generateVehicleIds() {
         String id = vehicleRepo.generateVehicleId();
         if (id != null) {
-            int tempId = Integer.
-                    parseInt(id.split("-")[1]);
+            int tempId = Integer.parseInt(id.split("-")[1]);
             tempId = tempId + 1;
             if (tempId <= 9) {
                 return "V00-00" + tempId;
@@ -75,5 +75,6 @@ public class VehicleServiceImpl implements VehicleService {
             }
         } else {
             return "V00-001";
-        }    }
+        }
+    }
 }

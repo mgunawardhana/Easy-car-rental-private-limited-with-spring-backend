@@ -45,5 +45,9 @@ public class VehicleController {
         return new ResponseUtil("Ok", "", vehicleService.countVehicle());
     }
 
-
+    @GetMapping(params = {"test"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateVehicleIds(@RequestParam String test) {
+        System.out.println(test);
+        return new ResponseUtil("Ok", "", vehicleService.generateVehicleIds());
+    }
 }

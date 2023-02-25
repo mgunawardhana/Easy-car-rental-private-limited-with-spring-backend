@@ -58,8 +58,18 @@ function getAllVehicle() {
             alert(message);
         }
     });
+    genarateVehicleID();
 }
-
+function genarateVehicleID() {
+    $.ajax({
+        url: baseURL + "?test=", success: function (res) {
+            $('#vehicleId').val(res.data);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
 
 $("#updateVehicle").on('click', function () {
     let vehicleId = $('#vehicleId').val();
