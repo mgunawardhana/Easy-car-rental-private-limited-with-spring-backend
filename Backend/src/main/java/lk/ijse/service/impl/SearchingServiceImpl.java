@@ -70,4 +70,11 @@ public class SearchingServiceImpl implements SearchingService {
         return modelMapper.map(vehicleRepo.findAllByTransmissionType(transmission_type), new TypeToken<List<VehicleDTO>>() {
         }.getType());
     }
+
+    @Override
+    public List<VehicleDTO> load_all_available_vehicles(String pickup_date, String return_date) {
+        return null;
+    }
+
+
 }

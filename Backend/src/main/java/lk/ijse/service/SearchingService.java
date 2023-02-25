@@ -6,6 +6,7 @@ import lk.ijse.enums.FuelType;
 import lk.ijse.enums.TransmissionType;
 import lk.ijse.enums.VehicleType;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface SearchingService {
@@ -21,6 +22,7 @@ public interface SearchingService {
 
     List<VehicleDTO> getVehicleByTransmissionType(TransmissionType transmission_type);
 
+    List<VehicleDTO> load_all_available_vehicles(String pickup_date, String return_date);
 
 
 }
