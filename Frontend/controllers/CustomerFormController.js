@@ -122,7 +122,6 @@ function getAllCustomers() {
 }
 
 function genarateID() {
-    $("#customerTableBody").empty();
     $.ajax({
         url: baseURL + "/customer/?test=", success: function (res) {
             $('#id').val(res.data);

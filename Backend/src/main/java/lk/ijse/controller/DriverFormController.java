@@ -45,4 +45,10 @@ public class DriverFormController {
         return new ResponseUtil("Ok", "", driverService.countDrivers());
     }
 
+    @GetMapping(params = {"test"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateDriverIds(@RequestParam String test) {
+        System.out.println(test);
+        return new ResponseUtil("Ok", "", driverService.generateDriverIds());
+    }
+
 }
