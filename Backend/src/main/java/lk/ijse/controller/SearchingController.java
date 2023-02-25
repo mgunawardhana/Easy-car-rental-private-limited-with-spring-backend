@@ -2,6 +2,8 @@ package lk.ijse.controller;
 
 import lk.ijse.embeded.PriceRate;
 import lk.ijse.enums.FuelType;
+import lk.ijse.enums.TransmissionType;
+import lk.ijse.enums.VehicleType;
 import lk.ijse.service.SearchingService;
 import lk.ijse.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,19 @@ public class SearchingController {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getPriceRate(price_rate));
     }
 
+    @GetMapping(params = "brand")
+    public ResponseUtil sortVehicleByBrand(@RequestParam String brand){
+        return new ResponseUtil("Ok", "Your request Success", searchingService.getVehicleByBrand(brand));
+    }
 
+    @GetMapping(params = "type")
+    public ResponseUtil sortVehicleByType(@RequestParam VehicleType type){
+        return new ResponseUtil("Ok", "Your request Success", searchingService.getVehicleByType(type));
+    }
+
+    @GetMapping(params = "transmission_type")
+    public ResponseUtil sortVehicleByTransmissionType(@RequestParam TransmissionType transmission_type){
+        return new ResponseUtil("Ok", "Your request Success", searchingService.getVehicleByTransmissionType(transmission_type));
+    }
 
 }

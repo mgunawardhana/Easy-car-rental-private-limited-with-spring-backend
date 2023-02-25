@@ -3,6 +3,8 @@ package lk.ijse.service;
 import lk.ijse.dto.VehicleDTO;
 import lk.ijse.embeded.PriceRate;
 import lk.ijse.enums.FuelType;
+import lk.ijse.enums.TransmissionType;
+import lk.ijse.enums.VehicleType;
 
 import java.util.List;
 
@@ -14,5 +16,11 @@ public interface SearchingService {
     List<VehicleDTO> getPriceRate(PriceRate price_rate);
 
     List<VehicleDTO> getVehicleByBrand(String brand);
+
+    List<VehicleDTO> getVehicleByType(VehicleType type);
+
+    List<VehicleDTO> getVehicleByTransmissionType(TransmissionType transmission_type);
+
+
 
 }

@@ -3,6 +3,8 @@ package lk.ijse.service.impl;
 import lk.ijse.dto.VehicleDTO;
 import lk.ijse.embeded.PriceRate;
 import lk.ijse.enums.FuelType;
+import lk.ijse.enums.TransmissionType;
+import lk.ijse.enums.VehicleType;
 import lk.ijse.repo.VehicleRepo;
 import lk.ijse.service.SearchingService;
 import org.modelmapper.ModelMapper;
@@ -54,6 +56,18 @@ public class SearchingServiceImpl implements SearchingService {
     @Override
     public List<VehicleDTO> getVehicleByBrand(String brand) {
         return modelMapper.map(vehicleRepo.findAllByVehicleBrand(brand), new TypeToken<List<VehicleDTO>>() {
+        }.getType());
+    }
+
+    @Override
+    public List<VehicleDTO> getVehicleByType(VehicleType type) {
+        return modelMapper.map(vehicleRepo.findAllByVehicleType(type), new TypeToken<List<VehicleDTO>>() {
+        }.getType());
+    }
+
+    @Override
+    public List<VehicleDTO> getVehicleByTransmissionType(TransmissionType transmission_type) {
+        return modelMapper.map(vehicleRepo.findAllByTransmissionType(transmission_type), new TypeToken<List<VehicleDTO>>() {
         }.getType());
     }
 }
