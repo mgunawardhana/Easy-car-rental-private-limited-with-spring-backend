@@ -50,17 +50,6 @@ public class PaymentServiceImpl implements PaymentService {
     public void updatePayment(PaymentDTO paymentDTO) {
 
     }
-    @Override
-    public ArrayList<BookingDTO> loadAllBookingDetails() {
-        ArrayList<BookingDTO> allIds= new ArrayList<>();
-        List<Booking> all = bookingRepo.findAll();
-        for (Booking b : all) {
-            CustomerDTO dto=  modelMapper.map( b.getCustomer(),CustomerDTO.class);
-            BookingDTO b1=new BookingDTO(b.getBookingID(),b.getPickUpDate(),b.getPickUpTime(),b.getReturnDate(),b.getDriverRequestType(),dto,b.getPickUpLocation());
-            allIds.add(b1);
-        }
-       return allIds;
-    }
 
     @Override
     public PaymentDTO searchPayment(String id) {
@@ -73,6 +62,25 @@ public class PaymentServiceImpl implements PaymentService {
         System.out.println(paymentRepo.findAll());
         return modelMapper.map(paymentRepo.findAll(), new TypeToken<ArrayList<PaymentDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public ArrayList<BookingDTO> loadAllBookingDetails() {
+        ArrayList<BookingDTO> allIds= new ArrayList<>();
+        List<Booking> all = bookingRepo.findAll();
+        for (Booking b : all) {
+            CustomerDTO dto=  modelMapper.map(b.getCustomer(),CustomerDTO.class);
+            BookingDTO b1=new BookingDTO(
+                    b.getBookingID(),
+                    b.getPickUpDate(),
+                    b.getPickUpTime(),
+                    b.getReturnDate(),
+                    b.getDriverRequestType(),
+                    dto,b.getPickUpLocation()
+            );
+            allIds.add(b1);
+        }
+        return allIds;
     }
 
 }

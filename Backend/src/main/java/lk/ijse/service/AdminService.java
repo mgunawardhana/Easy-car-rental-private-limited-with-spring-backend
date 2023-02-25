@@ -12,4 +12,6 @@ public interface AdminService {
     void deleteAdmin(String code);
 
     List<AdminDTO> getAllAdmin();
+
+    String generateAdminIds();
 }
