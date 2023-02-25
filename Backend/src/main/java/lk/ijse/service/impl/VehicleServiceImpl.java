@@ -58,4 +58,22 @@ public class VehicleServiceImpl implements VehicleService {
     public long countVehicle() {
         return vehicleRepo.count();
     }
+
+    @Override
+    public String generateVehicleIds() {
+        String id = vehicleRepo.generateVehicleId();
+        if (id != null) {
+            int tempId = Integer.
+                    parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                return "V00-00" + tempId;
+            } else if (tempId <= 99) {
+                return "V00-0" + tempId;
+            } else {
+                return "V00-" + tempId;
+            }
+        } else {
+            return "V00-001";
+        }    }
 }

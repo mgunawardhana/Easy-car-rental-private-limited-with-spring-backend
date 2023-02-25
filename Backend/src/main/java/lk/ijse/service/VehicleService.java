@@ -10,4 +10,5 @@ public interface VehicleService {
     void updateVehicle(VehicleDTO driverDTO);
     List<VehicleDTO> getAllVehicle();
     long countVehicle();
+    String generateVehicleIds();
 }
