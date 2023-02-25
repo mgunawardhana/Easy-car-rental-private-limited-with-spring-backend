@@ -83,6 +83,11 @@ public class BookingServiceImpl implements BookingService {
         return modelMapper.map(bookingDetailsRepo.findAll(), new TypeToken<ArrayList<BookingDTO>>() {
         }.getType());
     }
+
+    @Override
+    public BookingDTO getBookingById(String id) {
+        return modelMapper.map(bookingRepo.getBookingByBookingID(id),BookingDTO.class);
+    }
 }
 
 

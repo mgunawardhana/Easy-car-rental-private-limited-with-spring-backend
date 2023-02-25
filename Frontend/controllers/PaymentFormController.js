@@ -7,13 +7,9 @@ $("#save").on('click', function () {
     let formData = $("#paymentForm").serialize();
 
     $.ajax({
-        url: baseURL + "/payment/save_payment",
-        method: "post",
-        data: formData,
-        // contentType: "application/json",
+        url: baseURL + "/payment/save_payment", method: "post", data: formData, // contentType: "application/json",
         // data: JSON.stringify(formData),
-        dataType: "json",
-        success: function (res) {
+        dataType: "json", success: function (res) {
             alert(res.message);
         }, error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
@@ -26,19 +22,26 @@ $("#save").on('click', function () {
 function getAllPaymentDetails() {
     $("#paymentTable").empty();
     $.ajax({
-        url: baseURL + "/payment/get_all_payment_details",
-        dataType:"json",
-        success: function (res) {
+        url: baseURL + "/payment/get_all_payment_details", dataType: "json", success: function (res) {
             for (let c of res.data) {
+                console.log(c)
 
-                let payment_id = c.paymentId;
-                let invoice_no = c.invoiceNo;
-                let date = c.booking.returnDate;
-                let booking_id = c.booking.bookingID;
-                let payment_type = c.paymentType;
+                let paymentID = c.paymentId;
+                let paymentDate = c.paymentDate;
+                let invoiceNo = c.invoiceNo;
                 let amount = c.amount;
+                let paymentType = c.paymentDate;
+                let booking = c.booking;
 
-                let row = "<tr>" + "<td>" + payment_id + "</td>" + "<td>" + invoice_no + "</td>" + "<td>" + date + "</td>" + "<td>" + booking_id + "</td>" + "<td>" + payment_type + "</td>" + "<td>" + amount + "</td>" + "</tr>";
+
+                let row = "<tr>" +
+                    "<td>" +    paymentID + "</td>"
+                    + "<td>" + invoiceNo + "</td>"
+                    + "<td>" + paymentDate + "</td>"
+                    + "<td>" + booking + "</td>"
+                    + "<td>" + paymentType + "</td>"
+                    + "<td>" + amount + "</td>"
+                    + "</tr>";
                 $("#paymentTable").append(row);
             }
             // bindRowClickEvents();
@@ -59,6 +62,7 @@ function getAllPaymentDetails() {
 // return_date
 // customer_id
 loadAllCustomersToCombo();
+
 function loadAllCustomersToCombo() {
     $.ajax({
         url: baseURL + "/payment/get_all_bookings", method: "GET", dataType: "json", success: function (res) {
@@ -71,6 +75,7 @@ function loadAllCustomersToCombo() {
         }
     });
 }
+
 $('#bookingId').on('click', function () {
     $.ajax({
         url: baseURL + "/payment/get_all_bookings", method: "GET", dataType: "json", success: function (res) {
