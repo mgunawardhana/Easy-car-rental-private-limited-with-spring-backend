@@ -44,8 +44,7 @@ function getAllPaymentDetails() {
                     + "</tr>";
                 $("#paymentTable").append(row);
             }
-            // bindRowClickEvents();
-            // clearTextFields();
+
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);

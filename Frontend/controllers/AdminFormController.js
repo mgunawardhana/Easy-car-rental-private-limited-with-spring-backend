@@ -84,16 +84,6 @@ $("#updateAdmin").on('click', function () {
     let role = $("#role").val();
     let userId = $("#userId").val();
 
-    // var adminObj = {
-    //     name: {firstName: firstName, lastName: lastName},
-    //     address: address,
-    //     contact: contact,
-    //     email: email,
-    //     user: {username: username, password: password,role:role,userId:userId},
-    //     nic: nic,
-    //     id: id
-    // }
-
     var adminObj = {
         adminName: {firstName: firstName, lastName: lastName},
         adminAddress: address,
@@ -146,7 +136,7 @@ $('#firstName,#lastName,#adminAddress,#adminContact,#adminEmail,#userName,#passw
     if (e.key === "Tab") {
         e.preventDefault();
     }
-})
+});
 
 validator('#firstName', /^[A-z]{3,30}$/, "Your input can't be validated", '#reg_id', '#lastName');
 validator('#lastName', /^[A-z]{3,30}$/, "Your input can't be validated", '#f_name', '#adminAddress');
