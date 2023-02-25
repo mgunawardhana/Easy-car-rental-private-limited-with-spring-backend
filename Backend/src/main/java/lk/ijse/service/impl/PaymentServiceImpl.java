@@ -4,6 +4,7 @@ import lk.ijse.dto.BookingDTO;
 import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.PaymentDTO;
 import lk.ijse.entity.Booking;
+import lk.ijse.entity.Customer;
 import lk.ijse.entity.Payment;
 import lk.ijse.repo.BookingRepo;
 import lk.ijse.repo.PaymentRepo;
@@ -51,9 +52,14 @@ public class PaymentServiceImpl implements PaymentService {
     }
     @Override
     public ArrayList<BookingDTO> loadAllBookingDetails() {
-        System.out.println(bookingRepo.findAll());
-        return modelMapper.map(bookingRepo.findAll(), new TypeToken<ArrayList<BookingDTO>>() {
-        }.getType());
+        ArrayList<BookingDTO> allIds= new ArrayList<>();
+        List<Booking> all = bookingRepo.findAll();
+        for (Booking b : all) {
+            CustomerDTO dto=  modelMapper.map( b.getCustomer(),CustomerDTO.class);
+            BookingDTO b1=new BookingDTO(b.getBookingID(),b.getPickUpDate(),b.getPickUpTime(),b.getReturnDate(),b.getDriverRequestType(),dto,b.getPickUpLocation());
+            allIds.add(b1);
+        }
+       return allIds;
     }
 
     @Override

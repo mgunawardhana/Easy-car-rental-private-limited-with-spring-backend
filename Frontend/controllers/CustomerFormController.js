@@ -22,6 +22,7 @@ function saveCustomer() {
             alert(errorMessage.message);
         }
     });
+    clearTextFields();
 }
 
 $("#updateCustomer").on('click', function () {
@@ -117,6 +118,7 @@ function getAllCustomers() {
             alert(message);
         }
     });
+    genarateID();
 }
 
 function genarateID() {
@@ -180,18 +182,18 @@ function bindRowClickEvents() {
 }
 
 function clearTextFields() {
-    $('#id').val();
-    $('#firstName').val();
-    $('#lastName').val();
-    $('#address').val();
-    $('#email').val();
-    $('#contactNo').val();
-    $('#userName').val();
-    $('#password').val();
-    $('#nic').val();
-    $('#drivingLicenseNo').val();
-    $('#role').val();
-    $('#userId').val();
+    $('#id').val("");
+    $('#firstName').val("");
+    $('#lastName').val("");
+    $('#address').val("");
+    $('#email').val("");
+    $('#contactNo').val("");
+    $('#userName').val("");
+    $('#password').val("");
+    $('#nic').val("");
+    $('#drivingLicenseNo').val("");
+    $('#role').val("");
+    $('#userId').val("");
 }
 
 loadAllDriversToCombo();

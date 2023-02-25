@@ -34,17 +34,17 @@ public class BookingDTO {
     private List<BookingDetailsDTO> bookingDetails;
     private List<DriverScheduleDTO> driverSchedules;
 
-//    public BookingDTO(String bookingId, String pickUpDate, String pickUpTime, String returnDate, RequestType driverRequestType, CustomerDTO customer, String pickUpLocation) {
-//        this.bookingID = bookingId;
-//        this.pickUpDate = pickUpDate;
-//        this.pickUpTime = pickUpTime;
-//        this.returnDate = returnDate;
-//        this.driverRequestType = driverRequestType;
-//        this.customer = customer;
-//        this.pickUpLocation = pickUpLocation;
-//    }
+    public BookingDTO(String bookingId, String pickUpDate, String pickUpTime, String returnDate, RequestType driverRequestType, CustomerDTO customer, String pickUpLocation) {
+        this.bookingID = bookingId;
+        this.pickUpDate = pickUpDate;
+        this.pickUpTime = pickUpTime;
+        this.returnDate = returnDate;
+        this.driverRequestType = driverRequestType;
+        this.customer = customer;
+        this.pickUpLocation = pickUpLocation;
+    }
 //
-//    public BookingDTO(String bookingId) {
-//        this.bookingID = bookingId;
-//    }
+    public BookingDTO(String bookingId) {
+        this.bookingID = bookingId;
+    }
 }
