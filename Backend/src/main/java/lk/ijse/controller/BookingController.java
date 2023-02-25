@@ -44,20 +44,6 @@ public class BookingController {
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllVehiclesInToTheCombo());
     }
 
-
-//    @PostMapping(path = "/place_bookings")
-//    public ResponseUtil saveBooking(@ModelAttribute BookingDTO bookingDTO,
-//                                    @RequestParam String bookingID,
-//                                    @RequestParam String vehicleID) {
-//
-//        System.out.println("vehicleID = "+vehicleID+" bookingId = "+bookingID);
-//        System.out.println("out put " + bookingDTO.toString());
-//        bookingService.placeBooking(bookingDTO);
-//
-//
-//        return new ResponseUtil("Ok", "Saved", null);
-//    }
-
     @PostMapping(value = "/place_bookings")
     public ResponseUtil saveBooking(@RequestBody BookingDTO bookingDTO) {
         bookingService.placeBooking(bookingDTO);
@@ -68,5 +54,17 @@ public class BookingController {
     @GetMapping(path = "/bookingCount/{count}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil countBooking(@PathVariable String count) {
         return new ResponseUtil("Ok", "", bookingService.countBooking());
+    }
+
+    //TODO *************************************************
+
+    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllBookings(){
+        System.out.println("*************");
+        System.out.println(bookingService.getAllBookings().toString());
+        System.out.println("*************");
+
+        return new ResponseUtil("OK","Successful",bookingService.getAllBookings());
+
     }
 }

@@ -4,8 +4,10 @@ import lk.ijse.dto.BookingDTO;
 import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
 import lk.ijse.dto.VehicleDTO;
+import lk.ijse.entity.Booking;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface BookingService {
 
@@ -18,6 +20,8 @@ public interface BookingService {
     public ArrayList<VehicleDTO> loadAllVehiclesInToTheCombo();
 
     long countBooking();
+
+    List<Booking> getAllBookings();
 
 
 

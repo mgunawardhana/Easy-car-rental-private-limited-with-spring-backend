@@ -83,6 +83,10 @@ $("#deleteCustomer").on('click', function () {
     });
 });
 
+
+
+let cusID = "C00-0" ;
+
 function getAllCustomers() {
     $("#customerTableBody").empty();
     $.ajax({
@@ -119,13 +123,29 @@ function genarateID() {
     $("#customerTableBody").empty();
     $.ajax({
         url: baseURL + "/customer/?test=", success: function (res) {
-            $('#id').val(res.data.id);
+            $('#id').val(res.data);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
         }
     });
 }
+
+// function setUserCount() {
+//     $.ajax({
+//         url: baseURL + "/customer/?test=", method: "GET", dataType: "json", success: function (res) {
+//             console.log(res.data);
+//             $("#lbl2").text(res.data);
+//         }, error: function (error) {
+//             let message = JSON.parse(error.responseText).message;
+//             alert(message);
+//         }
+//     });
+// }
+
+
+
+
 
 function bindRowClickEvents() {
     $("#customerTableBody>tr").on('click', function () {
@@ -324,4 +344,6 @@ validator('#userId', /^[0-9]{12}$/, "Your input can't be validated", '#admin_nic
 validator('#password', /^[0-9]{4}$/, "Your input can't be validated", '#admin_id_label', '#drivingLicenseNo');
 validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#user_id_label', '#drivingLicenseNo');
 validator('#drivingLicenseNo', /^[0-9]{1,10}$/, "Your input can't be validated", '#user_id_label', '#nic');
+
+
 

@@ -4,6 +4,9 @@ setCarQuantity();
 setDriversCount();
 setBookingCunt();
 // setUserCunt();
+
+
+
 function setUserCount() {
     $.ajax({
         url: baseURL + "/customer/customerCount/{count}", method: "GET", dataType: "json", success: function (res) {

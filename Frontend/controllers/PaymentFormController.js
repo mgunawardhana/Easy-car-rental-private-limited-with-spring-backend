@@ -26,7 +26,9 @@ $("#save").on('click', function () {
 function getAllPaymentDetails() {
     $("#paymentTable").empty();
     $.ajax({
-        url: baseURL + "/payment/get_all_payment_details", success: function (res) {
+        url: baseURL + "/payment/get_all_payment_details",
+        dataType:"json",
+        success: function (res) {
             for (let c of res.data) {
 
                 let payment_id = c.paymentId;

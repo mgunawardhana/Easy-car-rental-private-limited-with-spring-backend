@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -30,6 +31,8 @@ public class BookingServiceImpl implements BookingService {
     private VehicleRepo vehicleRepo;
     @Autowired
     private BookingRepo bookingRepo;
+    @Autowired
+    private BookingDetailsRepo bookingDetailsRepo;
 
 
     @Override
@@ -70,6 +73,15 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public long countBooking() {
         return bookingRepo.count();
+    }
+
+    @Override
+    public List<Booking> getAllBookings() {
+        System.out.println("^^^^^^^^^^^^^^");
+        System.out.println(bookingDetailsRepo.findAll());
+        System.out.println("^^^^^^^^^^^^^^");
+        return modelMapper.map(bookingDetailsRepo.findAll(), new TypeToken<ArrayList<BookingDTO>>() {
+        }.getType());
     }
 }
 
