@@ -50,4 +50,10 @@ public class VehicleController {
         System.out.println(test);
         return new ResponseUtil("Ok", "", vehicleService.generateVehicleIds());
     }
+
+    @GetMapping( params= {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchVehicleById(@RequestParam String id) {
+        VehicleDTO vehicleDTO = vehicleService.searchVehicle(id);
+        return new ResponseUtil("Ok","Found",vehicleDTO);
+    }
 }

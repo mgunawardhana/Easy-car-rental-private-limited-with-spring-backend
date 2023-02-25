@@ -53,13 +53,7 @@ function getAllPaymentDetails() {
 }
 
 
-// bookingId
-// driver_req
-// pick_up_date
-// pick_up_location
-// pickup_time
-// return_date
-// customer_id
+
 loadAllCustomersToCombo();
 
 function loadAllCustomersToCombo() {

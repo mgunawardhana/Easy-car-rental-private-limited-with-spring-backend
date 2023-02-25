@@ -1,8 +1,11 @@
-getAllBookingDetails()
+let baseURL = "http://localhost:8080/Backend_war/bookings/";
+
+
+getAllBookingDetails();
 function getAllBookingDetails() {
 
     $.ajax({
-        url: baseURL + "/payment/load_all_booking_details", dataType: "json", success: function (res) {
+        url: baseURL + "load_all_booking_details", dataType: "json", success: function (res) {
             for (let c of res.data) {
                 console.log(c)
 

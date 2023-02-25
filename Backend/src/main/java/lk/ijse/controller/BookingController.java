@@ -58,7 +58,7 @@ public class BookingController {
 
     //TODO *************************************************
 
-    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/load_all_booking_details",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllBookings(){
         System.out.println("*************");
         System.out.println(bookingService.getAllBookings().toString());

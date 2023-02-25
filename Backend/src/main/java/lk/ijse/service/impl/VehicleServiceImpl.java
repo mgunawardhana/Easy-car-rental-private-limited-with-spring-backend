@@ -77,4 +77,20 @@ public class VehicleServiceImpl implements VehicleService {
             return "V00-001";
         }
     }
+
+    @Override
+    public VehicleDTO searchVehicle(String id) {
+        if (vehicleRepo.existsById(id)){
+            return modelMapper.map(vehicleRepo.findById(id).get(), VehicleDTO.class);
+        }else {
+            throw new RuntimeException("No Vehicle For " + id + " ..!");
+        }
+    }
+
+    @Override
+    public int brandAndTypeCount(String brand, String type) {
+        return 0;
+    }
+
+
 }

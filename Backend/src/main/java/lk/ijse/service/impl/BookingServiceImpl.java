@@ -76,7 +76,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<Booking> getAllBookings() {
+    public List<BookingDTO> getAllBookings() {
         System.out.println("^^^^^^^^^^^^^^");
         System.out.println(bookingDetailsRepo.findAll());
         System.out.println("^^^^^^^^^^^^^^");

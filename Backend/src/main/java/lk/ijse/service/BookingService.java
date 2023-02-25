@@ -21,7 +21,7 @@ public interface BookingService {
 
     long countBooking();
 
-    List<Booking> getAllBookings();
+    List<BookingDTO> getAllBookings();
 
     BookingDTO getBookingById(String id);
 
