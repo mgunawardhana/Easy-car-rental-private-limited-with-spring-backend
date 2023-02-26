@@ -27,8 +27,9 @@ public class SearchingController {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getAllFuelType(fuel_type));
     }
 
-    @GetMapping(params = {"price_rate"})
-    public ResponseUtil sortVehiclePriceRate(@RequestParam PriceRate price_rate) {
+    //TODO *************************************** මේක වැඩ නෑ 2/7
+    @GetMapping
+    public ResponseUtil sortVehiclePriceRate(PriceRate price_rate) {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getPriceRate(price_rate));
     }
 
@@ -47,6 +48,7 @@ public class SearchingController {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getVehicleByTransmissionType(transmission_type));
     }
 
+    //TODO *************************************** මේක වැඩ නෑ 7/7
     @GetMapping(params = {"pickUpDate", "returnDate"})
     public ResponseUtil loadAvailableVehicles(@RequestParam String pickup_date, @RequestParam String return_date) {
         return new ResponseUtil("Ok", "Your request Success", searchingService.load_all_available_vehicles(null, null));

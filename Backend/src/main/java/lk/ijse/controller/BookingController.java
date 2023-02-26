@@ -65,6 +65,10 @@ public class BookingController {
         System.out.println("*************");
 
         return new ResponseUtil("OK","Successful",bookingService.getAllBookings());
+    }
 
+    @GetMapping(value = "/get_all_bookings",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllBookingDetails(){
+        return new ResponseUtil("OK","Successful",bookingService.getBookingDetails());
     }
 }

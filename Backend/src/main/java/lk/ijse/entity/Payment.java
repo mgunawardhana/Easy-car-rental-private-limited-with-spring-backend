@@ -29,8 +29,8 @@ public class Payment {
     @Column(name = "payment_type")
     private PaymentType paymentType;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH})
-    @JoinColumn(name = "bookingId",referencedColumnName = "bookingId",insertable = false,updatable = false)
-    private Booking booking;
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "bookingId",referencedColumnName = "bookingId")
+    private Booking bookingDTO;
 
 }

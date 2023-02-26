@@ -36,7 +36,7 @@ public class BookingServiceImpl implements BookingService {
 
 
     @Override
-    public void placeBooking(BookingDTO bookingDTO) {
+    public void placeBooking(BookingDTO bookingDTO) {//meeka nee sir ? no
         if (bookingRepo.existsById(bookingDTO.getBookingID())) {
             throw new RuntimeException("already booked try another !");
         } else {
@@ -76,7 +76,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<BookingDTO> getAllBookings() {
+    public List<BookingDTO> getAllBookings() { //meka neda invoke wenne
         System.out.println("^^^^^^^^^^^^^^");
         System.out.println(bookingDetailsRepo.findAll());
         System.out.println("^^^^^^^^^^^^^^");
@@ -87,6 +87,33 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public BookingDTO getBookingById(String id) {
         return modelMapper.map(bookingRepo.getBookingByBookingID(id),BookingDTO.class);
+    }
+
+
+    //TODO **********************************
+
+    @Override
+    public List<BookingDTO> getBookingDetails() {//meeka ne sir enna one ?
+        //mekath mapper eken ain karanna wei wage. oya use karala thiyenne hibernate bydirectional realation ship ne..eka nisa okkoma data enawa. ekai me stuck wenne ow sir ara okkoma load wena eka tamai aula ema karama stackoverflow ekak awa issella..eka thamai
+        //methana mapper eka ain karala manually awasha data tika witharak daganna
+        List<BookingDTO> list= new ArrayList<>();
+        List<Booking> all = bookingRepo.findAll();
+        for (Booking b : all) {
+            CustomerDTO dto=  modelMapper.map(b.getCustomer(),CustomerDTO.class);
+            BookingDTO b1=new BookingDTO(
+                    b.getBookingID(),
+                    b.getPickUpDate(),
+                    b.getPickUpTime(),
+                    b.getReturnDate(),
+                    b.getDriverRequestType(),
+                    dto,b.getPickUpLocation()
+            );
+            list.add(b1);
+        }
+        //mn ara ekak manually kara neda.? ko eka ow sir
+        return list;
+//        return modelMapper.map(bookingRepo.findAll(), new TypeToken<ArrayList<BookingDTO>>() {
+//        }.getType());
     }
 }
 

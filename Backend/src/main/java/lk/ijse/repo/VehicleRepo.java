@@ -18,6 +18,7 @@ public interface VehicleRepo extends JpaRepository<Vehicle,String> {
 
     List<Vehicle>findAllByFuelType(FuelType fuelType);
 
+
     List<Vehicle>findAllByVehiclePriceRate(PriceRate priceRate);
 
     List<Vehicle> findAllByVehicleBrand(String brand);

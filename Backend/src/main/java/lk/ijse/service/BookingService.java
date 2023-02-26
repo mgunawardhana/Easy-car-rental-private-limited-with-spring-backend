@@ -25,6 +25,8 @@ public interface BookingService {
 
     BookingDTO getBookingById(String id);
 
+    List<BookingDTO> getBookingDetails();
+
 
 
 }

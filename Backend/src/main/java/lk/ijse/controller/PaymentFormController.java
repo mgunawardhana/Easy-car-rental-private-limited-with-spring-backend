@@ -23,14 +23,14 @@ public class PaymentFormController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = "save_payment",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil savePayment(@ModelAttribute PaymentDTO paymentDTO, @RequestParam String booking){
+    public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO){
 
+//        BookingDTO bookingDTO = bookingService.getBookingById(paymentDTO.getBookingDTO().getBookingID());
+//        paymentDTO.setBookingDTO(bookingDTO);
 
-//        System.out.println(bookingID);
-        BookingDTO bookingDTO = bookingService.getBookingById(booking);
-        paymentDTO.setBooking(bookingDTO);
-
+        System.out.println("=========================");
         System.out.println(paymentDTO.toString());
+        System.out.println("=========================");
 
         paymentService.savePayment(paymentDTO);
         return new ResponseUtil("OK","Saved",null);

@@ -21,6 +21,6 @@ public class PaymentDTO {
     private String invoiceNo;
     private double amount;
     private PaymentType paymentType;
-    private BookingDTO booking;
+    private BookingDTO bookingDTO;
 
 }
