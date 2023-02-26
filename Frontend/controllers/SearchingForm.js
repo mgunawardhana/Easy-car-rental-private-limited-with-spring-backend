@@ -2,7 +2,7 @@ let baseURL = "http://localhost:8080/Backend_war/";
 $("#search").on('click', function () {
     $("#vehicleTableBody").empty();
     $.ajax({
-        url: baseURL+"searching/?brand=" + $("#vehicleSearch").val(),
+        url: baseURL+"searching/?type=" + $("#vehicleSearch").val(),
         method: "GET",
         dataType: "json",
         success: function (resp) {
