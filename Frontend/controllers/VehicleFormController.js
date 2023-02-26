@@ -1,4 +1,4 @@
-let baseURL = "http://localhost:8080/Backend_war/vehicle/";
+let baseURL = "http://localhost:8080/Backend_war/";
 
 
 getAllVehicle();
@@ -10,7 +10,7 @@ $("#saveVehicle").on('click', function () {
 function saveVehicle() {
     let formData = $("#vehicleFormController").serialize();
     $.ajax({
-        url: baseURL + "save_vehicle", method: "post", data: formData, dataType: "json", success: function (res) {
+        url: baseURL + "vehicle/save_vehicle", method: "post", data: formData, dataType: "json", success: function (res) {
             alert(res.message);
             getAllVehicle();
             bindRowClickEventsForVehicle();
@@ -24,7 +24,7 @@ function saveVehicle() {
 function getAllVehicle() {
     $("#vehicleTableBody").empty();
     $.ajax({
-        url: baseURL + "get_all", success: function (res) {
+        url: baseURL + "vehicle/get_all", success: function (res) {
             for (let c of res.data) {
 
                 let vehicleId = c.vehicleID;
@@ -62,7 +62,7 @@ function getAllVehicle() {
 }
 function genarateVehicleID() {
     $.ajax({
-        url: baseURL + "?test=", success: function (res) {
+        url: baseURL + "vehicle/?test=", success: function (res) {
             $('#vehicleId').val(res.data);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -108,7 +108,7 @@ $("#updateVehicle").on('click', function () {
     }
 
     $.ajax({
-        url: baseURL + "update",
+        url: baseURL + "vehicle/update",
         method: "put",
         contentType: "application/json",
         data: JSON.stringify(vehicleObj),
@@ -156,7 +156,7 @@ function bindRowClickEventsForVehicle() {
 
 $("#deleteVehicle").on('click', function () {
     $.ajax({
-        url: baseURL + "?code=" + $("#vehicleId").val(), method: "delete", dataType: "json", success: function (resp) {
+        url: baseURL + "vehicle/?code=" + $("#vehicleId").val(), method: "delete", dataType: "json", success: function (resp) {
             console.log($("#vehicleId").val())
             getAllVehicle();
             alert(resp.message);
@@ -244,5 +244,48 @@ $('#car4').on("change", function (e) {
         reader.readAsDataURL(file[0]);
     }
 })
+
+
+$("#search").on('click', function () {
+    $("#vehicleTableBody").empty();
+
+
+    $.ajax({
+        url: baseURL+"searching/?no_of_passengers=" + $("#vehicleSearch").val(),
+        method: "GET",
+        dataType: "json",
+        success: function (resp) {
+            for (let c of resp.data) {
+                let vehicleId = c.vehicleID;
+                let registrationNo = c.registrationNo;
+                let brand = c.vehicleBrand;
+                let vehicleType = c.vehicleType;
+                let fuelType = c.fuelType;
+                let noOfPassengers = c.numberOfPassenger;
+                let Colour = c.vehicleColour;
+                let transmission = c.transmissionType;
+                let damageFee = c.refundableDamagedFee;
+                let daily_amount = c.vehiclePriceRate.dailyRate;
+                let monthly_amount = c.vehiclePriceRate.monthlyRate;
+                let daily_km = c.freeMileage.dailyMileage;
+                let monthly_km = c.freeMileage.monthlyMileage;
+                let last_service = c.lastServiceMileage;
+                let extraKmPrice = c.extraKmPer;
+                let Availability = c.vehicleAvailability;
+
+                //TODO vehicleMileage equals to serviceMileage
+                let vehicle_mileage = c.vehicleMileage;
+
+                let row = "<tr>" + "<td>" + vehicleId + "</td>" + "<td>" + noOfPassengers + "</td>" + "<td>" + extraKmPrice + "</td>" + "<td>" + registrationNo + "</td>" + "<td>" + Colour + "</td>" + "<td>" + daily_amount + "</td>" + "<td>" + monthly_amount + "</td>" + "<td>" + Availability + "</td>" + "<td>" + brand + "</td>" + "<td>" + transmission + "</td>" + "<td>" + daily_km + "</td>" + "<td>" + monthly_km + "</td>" + "<td>" + fuelType + "</td>" + "<td>" + damageFee + "</td>" + "<td>" + vehicleType + "</td>" + "<td>" + last_service + "</td>" + "<td>" + vehicle_mileage + "</td>" + "</tr>";
+
+                $("#vehicleTableBody").append(row);
+            }
+
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
 
 

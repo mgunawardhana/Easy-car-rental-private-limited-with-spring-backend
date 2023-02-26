@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface BookingRepo extends JpaRepository<Booking,String> {
 
-    List<Booking> find_all_by_return_date_after_and_before_pickup_date(LocalDate pickUpDate, LocalDate returnDate);
+//    List<Booking> find_all_by_return_date_after_and_before_pickup_date(LocalDate pickUpDate, LocalDate returnDate);
     BookingDTO getBookingByBookingID(String id);
 }
