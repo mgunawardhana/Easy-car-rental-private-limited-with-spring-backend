@@ -10,11 +10,16 @@ $("#saveVehicle").on('click', function () {
 function saveVehicle() {
     let formData = $("#vehicleFormController").serialize();
     $.ajax({
-        url: baseURL + "vehicle/save_vehicle", method: "post", data: formData, dataType: "json", success: function (res) {
+        url: baseURL + "vehicle/save_vehicle",
+        method: "post",
+        data: formData,
+        dataType: "json",
+        success: function (res) {
             alert(res.message);
             getAllVehicle();
             bindRowClickEventsForVehicle();
-        }, error: function (error) {
+        },
+        error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
             alert(errorMessage.message);
         }
@@ -47,8 +52,7 @@ function getAllVehicle() {
                 //TODO vehicleMileage equals to serviceMileage
                 let vehicle_mileage = c.vehicleMileage;
 
-                let row = "<tr>" + "<td>" + vehicleId + "</td>" + "<td>" + noOfPassengers + "</td>" + "<td>" + extraKmPrice + "</td>" + "<td>" + registrationNo + "</td>" + "<td>" + Colour + "</td>" + "<td>" + daily_amount + "</td>" + "<td>" + monthly_amount + "</td>" + "<td>" + Availability + "</td>" + "<td>" + brand + "</td>" + "<td>" + transmission + "</td>" + "<td>" + daily_km + "</td>" + "<td>" + monthly_km + "</td>" + "<td>" + fuelType + "</td>" + "<td>" + damageFee + "</td>" + "<td>" + vehicleType + "</td>"
-                          + "<td>" +last_service  + "</td>" + "<td>" + vehicle_mileage + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + vehicleId + "</td>" + "<td>" + noOfPassengers + "</td>" + "<td>" + extraKmPrice + "</td>" + "<td>" + registrationNo + "</td>" + "<td>" + Colour + "</td>" + "<td>" + daily_amount + "</td>" + "<td>" + monthly_amount + "</td>" + "<td>" + Availability + "</td>" + "<td>" + brand + "</td>" + "<td>" + transmission + "</td>" + "<td>" + daily_km + "</td>" + "<td>" + monthly_km + "</td>" + "<td>" + fuelType + "</td>" + "<td>" + damageFee + "</td>" + "<td>" + vehicleType + "</td>" + "<td>" + last_service + "</td>" + "<td>" + vehicle_mileage + "</td>" + "</tr>";
 
                 $("#vehicleTableBody").append(row);
             }
@@ -60,6 +64,7 @@ function getAllVehicle() {
     });
     genarateVehicleID();
 }
+
 function genarateVehicleID() {
     $.ajax({
         url: baseURL + "vehicle/?test=", success: function (res) {
@@ -156,11 +161,15 @@ function bindRowClickEventsForVehicle() {
 
 $("#deleteVehicle").on('click', function () {
     $.ajax({
-        url: baseURL + "vehicle/?code=" + $("#vehicleId").val(), method: "delete", dataType: "json", success: function (resp) {
+        url: baseURL + "vehicle/?code=" + $("#vehicleId").val(),
+        method: "delete",
+        dataType: "json",
+        success: function (resp) {
             console.log($("#vehicleId").val())
             getAllVehicle();
             alert(resp.message);
-        }, error: function (error) {
+        },
+        error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
     });
@@ -243,14 +252,35 @@ $('#car4').on("change", function (e) {
         }
         reader.readAsDataURL(file[0]);
     }
-})
+});
 
+
+// let searchType = $("#searchDropBox").val();
 
 $("#search").on('click', function () {
+    let searchType = $("#searchDropBox").val();
+    if ("PASSENGERS" === searchType) {
+        searchByPassengerCount();
+    } else if ("TRANSMISSION" === searchType) {
+        searchByTransMissionType();
+    } else if ("BRAND" === searchType) {
+        searchByBrand();
+    } else if ("TYPE" === searchType) {
+        searchByType();
+    } else if ("PRICE" === searchType) {
+        searchByRate();
+    } else if ("FUEL" === searchType) {
+        searchByFuelType();
+    } else {
+        alert("fuck u idiot !");
+    }
+});
+
+function searchByPassengerCount() {
     $("#vehicleTableBody").empty();
 
     $.ajax({
-        url: baseURL+"searching/?no_of_passengers=" + $("#vehicleSearch").val(),
+        url: baseURL + "searching/?no_of_passengers=" + $("#vehicleSearch").val(),
         method: "GET",
         dataType: "json",
         success: function (resp) {
@@ -262,13 +292,13 @@ $("#search").on('click', function () {
             alert(JSON.parse(error.responseText).message);
         }
     });
-});
+}
 
-
-$("#search").on('click', function () {
+function searchByFuelType() {
     $("#vehicleTableBody").empty();
+
     $.ajax({
-        url: baseURL+"searching/?fuel_type=" + $("#vehicleSearch").val(),
+        url: baseURL + "searching/?fuel_type=" + $("#vehicleSearch").val(),
         method: "GET",
         dataType: "json",
         success: function (resp) {
@@ -280,12 +310,13 @@ $("#search").on('click', function () {
             alert(JSON.parse(error.responseText).message);
         }
     });
-});
+}
 
-$("#search").on('click', function () {
+function searchByBrand() {
     $("#vehicleTableBody").empty();
+
     $.ajax({
-        url: baseURL+"searching/?brand=" + $("#vehicleSearch").val(),
+        url: baseURL + "searching/?brand=" + $("#vehicleSearch").val(),
         method: "GET",
         dataType: "json",
         success: function (resp) {
@@ -297,12 +328,13 @@ $("#search").on('click', function () {
             alert(JSON.parse(error.responseText).message);
         }
     });
-});
+}
 
-$("#search").on('click', function () {
+function searchByType() {
     $("#vehicleTableBody").empty();
+
     $.ajax({
-        url: baseURL+"searching/?type=" + $("#vehicleSearch").val(),
+        url: baseURL + "searching/?type=" + $("#vehicleSearch").val(),
         method: "GET",
         dataType: "json",
         success: function (resp) {
@@ -314,12 +346,13 @@ $("#search").on('click', function () {
             alert(JSON.parse(error.responseText).message);
         }
     });
-});
+}
 
-$("#search").on('click', function () {
+function searchByTransMissionType() {
     $("#vehicleTableBody").empty();
+
     $.ajax({
-        url: baseURL+"searching/?transmission_type=" + $("#vehicleSearch").val(),
+        url: baseURL + "searching/?transmission_type=" + $("#vehicleSearch").val(),
         method: "GET",
         dataType: "json",
         success: function (resp) {
@@ -331,28 +364,27 @@ $("#search").on('click', function () {
             alert(JSON.parse(error.responseText).message);
         }
     });
-});
+}
 
-//
-// $("#search").on('click', function () {
-//     $("#vehicleTableBody").empty();
-//     $.ajax({
-//         url: baseURL+"searching/?dailyRate=" + $("#vehicleSearch").val()+"&monthlyRate="+ $("#vehicleSearch").val(),
-//         method: "GET",
-//         dataType: "json",
-//         success: function (resp) {
-//             for (let c of resp.data) {
-//                 vehicleSearchManager(c);
-//             }
-//         }
-//         ,error: function (error) {
-//             alert(JSON.parse(error.responseText).message);
-//         }
-//     });
-// });
-//
+function searchByRate() {
+    $("#vehicleTableBody").empty();
+    $.ajax({
+        url: baseURL + "searching/?dailyRate=" + $("#vehicleSearch").val() + "&monthlyRate=" + $("#vehicleSearch").val(),
+        method: "GET",
+        dataType: "json",
+        success: function (resp) {
+            for (let c of resp.data) {
+                vehicleSearchManager(c);
+            }
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+}
 
-function vehicleSearchManager(c){
+
+function vehicleSearchManager(c) {
     let vehicleId = c.vehicleID;
     let registrationNo = c.registrationNo;
     let brand = c.vehicleBrand;
@@ -375,4 +407,6 @@ function vehicleSearchManager(c){
 
     let row = "<tr>" + "<td>" + vehicleId + "</td>" + "<td>" + noOfPassengers + "</td>" + "<td>" + extraKmPrice + "</td>" + "<td>" + registrationNo + "</td>" + "<td>" + Colour + "</td>" + "<td>" + daily_amount + "</td>" + "<td>" + monthly_amount + "</td>" + "<td>" + Availability + "</td>" + "<td>" + brand + "</td>" + "<td>" + transmission + "</td>" + "<td>" + daily_km + "</td>" + "<td>" + monthly_km + "</td>" + "<td>" + fuelType + "</td>" + "<td>" + damageFee + "</td>" + "<td>" + vehicleType + "</td>" + "<td>" + last_service + "</td>" + "<td>" + vehicle_mileage + "</td>" + "</tr>";
     $("#vehicleTableBody").append(row);
+
 }
+

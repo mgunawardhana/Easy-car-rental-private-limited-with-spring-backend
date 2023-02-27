@@ -135,7 +135,8 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/VehicleForm.html">
+                <a class="nav-link  active" href="../pages/VehicleForm.html"
+                   style="background-color: #2f3542 !important;">
                     <div class="icon icon-shape icon-sm shadow border-radius-md myCol text-center me-2 d-flex align-items-center justify-content-center">
                         <svg height="12px" version="1.1" viewBox="0 0 45 40" width="12px"
                              xmlns="http://www.w3.org/2000/svg">
@@ -154,7 +155,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Vehicle</span>
+                    <span class="nav-link-text ms-1" style="color: #ffffff !important;">Vehicle</span>
                 </a>
             </li>
 
@@ -249,17 +250,26 @@
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                     <div class="input-group">
-                        <span class="input-group-text text-body"><i aria-hidden="true" class="fas fa-search"></i></span>
-                        <input class="form-control" placeholder="Type here..." type="text">
+                        <select class="form-control" id="searchDropBox" name="searchType">
+                            <option>Search By</option>
+                            <option>PASSENGERS</option>
+                            <option>TRANSMISSION</option>
+                            <option>BRAND</option>
+                            <option>TYPE</option>
+                            <option>PRICE</option>
+                            <option>FUEL</option>
+                        </select>
                     </div>
+                    <div class="input-group">
+                        <span class="input-group-text text-body"><i aria-hidden="true" class="fas fa-search"></i></span>
+                        <input class="form-control" id="vehicleSearch" placeholder="Type here..." type="text">
+                    </div>
+                    <button class="btn btn-primary bg-success" style="margin-top: 11px !important;" id="search" type="button">Search
+                    </button>
+
                 </div>
                 <ul class="navbar-nav  justify-content-end">
-                    <li class="nav-item d-flex align-items-center">
-                        <a class="nav-link text-body font-weight-bold px-0" href="javascript:">
-                            <i class="fa fa-user me-sm-1"></i>
-                            <span class="d-sm-inline d-none">Sign In</span>
-                        </a>
-                    </li>
+
                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                         <a class="nav-link text-body p-0" href="javascript:" id="iconNavbarSidenav">
                             <div class="sidenav-toggler-inner">
@@ -361,34 +371,34 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-<!--        &lt;!&ndash;*****************************************************************************************************************&ndash;&gt;-->
-<!--        <div class="row">-->
-<!--            <div class="col-12">-->
-<!--                <div class="card">-->
-<!--                    <div class="card-body">-->
+        <!--        &lt;!&ndash;*****************************************************************************************************************&ndash;&gt;-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-12">-->
+        <!--                <div class="card">-->
+        <!--                    <div class="card-body">-->
 
-<!--                        <form id="paymentForm">-->
-<!--                            <div class="row form-group">-->
+        <!--                        <form id="paymentForm">-->
+        <!--                            <div class="row form-group">-->
 
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Search</label>-->
-<!--                                        <input class="form-control" id="vehicleSearch" name="vehicleSearch" type="text">-->
-<!--                                    </div>-->
-<!--                                </div>-->
+        <!--                                <div class="col-12 col-sm-6">-->
+        <!--                                    <div class="form-group">-->
+        <!--                                        <label>Search</label>-->
+        <!--                                        <input class="form-control" id="vehicleSearch" name="vehicleSearch" type="text">-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
 
-<!--                                <div class="col-12">-->
+        <!--                                <div class="col-12">-->
 
-<!--                                    <button class="btn btn-primary bg-gradient-faded-dark-vertical search-box" id="search"-->
-<!--                                            type="button">Search-->
-<!--                                    </button>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--                                    <button class="btn btn-primary bg-gradient-faded-dark-vertical search-box" id="search"-->
+        <!--                                            type="button">Search-->
+        <!--                                    </button>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </form>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
         <!--*****************************************************************************************************************-->
         <div class="row">
@@ -402,57 +412,35 @@
                             <div class="row form-group">
 
 
+                                <!--                                <div class="row">-->
+                                <!--                                    <div class="col-12">-->
+                                <!--                                        <div class="card">-->
+                                <!--                                            <div class="card-body">-->
 
+                                <!--                                                <form id="paymentForm">-->
+                                <!--                                                    <div class="row form-group">-->
 
+                                <!--                                                        <div class="col-12 col-sm-6">-->
+                                <!--                                                            <div class="form-group">-->
+                                <!--                                                                <label>Search</label>-->
+                                <!--                                                                <input class="form-control" id="vehicleSearch"-->
+                                <!--                                                                       name="vehicleSearch" type="text">-->
+                                <!--                                                            </div>-->
+                                <!--                                                        </div>-->
 
+                                <!--                                                        <div class="col-12">-->
 
-
-
-
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card">
-                                            <div class="card-body">
-
-                                                <form id="paymentForm">
-                                                    <div class="row form-group">
-
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label>Search</label>
-                                                                <input class="form-control" id="vehicleSearch" name="vehicleSearch" type="text">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-12">
-
-                                                            <button class="btn btn-primary bg-gradient-faded-dark-vertical search-box" id="search"
-                                                                    type="button">Search
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                <!--                                                            <button class="btn btn-primary bg-gradient-faded-dark-vertical search-box"-->
+                                <!--                                                                    id="search"-->
+                                <!--                                                                    type="button">Search-->
+                                <!--                                                            </button>-->
+                                <!--                                                        </div>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </form>-->
+                                <!--                                            </div>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
 
 
                                 <div class="col-12">
@@ -847,10 +835,6 @@
 <script src="../controllers/util.js"></script>
 <script src="../controllers/VehicleFormController.js"></script>
 <!--<script src="../controllers/SearchingForm.js"></script>-->
-
-
-
-
 
 
 <script src="../assets/js/core/popper.min.js"></script>
