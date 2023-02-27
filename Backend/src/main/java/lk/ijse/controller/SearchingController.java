@@ -27,7 +27,6 @@ public class SearchingController {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getAllFuelType(fuel_type));
     }
 
-    //TODO *************************************** මේක වැඩ නෑ 2/7
     @GetMapping
     public ResponseUtil sortVehiclePriceRate(PriceRate price_rate) {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getPriceRate(price_rate));

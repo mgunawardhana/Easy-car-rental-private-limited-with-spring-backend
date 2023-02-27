@@ -3,9 +3,7 @@ let baseURL = "http://localhost:8080/Backend_war";
 getAllPaymentDetails();
 
 $("#save").on('click', function () {
-    // Calc();
 
-    // let formData = $("#paymentForm").serialize();//methanath josn ekak yawanna aha ha sir..yawanna ithin
     let paymentID = $("#paymentId").val();
     let paymentDate = $("#paymentDate").val();
     let invoiceNo = $("#invoiceNo").val();
@@ -14,7 +12,6 @@ $("#save").on('click', function () {
     let bookingID = $("#bookingId").val();
 
 
-    //dan hari sir
     let obj = {
         paymentId: paymentID,
         paymentDate: paymentDate,
@@ -24,13 +21,9 @@ $("#save").on('click', function () {
         bookingDTO: {bookingID: bookingID},
     }
 
-
-//hari nee sir ?//values enawada ohoma karahama variable ekaka kata dala dannada sir ?
-    //meema ywannam nee sir meekama
-    //nattam jsn obj ekak widiyatada sir ?/json ob
     $.ajax({
         url: baseURL + "/payment/save_payment",
-        method: "post", // data: formData,
+        method: "post",
         contentType: "application/json",
         data: JSON.stringify(obj),
         dataType: "json", success: function (res) {
@@ -46,7 +39,7 @@ $("#save").on('click', function () {
 function getAllPaymentDetails() {
     $("#paymentTable").empty();
     $.ajax({
-        url: baseURL + "/payment/get_all_bookings", dataType: "json", success: function (res) {
+        url: baseURL + "/payment/get_all_payment_details", dataType: "json", success: function (res) {
             for (let c of res.data) {
                 console.log(c)
 
@@ -101,18 +94,18 @@ $('#bookingId').on('click', function () {
         }
     });
 });
-Calc();
-
-function Calc() {
-    let mileage = parseInt($("#totalVehicleMileage").val());
-    let extraPrice = parseInt($("#extraKmPrice").val());
-
-    let dailyRate = 1000;
-
-    if (mileage > 100) {
-        $("#amount").val(((mileage - 100) * extraPrice) + dailyRate);
-    }
-    if (mileage <= 100) {
-        $("#amount").val(dailyRate);
-    }
-}
+// Calc();
+//
+// function Calc() {
+//     let mileage = parseInt($("#totalVehicleMileage").val());
+//     let extraPrice = parseInt($("#extraKmPrice").val());
+//
+//     let dailyRate = 1000;
+//
+//     if (mileage > 100) {
+//         $("#amount").val(((mileage - 100) * extraPrice) + dailyRate);
+//     }
+//     if (mileage <= 100) {
+//         $("#amount").val(dailyRate);
+//     }
+// }
