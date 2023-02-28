@@ -156,33 +156,36 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form role="form text-left">
-                                <div class="mb-3">
-                                    <input aria-describedby="email-addon" aria-label="Name" class="form-control" placeholder="Name"
-                                           type="text" id="name">
+                            <form >
+                                <div class="row form-group">
+                                    <form role="form text-left">
+
+                                        <div class="mb-3">
+                                            <input aria-describedby="email-addon" aria-label="Name" class="form-control"
+                                                   id="name"
+                                                   placeholder="Name" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <input aria-describedby="password-addon" aria-label="Password"
+                                                   class="form-control"
+                                                   id="password" placeholder="Password" type="password">
+                                        </div>
+                                        <div class="form-check form-check-info text-left">
+                                            <input checked class="form-check-input" id="flexCheckDefault"
+                                                   type="checkbox"
+                                                   value="">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                I agree the <a class="text-dark font-weight-bolder" href="javascript:">Terms
+                                                and Conditions</a>
+                                            </label>
+                                        </div>
+
+                                    </form>
+
+                                    <button class="btn btn-primary bg-success w-100 my-4 mb-2" id="login" type="button">
+                                        Login
+                                    </button>
                                 </div>
-                                <div class="mb-3">
-                                    <input aria-describedby="email-addon" aria-label="Email" class="form-control" placeholder="Email"
-                                           type="email" id="email">
-                                </div>
-                                <div class="mb-3">
-                                    <input aria-describedby="password-addon" aria-label="Password" class="form-control"
-                                           placeholder="Password" type="password" id="password">
-                                </div>
-                                <div class="form-check form-check-info text-left">
-                                    <input checked class="form-check-input" id="flexCheckDefault" type="checkbox"
-                                           value="">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I agree the <a class="text-dark font-weight-bolder" href="javascript:">Terms
-                                        and Conditions</a>
-                                    </label>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn bg-gradient-dark w-100 my-4 mb-2" id="login" type="button">Login</button>
-                                </div>
-                                <p class="text-sm mt-3 mb-0">Already have an account? <a class="text-dark font-weight-bolder"
-                                                                                         href="javascript:">Sign
-                                    in</a></p>
                             </form>
                         </div>
                     </div>
@@ -246,9 +249,11 @@
     </footer>
 </main>
 <script src="../assets/js/core/popper.min.js"></script>
-<script src="../controllers/loginFormController.js"></script>
 
 <script src="../js/jquery-3.6.1.min.js"></script>
+
+<script src="../controllers/loginFormController.js"></script>
+
 <script src="../assets/js/core/bootstrap.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
 <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>

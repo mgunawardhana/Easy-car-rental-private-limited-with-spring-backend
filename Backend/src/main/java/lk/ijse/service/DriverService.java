@@ -1,7 +1,9 @@
 package lk.ijse.service;
 
 
+import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
+import lk.ijse.dto.DriverScheduleDTO;
 import lk.ijse.entity.Driver;
 import lk.ijse.enums.AvailabilityType;
 
@@ -15,5 +17,9 @@ public interface DriverService {
     List<DriverDTO> getAllDriver();
     long countDrivers();
     String generateDriverIds();
+
+    //TODO **********************************
+
+//    List<DriverScheduleDTO> getDriverShedule();
 
 }

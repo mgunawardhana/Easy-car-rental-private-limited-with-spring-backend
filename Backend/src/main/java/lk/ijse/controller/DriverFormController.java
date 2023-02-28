@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 import lk.ijse.dto.DriverDTO;
+import lk.ijse.entity.DriverSchedule;
 import lk.ijse.service.DriverService;
 import lk.ijse.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,5 +51,13 @@ public class DriverFormController {
         System.out.println(test);
         return new ResponseUtil("Ok", "", driverService.generateDriverIds());
     }
+
+    //TODO *********************************************************
+//
+//    @GetMapping(value = "get_driver_time_table",produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseUtil getAllDriverTimeTable(){
+//        return new ResponseUtil("OK","Successful",driverService.getDriverShedule());
+//    }
+
 
 }

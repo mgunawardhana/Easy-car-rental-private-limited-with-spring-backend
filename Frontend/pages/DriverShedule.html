@@ -23,7 +23,7 @@
     <link href="../assets/css/soft-ui-dashboard.css?v=1.0.7" id="pagestyle" rel="stylesheet"/>
 </head>
 
-<body class="g-sidenav-show">
+<body class="g-sidenav-show  bg-gray-100">
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
        id="sidenav-main">
     <div class="sidenav-header">
@@ -113,8 +113,8 @@
                 </a>
             </li>
 
-            <li class="nav-item" >
-                <a class="nav-link  "  href="../pages/DriverForm.html" style="background-color: #2f3542 !important;">
+            <li class="nav-item">
+                <a class="nav-link  " href="../pages/DriverForm.html">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg height="12px" version="1.1" viewBox="0 0 45 40" width="12px"
                              xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +133,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1" style="color: #ffffff !important;">Driver</span>
+                    <span class="nav-link-text ms-1">Driver</span>
                 </a>
             </li>
             <!--======================================================================================================================================-->
@@ -211,15 +211,14 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link  active" href="../pages/DriverShedule.html">
+            <li class="nav-item" >
+                <a class="nav-link  active"  style="background-color: #2f3542 !important;" href="../pages/PaymentManage.html">
                     <div class="icon icon-shape icon-sm shadow border-radius-md myCol text-center me-2 d-flex align-items-center justify-content-center">
                         <svg height="12px" version="1.1" viewBox="0 0 45 40" width="12px"
                              xmlns="http://www.w3.org/2000/svg">
                             <title>shop </title>
                             <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
-                                <g fill="#FFFFFF" fill-rule="nonzero"
-                                   transform="translate(-1716.000000, -439.000000)">
+                                <g fill="#FFFFFF" fill-rule="nonzero" transform="translate(-1716.000000, -439.000000)">
                                     <g transform="translate(1716.000000, 291.000000)">
                                         <g transform="translate(0.000000, 148.000000)">
                                             <path class="color-background opacity-6"
@@ -232,9 +231,10 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Driver Schedule</span>
+                    <span class="nav-link-text ms-1" style="color: #ffffff !important;">Driver Schedule</span>
                 </a>
             </li>
+
         </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
@@ -262,11 +262,7 @@
                     </div>
                 </div>
                 <ul class="navbar-nav  justify-content-end">
-                    <li class="nav-item d-flex align-items-center">
-                        <a class="btn btn-outline-primary btn-sm mb-0 me-3"
-                           href=""
-                           target="_blank"></a>
-                    </li>
+
                     <li class="nav-item d-flex align-items-center">
                         <a class="nav-link text-body font-weight-bold px-0" href="javascript:">
                             <i class="fa fa-user me-sm-1"></i>
@@ -375,36 +371,10 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
         <div class="row">
-            <div class="col-12">
-                <div class="card blinkAnim">
-                    <div class="card-body">
-
-                        <form id="paymentForm">
-                            <div class="row form-group">
-
-                                <div class="col-12 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Booking number</label>
-                                        <input class="form-control" id="bookingNumber" name="bookingNumber" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary bg-gradient-faded-dark-vertical" id="search"
-                                            type="button">Save
-                                    </button>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-12"><br><br>
                 <div class="card mb-4 blinkAnim">
                     <div class="card-header pb-0">
-                        <h6>Driver Schedule table</h6>
+                        <h6>Payment table</h6>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -412,25 +382,22 @@
                                 <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Driver ID
+                                        Payment ID
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Booking ID
+                                        Invoice NO
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Driver Name
+                                        Date
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                                        Pickup Date
+                                        Booking ID
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Pickup Time
+                                        Payment Type
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Return Date
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Action
+                                        Amount
                                     </th>
 
                                 </tr>
@@ -575,7 +542,7 @@
 
 
 <script src="../js/jquery-3.6.1.min.js"></script>
-<script src="../controllers/AdminFormController.js"></script>
+<script src="../controllers/PaymentFormController.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
 <script src="../assets/js/core/bootstrap.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>

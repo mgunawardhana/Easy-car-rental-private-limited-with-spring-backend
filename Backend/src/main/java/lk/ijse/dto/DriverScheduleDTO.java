@@ -17,4 +17,7 @@ public class DriverScheduleDTO {
     private String bookingID;
     private DriverDTO driverDTO;
     private BookingDTO bookingDTO;
+
+
+
 }

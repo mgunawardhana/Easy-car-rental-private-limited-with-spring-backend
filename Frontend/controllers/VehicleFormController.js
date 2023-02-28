@@ -151,8 +151,6 @@ function bindRowClickEventsForVehicle() {
         $('#vehicleType').val($(this).children(":eq(14)").text());
         $('#dailyMileage1').val($(this).children(":eq(15)").text());
         $('#lastServiceMileage').val($(this).children(":eq(16)").text());
-
-
     });
 }
 
@@ -182,6 +180,9 @@ $('#vehicleId#numberOfPassenger,#extraKmPer,#registrationNo,#vehicleColour,#dail
     }
 })
 
+//TODO **********************************************************************
+
+
 validator('#vehicleId', /^V00-00[0-9]{1,5}$/, "Your input can't be validated", '#vehicleId_lbl', '#numberOfPassenger');
 validator('#numberOfPassenger', /^[0-9]{1,2}$/, "Your input can't be validated", '#no_of_passenger_lbl', '#extraKmPer');
 validator('#extraKmPer', /^[0-9]{3,10}$/, "Your input can't be validated", '#extra_km_per', '#registrationNo');
@@ -199,7 +200,7 @@ validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '
 
 //TODO **********************************************************************
 
-//TODO **********************************************************************
+
 
 
 $('#car1').on("change", function (e) {

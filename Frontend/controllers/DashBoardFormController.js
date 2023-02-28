@@ -54,3 +54,34 @@ function setBookingCunt() {
         }
     });
 }
+
+getAllDrivers();
+
+function getAllDrivers() {
+    $("#driverTableBody").empty();
+    $.ajax({
+        url: baseURL + "/driver/get_all", success: function (res) {
+            for (let c of res.data) {
+
+                let id = c.id;
+                let driverAvailability = c.driverAvailability;
+                let contactNo = c.contactNo;
+                let firstname = c.name.firstName;
+
+                let row = "<tr>"
+                    + "<td>" + id + "</td>"
+                    + "<td>" + firstname + "</td>"
+                    + "<td>" + driverAvailability + "</td>"
+                    + "<td>" + contactNo + "</td>"
+                    + "</tr>";
+                $("#availability").append(row);
+            }
+
+            bindRowClickEventsForDriver();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+    genarateID();
+}

@@ -20,6 +20,7 @@ function getAllBookingDetails() {//mekada i link eke aulk wage ssir poddak inn a
                 let customerID = c.customer.id;
 
 
+
                 let row = "<tr>" +
                     "<td>" +    bookingID + "</td>"
                     + "<td>" + requestType + "</td>"
