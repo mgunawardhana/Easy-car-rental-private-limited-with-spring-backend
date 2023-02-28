@@ -1,9 +1,7 @@
 package lk.ijse.service.impl;
 
 import lk.ijse.dto.AdminDTO;
-import lk.ijse.dto.CustomerDTO;
 import lk.ijse.entity.Admin;
-import lk.ijse.entity.Customer;
 import lk.ijse.repo.AdminRepo;
 import lk.ijse.service.AdminService;
 import org.modelmapper.ModelMapper;
@@ -14,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 @Transactional
 public class AdminServiceImpl implements AdminService {
@@ -31,7 +30,6 @@ public class AdminServiceImpl implements AdminService {
             adminRepo.save(modelMapper.map(adminDTO, Admin.class));
         }
     }
-
 
     @Override
     public void updateAdmin(AdminDTO adminDTO) {

@@ -38,25 +38,12 @@ function getAllDrivers() {
                 let nic = c.nic;
                 let password = c.user.password;
 
-                let row = "<tr>"
-                    + "<td>" + id + "</td>"
-                    + "<td>" + firstname + "</td>"
-                    + "<td>" + lastname + "</td>"
-                    + "<td>" + address + "</td>"
-                    + "<td>" + drivingLicenseNo + "</td>"
-                    + "<td>" + email + "</td>"
-                    + "<td>" + contactNo + "</td>"
-                    + "<td>" + driverAvailability + "</td>"
-                    + "<td>" + userName + "</td>"
-                    + "<td>" + user_id + "</td>"
-                    + "<td>" + nic + "</td>"
-                    + "<td>" + password + "</td>"
-                    + "</tr>";
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstname + "</td>" + "<td>" + lastname + "</td>" + "<td>" + address + "</td>" + "<td>" + drivingLicenseNo + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + driverAvailability + "</td>" + "<td>" + userName + "</td>" + "<td>" + user_id + "</td>" + "<td>" + nic + "</td>" + "<td>" + password + "</td>" + "</tr>";
 
                 $("#driverTableBody").append(row);
             }
 
-            bindRowClickEventsForDriver();            // clearTextFields();
+            bindRowClickEventsForDriver();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
@@ -105,19 +92,16 @@ $("#updateDriver").on('click', function () {
     let nic = $('#nic').val();
     let role = $('#role').val();
 
-
-    //TODO implement this
-
     var driver = {
-        id:id,
-        address:address,
-        contactNo:contactNo,
-        driverAvailability:driverAvailability,
-        drivingLicenseNo:drivingLicenseNo,
-        email:email,
-        name:{ firstName:firstName, lastName:lastName},
-        user:{userId:userId,userName:userName,password:password,role:role},
-        nic:nic,
+        id: id,
+        address: address,
+        contactNo: contactNo,
+        driverAvailability: driverAvailability,
+        drivingLicenseNo: drivingLicenseNo,
+        email: email,
+        name: {firstName: firstName, lastName: lastName},
+        user: {userId: userId, userName: userName, password: password, role: role},
+        nic: nic,
     }
 
     $.ajax({
@@ -153,7 +137,6 @@ function bindRowClickEventsForDriver() {
 
     });
 }
-
 
 
 $('#id,#firstName,#lastName,#address,#drivingLicenseNo,#email,#contactNo,#driverAvailability,#userName,#userId,#nic,#password').on('keydown', function (e) {

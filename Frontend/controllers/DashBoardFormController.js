@@ -3,9 +3,6 @@ setUserCount();
 setCarQuantity();
 setDriversCount();
 setBookingCunt();
-// setUserCunt();
-
-
 
 function setUserCount() {
     $.ajax({
@@ -68,12 +65,7 @@ function getAllDrivers() {
                 let contactNo = c.contactNo;
                 let firstname = c.name.firstName;
 
-                let row = "<tr>"
-                    + "<td>" + id + "</td>"
-                    + "<td>" + firstname + "</td>"
-                    + "<td>" + driverAvailability + "</td>"
-                    + "<td>" + contactNo + "</td>"
-                    + "</tr>";
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstname + "</td>" + "<td>" + driverAvailability + "</td>" + "<td>" + contactNo + "</td>" + "</tr>";
                 $("#availability").append(row);
             }
 

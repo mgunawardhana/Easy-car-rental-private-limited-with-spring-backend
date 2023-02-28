@@ -11,7 +11,6 @@ import lombok.ToString;
 @Data
 @ToString
 public class ImageDTO {
-
     String imageId;
     String imageType;
     String imageView;

@@ -5,6 +5,5 @@ import lombok.ToString;
 @ToString
 public enum FuelType {
 
-    DIESEL,
-    PETROL
+    DIESEL, PETROL
 }

@@ -70,6 +70,7 @@ function genarateAdminID() {
         }
     });
 }
+
 $("#updateAdmin").on('click', function () {
 
     let firstName = $("#firstName").val();
@@ -111,8 +112,6 @@ $("#updateAdmin").on('click', function () {
     });
 
 });
-
-
 
 
 function bindRowClickEventsForAdminTable() {

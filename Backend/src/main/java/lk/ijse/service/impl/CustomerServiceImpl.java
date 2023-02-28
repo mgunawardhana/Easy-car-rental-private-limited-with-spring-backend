@@ -59,8 +59,7 @@ public class CustomerServiceImpl implements CustomerService {
     public String generateCustomerIds() {
         String id = customerRepo.generateCustomerId();
         if (id != null) {
-            int tempId = Integer.
-                    parseInt(id.split("-")[1]);
+            int tempId = Integer.parseInt(id.split("-")[1]);
             tempId = tempId + 1;
             if (tempId <= 9) {
                 return "C00-00" + tempId;

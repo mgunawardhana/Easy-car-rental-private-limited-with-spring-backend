@@ -15,7 +15,6 @@ import javax.persistence.*;
 @ToString
 @IdClass(DriverSchedule_PK.class)
 public class DriverSchedule {
-
     @Id
     @Column(name = "driverID")
     private String driverID;
@@ -23,13 +22,11 @@ public class DriverSchedule {
     @Column(name = "bookingID")
     private String bookingID;
 
-
     @ManyToOne
-    @JoinColumn(name = "driverID",referencedColumnName = "id",insertable = false,updatable = false)
+    @JoinColumn(name = "driverID", referencedColumnName = "id", insertable = false, updatable = false)
     private Driver driverDTO;
 
     @ManyToOne
-    @JoinColumn(name = "bookingID",referencedColumnName = "bookingID",insertable = false,updatable = false)
+    @JoinColumn(name = "bookingID", referencedColumnName = "bookingID", insertable = false, updatable = false)
     private Booking bookingDTO;
-
 }

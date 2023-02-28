@@ -22,10 +22,6 @@ import javax.persistence.*;
  the lazy loading of data as referred before*/
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Vehicle {
-
-//    @Id
-//    private String vehicleId;
-
     @Id
     private String vehicleID;
     @Column(name = "registration_no")

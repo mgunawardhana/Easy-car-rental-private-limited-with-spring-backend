@@ -37,7 +37,4 @@ public class Driver {
     private AvailabilityType driverAvailability;
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
-
-
-
 }

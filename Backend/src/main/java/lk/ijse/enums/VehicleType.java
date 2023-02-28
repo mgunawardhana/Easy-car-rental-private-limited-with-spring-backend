@@ -5,7 +5,5 @@ import lombok.ToString;
 @ToString
 public enum VehicleType {
 
-    GENERAL,
-    LUXURY,
-    PREMIUM
+    GENERAL, LUXURY, PREMIUM
 }

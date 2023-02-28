@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -32,14 +30,14 @@ public class Booking {
     @Column(name = "driver_request_type")
     private RequestType driverRequestType;
 
-    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.REFRESH})
-    @JoinColumn(name = "custId",referencedColumnName = "id",nullable = false)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "custId", referencedColumnName = "id", nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
     private List<BookingDetails> bookingDetails;
 
-    @OneToMany(mappedBy = "bookingDTO",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "bookingDTO", cascade = CascadeType.ALL)
     private List<DriverSchedule> driverSchedules;
 
 }

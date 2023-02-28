@@ -3,10 +3,7 @@ let baseURL = "http://localhost:8080/Backend_war";
 getAllCustomers();
 genarateID();
 $("#saveCustomer").on('click', function () {
-
-
     saveCustomer();
-
 });
 
 function saveCustomer() {
@@ -88,8 +85,7 @@ $("#deleteCustomer").on('click', function () {
 });
 
 
-
-let cusID = "C00-0" ;
+let cusID = "C00-0";
 
 function getAllCustomers() {
     $("#customerTableBody").empty();
@@ -134,22 +130,6 @@ function genarateID() {
         }
     });
 }
-
-// function setUserCount() {
-//     $.ajax({
-//         url: baseURL + "/customer/?test=", method: "GET", dataType: "json", success: function (res) {
-//             console.log(res.data);
-//             $("#lbl2").text(res.data);
-//         }, error: function (error) {
-//             let message = JSON.parse(error.responseText).message;
-//             alert(message);
-//         }
-//     });
-// }
-
-
-
-
 
 function bindRowClickEvents() {
     $("#customerTableBody>tr").on('click', function () {
@@ -269,29 +249,10 @@ function loadAllVehiclesToCombo() {
     });
 }
 
-
-// $("#placeBookingBtn").on('click', function () {
-//     let formData = $("#placeBooking").serialize();
-//     console.log(formData)
-//     $.ajax({
-//         url: baseURL + "/bookings/place_bookings",
-//         method: "post",
-//         data: formData,
-//         dataType: "json",
-//         success: function (res) {
-//             alert(res.message);
-//         },
-//         error: function (error) {
-//             var errorMessage = JSON.parse(error.responseText);
-//             alert(errorMessage.message);
-//         }
-//     });
-// });
-
 $("#placeBookingBtn").on('click', function () {
-    let bookingID= $("#bookingId").val();//
+    let bookingID = $("#bookingId").val();//
     let rentID = $("#rentID").val();//
-    let driverID= $("#driverId").val();//
+    let driverID = $("#driverId").val();//
     let driverName = $("#driverName").val(); //
     let customer = $("#customer").val(); //
     let customerName = $("#customerName").val(); //
@@ -304,15 +265,15 @@ $("#placeBookingBtn").on('click', function () {
 
 
     var booking = {
-        bookingID:bookingID,
-        pickUpDate:pickupDate,
-        pickUpTime:pickupTime,
-        returnDate:returnDate,
-        driverRequestType:driverRequest,
-        customer: {id:customer},
-        pickUpLocation:pickUpLocation,
-        bookingDetails:[{vehicleID:vehicleID,bookingID:bookingID}],
-        driverSchedules:[{driverID:driverID,bookingID:bookingID}],
+        bookingID: bookingID,
+        pickUpDate: pickupDate,
+        pickUpTime: pickupTime,
+        returnDate: returnDate,
+        driverRequestType: driverRequest,
+        customer: {id: customer},
+        pickUpLocation: pickUpLocation,
+        bookingDetails: [{vehicleID: vehicleID, bookingID: bookingID}],
+        driverSchedules: [{driverID: driverID, bookingID: bookingID}],
     }
 
     $.ajax({

@@ -80,9 +80,9 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleDTO searchVehicle(String id) {
-        if (vehicleRepo.existsById(id)){
+        if (vehicleRepo.existsById(id)) {
             return modelMapper.map(vehicleRepo.findById(id).get(), VehicleDTO.class);
-        }else {
+        } else {
             throw new RuntimeException("No Vehicle For " + id + " ..!");
         }
     }

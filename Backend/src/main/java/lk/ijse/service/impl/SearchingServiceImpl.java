@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.jws.WebParam;
 import java.util.List;
+
 @Service
 @Transactional
 public class SearchingServiceImpl implements SearchingService {
@@ -23,7 +23,6 @@ public class SearchingServiceImpl implements SearchingService {
 
     @Autowired
     VehicleRepo vehicleRepo;
-
 
 
     @Override
@@ -75,6 +74,4 @@ public class SearchingServiceImpl implements SearchingService {
     public List<VehicleDTO> load_all_available_vehicles(String pickup_date, String return_date) {
         return null;
     }
-
-
 }

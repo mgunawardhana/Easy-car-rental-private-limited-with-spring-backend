@@ -6,6 +6,5 @@ import lombok.ToString;
 @ToString
 public enum TransmissionType {
 
-    MANUAL,
-    AUTO
+    MANUAL, AUTO
 }

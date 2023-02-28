@@ -1,7 +1,6 @@
 package lk.ijse.controller;
 
 import lk.ijse.dto.BookingDTO;
-import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.PaymentDTO;
 import lk.ijse.service.BookingService;
 import lk.ijse.service.PaymentService;
@@ -22,28 +21,19 @@ public class PaymentFormController {
     BookingService bookingService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(value = "save_payment",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO){
-
-//        BookingDTO bookingDTO = bookingService.getBookingById(paymentDTO.getBookingDTO().getBookingID());
-//        paymentDTO.setBookingDTO(bookingDTO);
-
-        System.out.println("=========================");
-        System.out.println(paymentDTO.toString());
-        System.out.println("=========================");
-
+    @PostMapping(value = "save_payment", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO) {
         paymentService.savePayment(paymentDTO);
-        return new ResponseUtil("OK","Saved",null);
+        return new ResponseUtil("OK", "Saved", null);
     }
 
-    @GetMapping(value = "get_all_payment_details",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllPayments(){
-        return new ResponseUtil("OK","Successful",paymentService.getAllPayment());
+    @GetMapping(value = "get_all_payment_details", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllPayments() {
+        return new ResponseUtil("OK", "Successful", paymentService.getAllPayment());
     }
 
     @GetMapping(path = "get_all_bookings")
     public ResponseUtil getAllBookingDetails(@ModelAttribute BookingDTO bookingDTO) {
-        System.out.println(paymentService.loadAllBookingDetails());
         return new ResponseUtil("OK", "Successfully Loaded ! ", paymentService.loadAllBookingDetails());
     }
 }

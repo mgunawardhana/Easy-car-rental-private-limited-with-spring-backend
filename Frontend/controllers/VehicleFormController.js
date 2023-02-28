@@ -255,9 +255,7 @@ $('#car4').on("change", function (e) {
     }
 });
 
-
-// let searchType = $("#searchDropBox").val();
-
+//TODO car searching methods
 $("#search").on('click', function () {
     let searchType = $("#searchDropBox").val();
     if ("PASSENGERS" === searchType) {

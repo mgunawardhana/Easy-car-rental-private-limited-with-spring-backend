@@ -5,8 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -17,7 +15,4 @@ public class DriverScheduleDTO {
     private String bookingID;
     private DriverDTO driverDTO;
     private BookingDTO bookingDTO;
-
-
-
 }

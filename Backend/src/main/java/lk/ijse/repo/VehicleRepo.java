@@ -10,16 +10,15 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface VehicleRepo extends JpaRepository<Vehicle,String> {
+public interface VehicleRepo extends JpaRepository<Vehicle, String> {
     @Query(value = "SELECT vehicleId FROM vehicle ORDER BY vehicleId DESC LIMIT 1", nativeQuery = true)
     String generateVehicleId();
 
     List<Vehicle> findAllByNumberOfPassenger(int noOfPassenger);
 
-    List<Vehicle>findAllByFuelType(FuelType fuelType);
+    List<Vehicle> findAllByFuelType(FuelType fuelType);
 
-
-    List<Vehicle>findAllByVehiclePriceRate(PriceRate priceRate);
+    List<Vehicle> findAllByVehiclePriceRate(PriceRate priceRate);
 
     List<Vehicle> findAllByVehicleBrand(String brand);
 

@@ -1,7 +1,6 @@
 package lk.ijse.controller;
 
 import lk.ijse.dto.AdminDTO;
-import lk.ijse.dto.CustomerDTO;
 import lk.ijse.service.AdminService;
 import lk.ijse.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +12,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("admin")
 public class AdminFormController {
 
-
-//TODO Admin update method not implemented please setup get_all name
-//TODO loading error and after setup the update method
-
-
     @Autowired
     public AdminService adminService;
 
-    @PostMapping(value = "save_admin",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "save_admin", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveAdmin(@ModelAttribute AdminDTO adminDTO) {
         adminService.saveAdmin(adminDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
@@ -45,9 +39,8 @@ public class AdminFormController {
         return new ResponseUtil("OK", "Successful", adminService.getAllAdmin());
     }
 
-    @GetMapping(params = {"test"},produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(params = {"test"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateCustomersIds(@RequestParam String test) {
-        System.out.println(test);
         return new ResponseUtil("Ok", "", adminService.generateAdminIds());
     }
 

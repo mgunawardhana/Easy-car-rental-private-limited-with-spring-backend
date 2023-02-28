@@ -5,6 +5,5 @@ import lombok.ToString;
 @ToString
 public enum RequestType {
 
-    YES,
-    NO
+    YES, NO
 }

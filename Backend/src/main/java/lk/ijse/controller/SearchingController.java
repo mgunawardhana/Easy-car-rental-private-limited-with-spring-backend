@@ -47,7 +47,6 @@ public class SearchingController {
         return new ResponseUtil("Ok", "Your request Success", searchingService.getVehicleByTransmissionType(transmission_type));
     }
 
-    //TODO *************************************** මේක වැඩ නෑ 7/7
     @GetMapping(params = {"pickUpDate", "returnDate"})
     public ResponseUtil loadAvailableVehicles(@RequestParam String pickup_date, @RequestParam String return_date) {
         return new ResponseUtil("Ok", "Your request Success", searchingService.load_all_available_vehicles(null, null));

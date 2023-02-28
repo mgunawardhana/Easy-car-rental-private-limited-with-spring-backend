@@ -26,9 +26,11 @@ $("#save").on('click', function () {
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(obj),
-        dataType: "json", success: function (res) {
+        dataType: "json",
+        success: function (res) {
             alert(res.message);
-        }, error: function (error) {
+        },
+        error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
             alert(errorMessage.message);
         }
@@ -94,18 +96,3 @@ $('#bookingId').on('click', function () {
         }
     });
 });
-// Calc();
-//
-// function Calc() {
-//     let mileage = parseInt($("#totalVehicleMileage").val());
-//     let extraPrice = parseInt($("#extraKmPrice").val());
-//
-//     let dailyRate = 1000;
-//
-//     if (mileage > 100) {
-//         $("#amount").val(((mileage - 100) * extraPrice) + dailyRate);
-//     }
-//     if (mileage <= 100) {
-//         $("#amount").val(dailyRate);
-//     }
-// }

@@ -14,8 +14,7 @@ public class VehicleController {
     @Autowired
     public VehicleService vehicleService;
 
-
-    @PostMapping(value = "save_vehicle",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "save_vehicle", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveVehicle(@ModelAttribute VehicleDTO vehicleDTO) {
         vehicleService.saveVehicle(vehicleDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
@@ -24,14 +23,12 @@ public class VehicleController {
     @DeleteMapping
     public ResponseUtil deleteVehicle(String code) {
         vehicleService.deleteVehicle(code);
-        System.out.println(code+" vehicle service impl");
-
         return new ResponseUtil("OK", "Successfully Deleted ! " + code, "");
     }
 
-    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllVehicle(){
-        return new ResponseUtil("OK","Successful",vehicleService.getAllVehicle());
+    @GetMapping(value = "get_all", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllVehicle() {
+        return new ResponseUtil("OK", "Successful", vehicleService.getAllVehicle());
     }
 
     @PutMapping(value = "update")
@@ -40,20 +37,19 @@ public class VehicleController {
         return new ResponseUtil("OK", "Successfully updated ! " + vehicleDTO.getVehicleID(), "");
     }
 
-    @GetMapping(path ="/vehicleCount/{count}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil countVehicles(@PathVariable String count){
+    @GetMapping(path = "/vehicleCount/{count}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil countVehicles(@PathVariable String count) {
         return new ResponseUtil("Ok", "", vehicleService.countVehicle());
     }
 
-    @GetMapping(params = {"test"},produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(params = {"test"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateVehicleIds(@RequestParam String test) {
-        System.out.println(test);
         return new ResponseUtil("Ok", "", vehicleService.generateVehicleIds());
     }
 
-    @GetMapping( params= {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(params = {"id"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchVehicleById(@RequestParam String id) {
         VehicleDTO vehicleDTO = vehicleService.searchVehicle(id);
-        return new ResponseUtil("Ok","Found",vehicleDTO);
+        return new ResponseUtil("Ok", "Found", vehicleDTO);
     }
 }

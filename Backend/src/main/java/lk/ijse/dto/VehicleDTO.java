@@ -8,8 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -23,7 +21,6 @@ public class VehicleDTO {
     private FuelType fuelType;
     private int numberOfPassenger;
     private String vehicleColour;
-
 
     private TransmissionType transmissionType;
     private double refundableDamagedFee;

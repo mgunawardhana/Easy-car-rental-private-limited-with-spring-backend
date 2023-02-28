@@ -7,27 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.jar.JarOutputStream;
-
 @RestController
 @CrossOrigin
 @RequestMapping("customer")
 public class CustomerFormController {
-
     @Autowired
     public CustomerService customerService;
 
-
-    @PostMapping(value = "save_customer",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "save_customer", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customerDTO) {
         customerService.saveCustomer(customerDTO);
         return new ResponseUtil("OK", "Successfully Registered !", "");
     }
 
 
-    @GetMapping(value = "get_all",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllCustomers(){
-        return new ResponseUtil("OK","Successful",customerService.getAllCustomer());
+    @GetMapping(value = "get_all", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCustomers() {
+        return new ResponseUtil("OK", "Successful", customerService.getAllCustomer());
     }
 
     @DeleteMapping
@@ -42,15 +38,13 @@ public class CustomerFormController {
         return new ResponseUtil("OK", "Successfully updated ! " + customerDTO.getId(), "");
     }
 
-    @GetMapping(params = {"test"},produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(params = {"test"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateCustomersIds(@RequestParam String test) {
-        System.out.println(test);
         return new ResponseUtil("Ok", "", customerService.generateCustomerIds());
     }
 
-    @GetMapping(path ="/customerCount/{count}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil countCustomers(@PathVariable String count){
-//        System.out.println(count);
+    @GetMapping(path = "/customerCount/{count}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil countCustomers(@PathVariable String count) {
         return new ResponseUtil("Ok", "Ok", customerService.countCustomer());
     }
 

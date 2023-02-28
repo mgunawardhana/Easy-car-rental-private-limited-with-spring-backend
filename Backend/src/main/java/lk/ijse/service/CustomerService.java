@@ -2,7 +2,6 @@ package lk.ijse.service;
 
 import lk.ijse.dto.CustomerDTO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface CustomerService {
@@ -17,5 +16,4 @@ public interface CustomerService {
     String generateCustomerIds();
 
     long countCustomer();
-
 }

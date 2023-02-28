@@ -28,26 +28,22 @@ public class BookingController {
 
     @GetMapping(path = "/get_all_customers")
     public ResponseUtil getAllCustomersInToTheCombo(@ModelAttribute CustomerDTO customerDTO) {
-//        System.out.println(bookingService.loadAllCustomersInTheCombo());
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllCustomersInTheCombo());
     }
 
     @GetMapping("/get_all_drivers")
     public ResponseUtil getAllDriversInToTheCombo(@ModelAttribute DriverDTO driverDTO) {
-//        System.out.println(bookingService.loadAllItemsInTheCombo());
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllItemsInTheCombo());
     }
 
     @GetMapping("/get_all_vehicles")
     public ResponseUtil getAllVehiclesInToTheCombo(@ModelAttribute VehicleDTO vehicleDTO) {
-//        System.out.println(bookingService.loadAllVehiclesInToTheCombo());
         return new ResponseUtil("OK", "Successfully Loaded ! ", bookingService.loadAllVehiclesInToTheCombo());
     }
 
     @PostMapping(value = "/place_bookings")
     public ResponseUtil saveBooking(@RequestBody BookingDTO bookingDTO) {
         bookingService.placeBooking(bookingDTO);
-        System.out.println("new implementation - "+bookingDTO.toString());
         return new ResponseUtil("Ok", "Saved", "");
     }
 
@@ -56,19 +52,13 @@ public class BookingController {
         return new ResponseUtil("Ok", "", bookingService.countBooking());
     }
 
-    //TODO *************************************************
-
-    @GetMapping(value = "/load_all_booking_details",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllBookings(){
-        System.out.println("*************");
-        System.out.println(bookingService.getAllBookings().toString());
-        System.out.println("*************");
-
-        return new ResponseUtil("OK","Successful",bookingService.getAllBookings());
+    @GetMapping(value = "/load_all_booking_details", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllBookings() {
+        return new ResponseUtil("OK", "Successful", bookingService.getAllBookings());
     }
 
-    @GetMapping(value = "/get_all_bookings",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllBookingDetails(){
-        return new ResponseUtil("OK","Successful",bookingService.getBookingDetails());
+    @GetMapping(value = "/get_all_bookings", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllBookingDetails() {
+        return new ResponseUtil("OK", "Successful", bookingService.getBookingDetails());
     }
 }

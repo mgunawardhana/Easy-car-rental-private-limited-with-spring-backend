@@ -1,12 +1,7 @@
 package lk.ijse.service.impl;
 
-import lk.ijse.dto.BookingDTO;
-import lk.ijse.dto.CustomerDTO;
 import lk.ijse.dto.DriverDTO;
-import lk.ijse.dto.DriverScheduleDTO;
-import lk.ijse.entity.Booking;
 import lk.ijse.entity.Driver;
-import lk.ijse.enums.AvailabilityType;
 import lk.ijse.repo.BookingRepo;
 import lk.ijse.repo.DriverRepo;
 import lk.ijse.repo.DriverSheduleRepo;
@@ -17,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,29 +85,6 @@ public class DriverServiceImpl implements DriverService {
             return "D00-001";
         }
     }
-
-//    @Override
-//    public List<DriverScheduleDTO> getDriverShedule() {
-////        return modelMapper.map(driverSheduleRepo.findAll(), new TypeToken<ArrayList<DriverScheduleDTO>>() {
-////        }.getType());
-//        ArrayList<DriverScheduleDTO> allIds= new ArrayList<>();
-//        List<Driver> all = driver.findAll();
-//        for (Driver b : all) {
-//            DriverDTO dto=  modelMapper.map(b.get,DriverDTO.class);
-//            DriverScheduleDTO b1=new DriverScheduleDTO(
-//                    b.getBookingID(),
-//                    b.getPickUpDate(),
-//                    b.getPickUpTime(),
-//                    b.getReturnDate(),
-//                    b.getDriverRequestType(),
-//                    dto,b.getPickUpLocation()
-//            );
-//            allIds.add(b1);
-//        }
-//
-
-
-
-    }
+}
 
 

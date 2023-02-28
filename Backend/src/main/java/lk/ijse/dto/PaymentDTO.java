@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.time.LocalDate;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -16,7 +14,7 @@ import java.time.LocalDate;
 public class PaymentDTO {
 
     private String paymentId;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private String paymentDate;
     private String invoiceNo;
     private double amount;

@@ -10,7 +10,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 public class DriverSchedule_PK implements Serializable {
-
     private String driverID;
     private String bookingID;
 }

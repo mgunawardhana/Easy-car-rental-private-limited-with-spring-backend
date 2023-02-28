@@ -14,7 +14,6 @@ import javax.persistence.*;
 @Entity
 @ToString
 public class CustomerRequest {
-
     @Id
     private String id;
     @Column(name = "nic_no")
@@ -32,6 +31,4 @@ public class CustomerRequest {
     private String contactNo;
     @OneToOne(cascade = CascadeType.ALL)
     private UserRequest user;
-
-    
 }

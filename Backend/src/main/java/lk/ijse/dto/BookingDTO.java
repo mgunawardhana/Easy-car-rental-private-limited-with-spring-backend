@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -19,17 +17,15 @@ public class BookingDTO {
 
     private String bookingID;
 
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private String pickUpDate;
-    @JsonFormat(pattern="HH:mm:ss")
+    @JsonFormat(pattern = "HH:mm:ss")
     private String pickUpTime;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private String returnDate;
     private RequestType driverRequestType;
     private CustomerDTO customer;
     private String pickUpLocation;
-//    private List<BookingDetailsDTO> bookingDetails;
-//    private List<DriverScheduleDTO> driverSchedules;
 
     private List<BookingDetailsDTO> bookingDetails;
     private List<DriverScheduleDTO> driverSchedules;
@@ -43,7 +39,7 @@ public class BookingDTO {
         this.customer = customer;
         this.pickUpLocation = pickUpLocation;
     }
-//
+
     public BookingDTO(String bookingId) {
         this.bookingID = bookingId;
     }

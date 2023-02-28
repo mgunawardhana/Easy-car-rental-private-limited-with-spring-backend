@@ -15,7 +15,6 @@ import javax.persistence.*;
 @Entity
 @ToString
 public class Customer {
-
     @Id
     private String id;
     @Column(name = "nic_no")

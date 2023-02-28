@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -29,5 +30,4 @@ public class Admin {
     private String adminContact;
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
-
 }
