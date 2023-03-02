@@ -120,10 +120,13 @@ function getAllCustomers() {
     genarateID();
 }
 
+let genaratedValue;
+
 function genarateID() {
     $.ajax({
         url: baseURL + "/customer/?test=", success: function (res) {
             $('#id').val(res.data);
+            genaratedValue = res.data;
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
@@ -310,5 +313,63 @@ validator('#password', /^[0-9]{4}$/, "Your input can't be validated", '#admin_id
 validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#user_id_label', '#drivingLicenseNo');
 validator('#drivingLicenseNo', /^[0-9]{1,10}$/, "Your input can't be validated", '#user_id_label', '#nic');
 
+//TODO image storing option local storage
+
+var imgArray = [];
+var verify1;
+
+$('#file').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            verify1 = reader.result;
+            imgArray.push(reader.result);
+            $('#display').css({
+                "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+
+$('#file2').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            imgArray.push(reader.result);
+            $('#display2').css({
+                "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+let row;
 
 
+const reader = new FileReader();
+const reader2 = new FileReader();
+
+
+$('#saveCustomer').on("click", function () {
+
+    const nicDlImageFile = document.getElementById('file');
+    const imgFile = nicDlImageFile.files[0];
+    reader.readAsDataURL(imgFile);
+
+    reader.addEventListener('load', () => {
+        const url = reader.result
+        localStorage.setItem((genaratedValue + "1stPhoto"), url);
+    });
+
+    const nicDlImageFile2 = document.getElementById('file2');
+    const imgFile2 = nicDlImageFile2.files[0];
+    reader2.readAsDataURL(imgFile2);
+
+    reader2.addEventListener('load', () => {
+        const url = reader2.result
+        localStorage.setItem(genaratedValue + "2stPhoto", url);
+    });
+});
