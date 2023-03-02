@@ -134,7 +134,12 @@ function genarateID() {
     });
 }
 
+let code;
+
+
 function bindRowClickEvents() {
+
+
     $("#customerTableBody>tr").on('click', function () {
         let id = $(this).children(":eq(0)").text();
         let firstName = $(this).children(":eq(1)").text();
@@ -162,6 +167,31 @@ function bindRowClickEvents() {
         $('#drivingLicenseNo').val(drivingLicenseNo);
         $('#role').val(role);
         $('#userId').val(userId);
+
+
+        // loadingImg();
+
+        //TODO image repeating problem *****************
+
+        let key = $(this).children(":eq(0)").text();
+
+        if (key !== code) {
+
+            const url = localStorage.getItem(key + "1stPhoto");
+            const img = new Image();
+            img.src = url;
+            $("#imgLoader").append(img);
+
+
+            const url2 = localStorage.getItem(key + "2stPhoto");
+            const img2 = new Image();
+            img2.src = url2;
+            $("#imgLoader2").append(img2);
+
+            code = key;
+
+        }
+
 
     });
 }
@@ -373,15 +403,23 @@ $('#saveCustomer').on("click", function () {
         localStorage.setItem(genaratedValue + "2stPhoto", url);
     });
 });
-alert($("#id").val());
-const url = localStorage.getItem("C00-0011stPhoto");
-const img = new Image();
-img.src = url;
-$("#imgLoader").append(img);
 
-const url2 = localStorage.getItem("C00-0012stPhoto");
-const img2 = new Image();
-img2.src = url2;
-$("#imgLoader2").append(img2);
+let count;
 
-
+// function loadingImg() {
+//     $("#customerTableBody>tr").on('click', function () {
+//
+//             let key = $(this).children(":eq(0)").text();
+//
+//             const url = localStorage.getItem(key + "1stPhoto");
+//             const img = new Image();
+//             img.src = url;
+//             $("#imgLoader").append(img);
+//
+//
+//             const url2 = localStorage.getItem(key + "2stPhoto");
+//             const img2 = new Image();
+//             img2.src = url2;
+//             $("#imgLoader2").append(img2);
+//     });
+// }
