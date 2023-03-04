@@ -37,15 +37,15 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-  <p>Tools</p>
+  <h2>Tools</h2>
      <img src="https://skillicons.dev/icons?i=idea,git,github,vscode" />
      <br>
-  <p>🇱​🇦​🇳​🇬​🇺​🇦​🇬​🇪​🇸​ 🇦​🇳​🇩​ 🇫​🇷​🇦​🇲​🇪​🇼​🇴​🇷​🇰​🇸​</p>
+  <h2> 🇱​🇦​🇳​🇬​🇺​🇦​🇬​🇪​🇸​ 🇦​🇳​🇩​ 🇫​🇷​🇦​🇲​🇪​🇼​🇴​🇷​🇰​🇸​</h2>
     <br>
-<p>🇫​🇷​🇴​🇳​🇹​🇪​🇳​🇩​</p>
+<h3>🇫​🇷​🇴​🇳​🇹​🇪​🇳​🇩​</h3>
      <img src="https://skillicons.dev/icons?i=html,js,bootstrap,jquery,nodejs,css" />
     <br>
-    <p>🇧​🇦​🇨​🇰​🇪​🇳​🇩​</p>
+    <h3>🇧​🇦​🇨​🇰​🇪​🇳​🇩​</h3>
      <img src="https://skillicons.dev/icons?i=hibernate,java,mysql,spring,svelte,ajax" />
   </a>
 </p>
