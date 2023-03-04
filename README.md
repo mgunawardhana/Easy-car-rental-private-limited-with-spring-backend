@@ -52,8 +52,7 @@
 <div align="center">
 
 <h3>🇫​🇷​🇴​🇳​🇹​🇪​🇳​🇩​</h3>
-     <img src="https://skillicons.dev/icons?i=html,js,bootstrap,jquery,nodejs,css" />
-
+  <img src="https://skillicons.dev/icons?i=html,css,bootstrap,js,jquery,nodejs" />
 </div>
 
 
