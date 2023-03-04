@@ -173,25 +173,38 @@ function bindRowClickEvents() {
 
         //TODO image repeating problem *****************
 
+        // let key = $(this).children(":eq(0)").text();
+        //
+        // if (key !== code) {
+        //
+        //     const url = localStorage.getItem(key + "1stPhoto");
+        //     const img = new Image();
+        //     img.src = url;
+        //     $("#imgLoader").append(img);
+        //
+        //
+        //     const url2 = localStorage.getItem(key + "2stPhoto");
+        //     const img2 = new Image();
+        //     img2.src = url2;
+        //     $("#imgLoader2").append(img2);
+        //
+        //     code = key;
+        //
+        // }
+        $("#imgLoader").empty();
+        $("#imgLoader2").empty();
         let key = $(this).children(":eq(0)").text();
 
-        if (key !== code) {
-
-            const url = localStorage.getItem(key + "1stPhoto");
-            const img = new Image();
-            img.src = url;
-            $("#imgLoader").append(img);
+        const url = localStorage.getItem(key + "1stPhoto");
+        const img = new Image();
+        img.src = url;
+        $("#imgLoader").append(img);
 
 
-            const url2 = localStorage.getItem(key + "2stPhoto");
-            const img2 = new Image();
-            img2.src = url2;
-            $("#imgLoader2").append(img2);
-
-            code = key;
-
-        }
-
+        const url2 = localStorage.getItem(key + "2stPhoto");
+        const img2 = new Image();
+        img2.src = url2;
+        $("#imgLoader2").append(img2);;
 
     });
 }
