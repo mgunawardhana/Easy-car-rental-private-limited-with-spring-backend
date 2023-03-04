@@ -41,7 +41,8 @@
      <img src="https://skillicons.dev/icons?i=idea,git,github,vscode" />
      <br>
   <h2> 🇱​🇦​🇳​🇬​🇺​🇦​🇬​🇪​🇸​ 🇦​🇳​🇩​ 🇫​🇷​🇦​🇲​🇪​🇼​🇴​🇷​🇰​🇸​</h2>
-    <br>
+ 
+ 
 <h3>🇫​🇷​🇴​🇳​🇹​🇪​🇳​🇩​</h3>
      <img src="https://skillicons.dev/icons?i=html,js,bootstrap,jquery,nodejs,css" />
     <br>
@@ -52,6 +53,6 @@
 
 <div align="center">
 
-## © 2022 ɢᴜɴᴀᴡᴀʀᴅʜᴀɴᴀ,ɪɴᴄ. ᴀʟʟ ʀɪɢʜᴛꜱ ʀᴇꜱᴇʀᴠᴇᴅ.
+## © 2023 ɢᴜɴᴀᴡᴀʀᴅʜᴀɴᴀ,ɪɴᴄ. ᴀʟʟ ʀɪɢʜᴛꜱ ʀᴇꜱᴇʀᴠᴇᴅ.
 
 </div>
