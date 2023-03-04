@@ -20,33 +20,18 @@ window.addEventListener('scroll', () => {
     header.classList.toggle('shadow', window.scrollY > 0);
 });
 
-getAllVehicle();
+loadingAllVehiclesForFrontendPage();
 
-function getAllVehicle() {
+function loadingAllVehiclesForFrontendPage() {
     $("#addingVehicles").empty();
     $.ajax({
         url: baseURL + "vehicle/get_all", success: function (res) {
             for (let c of res.data) {
-
-                let vehicleId = c.vehicleID;
-                let registrationNo = c.registrationNo;
                 let brand = c.vehicleBrand;
                 let vehicleType = c.vehicleType;
-                let fuelType = c.fuelType;
-                let noOfPassengers = c.numberOfPassenger;
-                let Colour = c.vehicleColour;
-                let transmission = c.transmissionType;
-                let damageFee = c.refundableDamagedFee;
                 let daily_amount = c.vehiclePriceRate.dailyRate;
                 let monthly_amount = c.vehiclePriceRate.monthlyRate;
-                let daily_km = c.freeMileage.dailyMileage;
-                let monthly_km = c.freeMileage.monthlyMileage;
-                let last_service = c.lastServiceMileage;
                 let extraKmPrice = c.extraKmPer;
-                let Availability = c.vehicleAvailability;
-
-                //TODO vehicleMileage equals to serviceMileage
-                let vehicle_mileage = c.vehicleMileage;
 
                 let vehicle_addons = `<div class="box">
                                             <img alt="" src="">
@@ -62,12 +47,10 @@ function getAllVehicle() {
 
                 $("#addingVehicles").append(vehicle_addons);
             }
-            bindRowClickEventsForVehicle();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
         }
     });
-    genarateVehicleID();
 }
 
