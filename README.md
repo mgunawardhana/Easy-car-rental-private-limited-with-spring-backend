@@ -35,6 +35,12 @@
 </div>
 <br><br>
 
+<p align="center">
+  <a href="https://skillicons.dev">
+     <img src="https://skillicons.dev/icons?i=hibernate,html,idea,java,js,bootstrap,jquery,mysql,nodejs,css,git,github,spring,svelte,vscode" />
+  </a>
+</p>
+
 <div align="center">
 
 ## © 2022 ɢᴜɴᴀᴡᴀʀᴅʜᴀɴᴀ,ɪɴᴄ. ᴀʟʟ ʀɪɢʜᴛꜱ ʀᴇꜱᴇʀᴠᴇᴅ.
