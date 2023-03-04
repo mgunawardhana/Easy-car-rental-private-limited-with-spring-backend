@@ -199,15 +199,25 @@ validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '
 
 
 //TODO **********************************************************************
+/** metanin upload karana image eka ay local storage ekata add nowene
+ * kiyala balanna  */
 
 
 
-/** image uploading starts ****************************************************************************************** */
+
+var imgArray = [];
+var verify1;
+let row;
+const reader = new FileReader();
+
+
 $('#car1').on("change", function (e) {
     let file = e.target.files;
     if (FileReader && file && file.length) {
         let reader = new FileReader();
         reader.onload = function () {
+            verify1 = reader.result;
+            imgArray.push(reader.result);
             $('#frontImg').css({
                 "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
             });
@@ -216,9 +226,10 @@ $('#car1').on("change", function (e) {
     }
 })
 
-$('#saveCustomer').on("click", function () {
 
-    const nicDlImageFile = document.getElementById('file');
+$('#saveVehicle').on("click", function () {
+
+    const nicDlImageFile = document.getElementById('car1');
     const imgFile = nicDlImageFile.files[0];
     reader.readAsDataURL(imgFile);
 
