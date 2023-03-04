@@ -35,21 +35,37 @@
 </div>
 <br><br>
 
-<p align="center">
-  <a href="https://skillicons.dev">
-  <h2>Tools</h2>
+
+<div align="center">
+
+<h2>Tools</h2>
      <img src="https://skillicons.dev/icons?i=idea,git,github,vscode" />
      <br>
   <h2> 🇱​🇦​🇳​🇬​🇺​🇦​🇬​🇪​🇸​ 🇦​🇳​🇩​ 🇫​🇷​🇦​🇲​🇪​🇼​🇴​🇷​🇰​🇸​</h2>
  
- 
+
+</div>
+
+
+
+
+<div align="center">
+
 <h3>🇫​🇷​🇴​🇳​🇹​🇪​🇳​🇩​</h3>
      <img src="https://skillicons.dev/icons?i=html,js,bootstrap,jquery,nodejs,css" />
-    <br>
-    <h3>🇧​🇦​🇨​🇰​🇪​🇳​🇩​</h3>
-     <img src="https://skillicons.dev/icons?i=hibernate,java,mysql,spring,svelte,ajax" />
-  </a>
-</p>
+
+</div>
+
+
+<div align="center">
+ <h3>🇧​🇦​🇨​🇰​🇪​🇳​🇩​</h3>
+     <img src="https://skillicons.dev/icons?i=hibernate,java,mysql,spring,svelte" />
+
+</div>
+
+
+
+
 
 <div align="center">
 
