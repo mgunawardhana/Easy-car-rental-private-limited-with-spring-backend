@@ -37,7 +37,11 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-     <img src="https://skillicons.dev/icons?i=hibernate,html,idea,java,js,bootstrap,jquery,mysql,nodejs,css,git,github,spring,svelte,vscode" />
+  <p>Tools</p>
+     <img src="https://skillicons.dev/icons?i=idea,git,github,vscode" />
+     <br>
+  <p>Languages and Frameworks</p>
+    <img src="https://skillicons.dev/icons?i=hibernate,html,idea,java,js,bootstrap,jquery,mysql,nodejs,css,git,github,spring,svelte,vscode" />
   </a>
 </p>
 
