@@ -52,7 +52,7 @@ function getAllVehicle() {
             <img alt="" src="">
             <h3>`+brand+`</h3>
             <hr>
-            <p>Daily - 18,000.00LKR</p>
+            <p>Daily - `+daily_amount+`LKR</p>
             <p>Monthly - 300,000.00LKR</p>
             <p>Price per extra Km -100.00LKR</p>
             <p>Count - 2</p>
