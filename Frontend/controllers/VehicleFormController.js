@@ -202,7 +202,7 @@ validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '
 
 
 
-
+/** image uploading starts ****************************************************************************************** */
 $('#car1').on("change", function (e) {
     let file = e.target.files;
     if (FileReader && file && file.length) {
@@ -215,6 +215,18 @@ $('#car1').on("change", function (e) {
         reader.readAsDataURL(file[0]);
     }
 })
+
+$('#saveCustomer').on("click", function () {
+
+    const nicDlImageFile = document.getElementById('file');
+    const imgFile = nicDlImageFile.files[0];
+    reader.readAsDataURL(imgFile);
+
+    reader.addEventListener('load', () => {
+        const url = reader.result
+        localStorage.setItem((genaratedValue + "1stPhoto"), url);
+    });
+});
 
 $('#car2').on("change", function (e) {
     let file = e.target.files;
