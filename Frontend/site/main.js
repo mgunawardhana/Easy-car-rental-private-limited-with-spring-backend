@@ -1,4 +1,3 @@
-
 let baseURL = "http://localhost:8080/Backend_war/";
 
 
@@ -22,6 +21,7 @@ window.addEventListener('scroll', () => {
 });
 
 getAllVehicle();
+
 function getAllVehicle() {
     $("#addingVehicles").empty();
     $.ajax({
@@ -49,20 +49,16 @@ function getAllVehicle() {
                 let vehicle_mileage = c.vehicleMileage;
 
                 let vehicle_addons = `<div class="box">
-            <img alt="" src="">
-            <h3>`+brand+`</h3>
-            <hr>
-            <p>Daily - `+daily_amount+`LKR</p>
-            <p>Monthly - 300,000.00LKR</p>
-            <p>Price per extra Km -100.00LKR</p>
-            <p>Count - 2</p>
-            <hr>
-            <a class="blog-btn" href="#">Type - Luxury<i class='bx bx-right-arrow-alt'></i></a>
-        </div>`;
-
-
-
-
+                                            <img alt="" src="">
+                                            <h3>` + brand + `</h3>
+                                            <hr>
+                                            <p>Daily - ` + daily_amount + `LKR</p>
+                                            <p>Monthly - `+monthly_amount+`LKR</p>
+                                            <p>Price per extra Km -`+extraKmPrice+`LKR</p>
+                                            <p>Count - 1</p>
+                                            <hr>
+                                            <a class="blog-btn" href="#">Type - `+vehicleType+`<i class='bx bx-right-arrow-alt'></i></a>
+                                       </div>`;
 
                 $("#addingVehicles").append(vehicle_addons);
             }
