@@ -25,4 +25,14 @@ public class IncomeServiceImpl implements IncomeService {
         return incomeRepo.getRevenueByDate();
     }
 
+    @Override
+    public List getCurrentIncomeByMonth() {
+        return incomeRepo.getRevenueByYear();
+    }
+
+    @Override
+    public List getCurrentIncomeByYear() {
+        return null;
+    }
+
 }
