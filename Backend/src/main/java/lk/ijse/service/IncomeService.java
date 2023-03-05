@@ -7,4 +7,9 @@ import java.util.List;
 
 public interface IncomeService {
     List getCurrentIncomeByDate();
+
+    List getCurrentIncomeByMonth();
+
+    List getCurrentIncomeByYear();
+
 }
