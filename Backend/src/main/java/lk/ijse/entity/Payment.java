@@ -32,4 +32,8 @@ public class Payment {
     @JoinColumn(name = "bookingId", referencedColumnName = "bookingId")
     private Booking bookingDTO;
 
+    public Payment(String paymentDate, double amount) {
+        this.paymentDate = paymentDate;
+        this.amount = amount;
+    }
 }

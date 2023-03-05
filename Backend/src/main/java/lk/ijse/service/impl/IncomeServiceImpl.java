@@ -1,5 +1,6 @@
 package lk.ijse.service.impl;
 
+import lk.ijse.dto.PaymentDTO;
 import lk.ijse.repo.IncomeRepo;
 import lk.ijse.service.IncomeService;
 import org.modelmapper.ModelMapper;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -19,7 +21,8 @@ public class IncomeServiceImpl implements IncomeService {
     IncomeRepo incomeRepo;
 
     @Override
-    public String getCurrentIncomeByDate() {
+    public List getCurrentIncomeByDate() {
         return incomeRepo.getRevenueByDate();
     }
+
 }

@@ -21,4 +21,8 @@ public class PaymentDTO {
     private PaymentType paymentType;
     private BookingDTO bookingDTO;
 
+    public PaymentDTO(String paymentDate, double amount) {
+        this.paymentDate = paymentDate;
+        this.amount = amount;
+    }
 }
