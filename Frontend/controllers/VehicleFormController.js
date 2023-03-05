@@ -2,9 +2,13 @@ let baseURL = "http://localhost:8080/Backend_war/";
 
 
 getAllVehicle();
-
+const vehicleFrontImgReader = new FileReader();
+let genaratedVehicleValue;
 $("#saveVehicle").on('click', function () {
     saveVehicle();
+
+
+
 });
 
 function saveVehicle() {
@@ -69,6 +73,7 @@ function genarateVehicleID() {
     $.ajax({
         url: baseURL + "vehicle/?test=", success: function (res) {
             $('#vehicleId').val(res.data);
+            genaratedVehicleValue = res.data;
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
@@ -203,12 +208,7 @@ validator('#vehicleMileage', /^[0-9]{3,30}$/, "Your input can't be validated", '
  * kiyala balanna  */
 
 
-
-
-var imgArray = [];
-var verify1;
 let row;
-const reader = new FileReader();
 
 
 $('#car1').on("change", function (e) {
@@ -216,8 +216,6 @@ $('#car1').on("change", function (e) {
     if (FileReader && file && file.length) {
         let reader = new FileReader();
         reader.onload = function () {
-            verify1 = reader.result;
-            imgArray.push(reader.result);
             $('#frontImg').css({
                 "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
             });
@@ -228,15 +226,18 @@ $('#car1').on("change", function (e) {
 
 
 $('#saveVehicle').on("click", function () {
+    /***************************************************************/
 
-    const nicDlImageFile = document.getElementById('car1');
-    const imgFile = nicDlImageFile.files[0];
-    reader.readAsDataURL(imgFile);
+    const frontImageFile = document.getElementById('car1');
+    const imgFile = frontImageFile.files[0];
+    vehicleFrontImgReader.readAsDataURL(imgFile);
 
-    reader.addEventListener('load', () => {
-        const url = reader.result
-        localStorage.setItem((genaratedValue + "1stPhoto"), url);
+    vehicleFrontImgReader.addEventListener('load', () => {
+        const url = vehicleFrontImgReader.result
+        localStorage.setItem((genaratedVehicleValue + "frontPhoto"), url);
     });
+
+    /***************************************************************/
 });
 
 $('#car2').on("change", function (e) {
