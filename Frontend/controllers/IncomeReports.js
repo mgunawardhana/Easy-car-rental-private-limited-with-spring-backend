@@ -4,16 +4,14 @@ let baseURL = "http://localhost:8080/Backend_war/";
 getAllByDailyRevenues();
 gettingRevenueByYear();
 
-
+let val1;
+let val2;
 function getAllByDailyRevenues() {
     $.ajax({
         url: baseURL + "income/by_daily", dataType: "json", success: function (res) {
-            console.log(res.data);
             for (let c of res.data) {
-                console.log(c);
-
-                // let row = "<tr>" + "<td>" +c+ "</td>" + "<td>" + c + "</td>"+"</tr>";
-                    $("#incomeReportsDailyTable").append(c+"<br>");
+                let row = "<tr>" + "<td>" + (c[1]) + "</td>" + "<td>" + (c[0]) + "</td>" + "</tr>";
+                $("#incomeReportsDailyTable").append(row);
             }
 
         }, error: function (error) {
