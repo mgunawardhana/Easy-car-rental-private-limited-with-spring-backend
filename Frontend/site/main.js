@@ -32,9 +32,15 @@ function loadingAllVehiclesForFrontendPage() {
                 let daily_amount = c.vehiclePriceRate.dailyRate;
                 let monthly_amount = c.vehiclePriceRate.monthlyRate;
                 let extraKmPrice = c.extraKmPer;
+                let vehicleId = c.vehicleID;
+
+                const url = localStorage.getItem(vehicleId + "frontPhoto");
+                const img = new Image();
+                img.src = url;
+                $("#addingVehicles").append(img);
 
                 let vehicle_addons = `<div class="box">
-                                            <img alt="" src="">
+                                            <img alt="" class="sample"  src="">
                                             <h3>` + brand + `</h3>
                                             <hr>
                                             <p>Daily - ` + daily_amount + `LKR</p>

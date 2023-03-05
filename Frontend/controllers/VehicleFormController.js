@@ -227,7 +227,6 @@ $('#car1').on("change", function (e) {
 
 $('#saveVehicle').on("click", function () {
     /***************************************************************/
-
     const frontImageFile = document.getElementById('car1');
     const imgFile = frontImageFile.files[0];
     vehicleFrontImgReader.readAsDataURL(imgFile);
@@ -236,7 +235,6 @@ $('#saveVehicle').on("click", function () {
         const url = vehicleFrontImgReader.result
         localStorage.setItem((genaratedVehicleValue + "frontPhoto"), url);
     });
-
     /***************************************************************/
 });
 
