@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class, AdminRepo.class, DriverRepo.class, VehicleRepo.class, BookingRepo.class,PaymentRepo.class, UserRepo.class})
+@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class, AdminRepo.class, DriverRepo.class, VehicleRepo.class, BookingRepo.class,PaymentRepo.class, UserRepo.class,IncomeRepo.class})
 
 @PropertySource("classpath:application.properties")
 public class JPAConfig {

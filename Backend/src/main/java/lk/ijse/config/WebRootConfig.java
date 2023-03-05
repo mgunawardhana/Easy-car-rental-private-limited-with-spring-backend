@@ -1,5 +1,6 @@
 package lk.ijse.config;
 
+import lk.ijse.service.IncomeService;
 import lk.ijse.service.VehicleService;
 import lk.ijse.service.impl.*;
 import org.modelmapper.ModelMapper;
@@ -10,7 +11,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import(JPAConfig.class)
-@ComponentScan(basePackageClasses = {CustomerServiceImpl.class, AdminServiceImpl.class, DriverServiceImpl.class, VehicleServiceImpl.class, BookingServiceImpl.class, PaymentServiceImpl.class,SearchingServiceImpl.class})
+@ComponentScan(basePackageClasses = {CustomerServiceImpl.class, AdminServiceImpl.class, DriverServiceImpl.class, VehicleServiceImpl.class, BookingServiceImpl.class, PaymentServiceImpl.class,SearchingServiceImpl.class, IncomeService.class})
 public class WebRootConfig {
     @Bean
     public ModelMapper modelMapper(){
