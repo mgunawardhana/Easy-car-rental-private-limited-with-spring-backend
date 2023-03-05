@@ -17,12 +17,12 @@ public class IncomeFormController {
     @Autowired
     public IncomeService incomeService;
 
-    @GetMapping("by_daily")
+    @GetMapping("/by_daily")
     public ResponseUtil getRevenueByDate(){
         return new ResponseUtil("OK", "Successfully Loaded ! ", incomeService.getCurrentIncomeByDate());
     }
 
-    @GetMapping("by_year")
+    @GetMapping("/by_year")
     public ResponseUtil getRevenueByYear(){
         return new ResponseUtil("OK", "Successfully Loaded ! ", incomeService.getCurrentIncomeByYear());
     }
