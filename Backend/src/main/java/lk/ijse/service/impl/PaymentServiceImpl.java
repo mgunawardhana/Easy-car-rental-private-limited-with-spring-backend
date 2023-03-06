@@ -31,6 +31,11 @@ public class PaymentServiceImpl implements PaymentService {
     BookingRepo bookingRepo;
 
     @Override
+    public List gettingAllPaymentDetails() {
+        return paymentRepo.getAllPaymentDetails();
+    }
+
+    @Override
     public void savePayment(PaymentDTO paymentDTO) {
         if (!paymentRepo.existsById(paymentDTO.getPaymentId())) {
             paymentRepo.save(modelMapper.map(paymentDTO, Payment.class));

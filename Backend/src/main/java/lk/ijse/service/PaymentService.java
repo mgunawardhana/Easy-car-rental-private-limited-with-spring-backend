@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface PaymentService {
+
+    List gettingAllPaymentDetails();
+
     void savePayment(PaymentDTO paymentDTO);
 
     void deletePayment(String id);

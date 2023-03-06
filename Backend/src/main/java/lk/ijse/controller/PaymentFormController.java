@@ -29,7 +29,7 @@ public class PaymentFormController {
 
     @GetMapping(value = "get_all_payment_details", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllPayments() {
-        return new ResponseUtil("OK", "Successful", paymentService.getAllPayment());
+        return new ResponseUtil("OK", "Successful", paymentService.gettingAllPaymentDetails());
     }
 
     @GetMapping(path = "get_all_bookings")
