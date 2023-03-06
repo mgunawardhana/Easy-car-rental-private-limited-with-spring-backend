@@ -21,18 +21,24 @@ function getAllByDailyRevenues() {
         }
     });
 }
-
+let month;
 function getAllByMonthlyRevenues() {
     $.ajax({
         url: baseURL + "income/by_month", dataType: "json", success: function (res) {
             for (let c of res.data) {
-                if ()
+                if (c[0]===1){
+                    month="January";
+                }else if(c[0]===2){
+                    month ="February";
+                }else if(c[0]===3){
+                    month="March";
+                }
 
 
 
 
 
-                let row = "<tr>" + "<td>" + (c[0]) + "</td>" + "<td>" + (c[1]) + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + month + "</td>" + "<td>" + (c[1]) + "</td>" + "</tr>";
                 $("#incomeReportsMonthlyTable").append(row);
 
 
