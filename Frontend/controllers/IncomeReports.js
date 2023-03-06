@@ -21,9 +21,6 @@ function getAllByDailyRevenues() {
     });
 }
 function gettingRevenueByYear() {
-
-
-
     $("#todayDate").val(new Date().getFullYear()+" / "+new Date().getMonth()+" / "+new Date().getDate()+"   "
         +new Date().getHours()+" : "+new Date().getMinutes()+" : "+new Date().getSeconds());
 

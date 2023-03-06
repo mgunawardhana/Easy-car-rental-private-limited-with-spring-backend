@@ -37,10 +37,10 @@ function loadingAllVehiclesForFrontendPage() {
                 const url = localStorage.getItem(vehicleId + "frontPhoto");
                 const img = new Image();
                 img.src = url;
-                $("#addingVehicles").append(img);
+                // $(".sample").append(img);
 
                 let vehicle_addons = `<div class="box">
-                                            <img alt="" class="sample"  src="">
+                                            <img alt="" class="sample"  src="`+url+`" >
                                             <h3>` + brand + `</h3>
                                             <hr>
                                             <p>Daily - ` + daily_amount + `LKR</p>
