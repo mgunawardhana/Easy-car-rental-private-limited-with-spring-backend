@@ -2,6 +2,7 @@ let baseURL = "http://localhost:8080/Backend_war/";
 
 
 getAllByDailyRevenues();
+getAllByMonthlyRevenues();
 gettingRevenueByYear();
 
 let val1;
@@ -20,6 +21,38 @@ function getAllByDailyRevenues() {
         }
     });
 }
+
+function getAllByMonthlyRevenues() {
+    $.ajax({
+        url: baseURL + "income/by_month", dataType: "json", success: function (res) {
+            for (let c of res.data) {
+                if ()
+
+
+
+
+
+                let row = "<tr>" + "<td>" + (c[0]) + "</td>" + "<td>" + (c[1]) + "</td>" + "</tr>";
+                $("#incomeReportsMonthlyTable").append(row);
+
+
+
+
+
+            }
+
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
+
+
+
+
+
+
 function gettingRevenueByYear() {
     $("#todayDate").val(new Date().getFullYear()+" / "+new Date().getMonth()+" / "+new Date().getDate()+"   "
         +new Date().getHours()+" : "+new Date().getMinutes()+" : "+new Date().getSeconds());
