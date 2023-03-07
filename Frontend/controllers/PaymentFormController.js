@@ -29,6 +29,7 @@ $("#save").on('click', function () {
         dataType: "json",
         success: function (res) {
             alert(res.message);
+            getAllPaymentDetails();
         },
         error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
