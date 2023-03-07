@@ -9,5 +9,5 @@ import java.util.List;
 public interface PaymentRepo extends JpaRepository<Payment, String> {
 
     @Query(value = "SELECT * FROM payment;", nativeQuery = true)
-    List getAllPaymentDetails();
+    List<?> getAllPaymentDetails();
 }

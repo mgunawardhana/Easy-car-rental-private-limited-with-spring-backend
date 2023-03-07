@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PaymentService {
 
-    List gettingAllPaymentDetails();
+    List<?> gettingAllPaymentDetails();
 
     void savePayment(PaymentDTO paymentDTO);
 

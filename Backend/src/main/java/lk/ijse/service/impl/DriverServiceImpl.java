@@ -85,6 +85,11 @@ public class DriverServiceImpl implements DriverService {
             return "D00-001";
         }
     }
+
+    @Override
+    public List<?> gettingDriverSchedule() {
+        return null;
+    }
 }
 
 
