@@ -12,7 +12,7 @@ function getAllByDailyRevenues() {
     $.ajax({
         url: baseURL + "income/by_daily", dataType: "json", success: function (res) {
             for (let c of res.data) {
-                let row = "<tr>" + "<td>" + (c[1]) + "</td>" + "<td>" + (c[0]) + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + (c[1]) + "</td>" + "<td>" + "Rs "+(c[0])+".00" + "</td>" + "</tr>";
                 $("#incomeReportsDailyTable").append(row);
             }
 
@@ -55,7 +55,7 @@ function getAllByMonthlyRevenues() {
                     month = "December";
                 }
 
-                let row = "<tr>" + "<td>" + month + "</td>" + "<td>" + (c[1]) + "</td>" + "</tr>";
+                let row = "<tr>" + "<td>" + month + "</td>" + "<td>" + "Rs "+ (c[1])+".00"  + "</td>" + "</tr>";
                 $("#incomeReportsMonthlyTable").append(row);
 
 
