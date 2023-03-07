@@ -6,9 +6,6 @@ const vehicleFrontImgReader = new FileReader();
 let genaratedVehicleValue;
 $("#saveVehicle").on('click', function () {
     saveVehicle();
-
-
-
 });
 
 function saveVehicle() {

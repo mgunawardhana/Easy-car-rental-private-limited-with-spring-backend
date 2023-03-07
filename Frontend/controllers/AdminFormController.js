@@ -2,6 +2,7 @@ let baseURL = "http://localhost:8080/Backend_war/admin/";
 
 getAllAdmins();
 
+/* save admin function */
 $("#saveAdmin").on('click', function () {
     saveAdmin();
 });
@@ -19,6 +20,7 @@ function saveAdmin() {
     });
 }
 
+/* delete admin function */
 $("#deleteAdmin").on('click', function () {
     $.ajax({
         url: baseURL + "?code=" + $("#adminId").val(), method: "delete", dataType: "json", success: function (resp) {

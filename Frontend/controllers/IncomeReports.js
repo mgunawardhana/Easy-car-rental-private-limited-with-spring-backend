@@ -58,9 +58,7 @@ function getAllByMonthlyRevenues() {
                 let row = "<tr>" + "<td>" + month + "</td>" + "<td>" + "Rs "+ (c[1])+".00"  + "</td>" + "</tr>";
                 $("#incomeReportsMonthlyTable").append(row);
 
-
             }
-
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
