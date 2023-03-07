@@ -13,6 +13,9 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
+    /**
+     * checking the users are real ? using their username and password
+     */
     @GetMapping(params = {"userName", "password"})
     public ResponseUtil getUser(@RequestParam String userName, @RequestParam String password) {
         UserDTO dto = loginService.loginUser(userName, password);

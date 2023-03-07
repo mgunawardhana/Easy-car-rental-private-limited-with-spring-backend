@@ -8,6 +8,9 @@ import java.util.List;
 
 public interface PaymentRepo extends JpaRepository<Payment, String> {
 
+    /**
+     * query for load all payment details
+     */
     @Query(value = "SELECT * FROM payment;", nativeQuery = true)
     List<?> getAllPaymentDetails();
 }

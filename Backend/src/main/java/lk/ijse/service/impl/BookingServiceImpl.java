@@ -34,6 +34,9 @@ public class BookingServiceImpl implements BookingService {
     @Autowired
     private BookingDetailsRepo bookingDetailsRepo;
 
+    /**
+     * place booking
+     */
     @Override
     public void placeBooking(BookingDTO bookingDTO) {
         if (bookingRepo.existsById(bookingDTO.getBookingID())) {
@@ -44,40 +47,61 @@ public class BookingServiceImpl implements BookingService {
         }
     }
 
+    /**
+     * load all customers in to the combo box
+     */
     @Override
     public ArrayList<CustomerDTO> loadAllCustomersInTheCombo() {
         return modelMapper.map(customerRepo.findAll(), new TypeToken<ArrayList<CustomerDTO>>() {
         }.getType());
     }
 
+    /**
+     * load all items in to the combo box
+     */
     @Override
     public ArrayList<DriverDTO> loadAllItemsInTheCombo() {
         return modelMapper.map(driverRepo.findAll(), new TypeToken<ArrayList<DriverDTO>>() {
         }.getType());
     }
 
+    /**
+     * load all vehicles in to the combo box
+     */
     @Override
     public ArrayList<VehicleDTO> loadAllVehiclesInToTheCombo() {
         return modelMapper.map(vehicleRepo.findAll(), new TypeToken<ArrayList<VehicleDTO>>() {
         }.getType());
     }
 
+    /**
+     * counting how many bookings we have ?
+     */
     @Override
     public long countBooking() {
         return bookingRepo.count();
     }
 
+    /**
+     * load all booking details in t the table
+     */
     @Override
     public List<BookingDTO> getAllBookings() {
         return modelMapper.map(bookingDetailsRepo.findAll(), new TypeToken<ArrayList<BookingDTO>>() {
         }.getType());
     }
 
+    /**
+     * search booking by id
+     */
     @Override
     public BookingDTO getBookingById(String id) {
         return modelMapper.map(bookingRepo.getBookingByBookingID(id), BookingDTO.class);
     }
 
+    /**
+     * getting all booking details
+     */
     @Override
     public List<BookingDTO> getBookingDetails() {
         List<BookingDTO> list = new ArrayList<>();

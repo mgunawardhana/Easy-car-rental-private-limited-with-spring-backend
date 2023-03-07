@@ -22,6 +22,9 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     ModelMapper modelMapper;
 
+    /**
+     * save admin
+     */
     @Override
     public void saveAdmin(AdminDTO adminDTO) {
         if (adminRepo.existsById(adminDTO.getAdminId())) {
@@ -31,6 +34,9 @@ public class AdminServiceImpl implements AdminService {
         }
     }
 
+    /**
+     * update admin
+     */
     @Override
     public void updateAdmin(AdminDTO adminDTO) {
 
@@ -41,6 +47,9 @@ public class AdminServiceImpl implements AdminService {
         }
     }
 
+    /**
+     * delete admin
+     */
     @Override
     public void deleteAdmin(String id) {
         if (adminRepo.existsById(id)) {
@@ -50,12 +59,18 @@ public class AdminServiceImpl implements AdminService {
         }
     }
 
+    /**
+     * load all admins in to the table
+     */
     @Override
     public List<AdminDTO> getAllAdmin() {
         return modelMapper.map(adminRepo.findAll(), new TypeToken<ArrayList<AdminDTO>>() {
         }.getType());
     }
 
+    /**
+     * generating admin id's
+     */
     @Override
     public String generateAdminIds() {
         String adminID = adminRepo.generateAdminId();

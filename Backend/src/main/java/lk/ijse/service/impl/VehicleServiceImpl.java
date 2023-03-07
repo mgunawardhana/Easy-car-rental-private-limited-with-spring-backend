@@ -21,6 +21,9 @@ public class VehicleServiceImpl implements VehicleService {
     @Autowired
     ModelMapper modelMapper;
 
+    /**
+     * search vehicle
+     */
     @Override
     public void saveVehicle(VehicleDTO vehicleDTO) {
         if (vehicleRepo.existsById(vehicleDTO.getVehicleID())) {
@@ -30,6 +33,9 @@ public class VehicleServiceImpl implements VehicleService {
         }
     }
 
+    /**
+     * delete vehicle
+     */
     @Override
     public void deleteVehicle(String code) {
         if (vehicleRepo.existsById(code)) {
@@ -39,6 +45,9 @@ public class VehicleServiceImpl implements VehicleService {
         }
     }
 
+    /**
+     * update vehicle
+     */
     @Override
     public void updateVehicle(VehicleDTO vehicleDTO) {
         if (!vehicleRepo.existsById(vehicleDTO.getVehicleID())) {
@@ -49,17 +58,26 @@ public class VehicleServiceImpl implements VehicleService {
         }
     }
 
+    /**
+     * load all vehicle
+     */
     @Override
     public List<VehicleDTO> getAllVehicle() {
         return modelMapper.map(vehicleRepo.findAll(), new TypeToken<ArrayList<VehicleDTO>>() {
         }.getType());
     }
 
+    /**
+     * count how many vehicle's if we have ?
+     */
     @Override
     public long countVehicle() {
         return vehicleRepo.count();
     }
 
+    /**
+     * auto generating vehicle id option
+     */
     @Override
     public String generateVehicleIds() {
         String id = vehicleRepo.generateVehicleId();
@@ -78,6 +96,9 @@ public class VehicleServiceImpl implements VehicleService {
         }
     }
 
+    /**
+     * search vehicle option
+     */
     @Override
     public VehicleDTO searchVehicle(String id) {
         if (vehicleRepo.existsById(id)) {
@@ -87,6 +108,9 @@ public class VehicleServiceImpl implements VehicleService {
         }
     }
 
+    /**
+     * getting vehicle count by brand and type
+     */
     @Override
     public int brandAndTypeCount(String brand, String type) {
         return 0;

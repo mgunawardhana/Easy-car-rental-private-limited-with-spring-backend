@@ -7,6 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface DriverSheduleRepo extends JpaRepository<DriverSchedule, String> {
+
+    /**
+     * query for loading driver schedule
+     */
     @Query(value = "select * from driverschedule", nativeQuery = true)
     List<?> gettingDriverSchedule();
 }

@@ -20,16 +20,25 @@ public class IncomeServiceImpl implements IncomeService {
     @Autowired
     IncomeRepo incomeRepo;
 
+    /**
+     * generating daily income
+     */
     @Override
     public List<?> getCurrentIncomeByDate() {
         return incomeRepo.getRevenueByDate();
     }
 
+    /**
+     * generating monthly income
+     */
     @Override
     public List<?> getCurrentIncomeByMonth() {
         return incomeRepo.getRevenueByMonth();
     }
 
+    /**
+     * generating yearly income
+     */
     @Override
     public List<?> getCurrentIncomeByYear() {
         return incomeRepo.getRevenueByYear();

@@ -22,6 +22,9 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     ModelMapper modelMapper;
 
+    /**
+     * save customer
+     */
     @Override
     public void saveCustomer(CustomerDTO customerDTO) {
         if (customerRepo.existsById(customerDTO.getId())) {
@@ -31,6 +34,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * update customer
+     */
     @Override
     public void updateCustomer(CustomerDTO customerDTO) {
         if (customerRepo.existsById(customerDTO.getId())) {
@@ -40,6 +46,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * delete customer
+     */
     @Override
     public void deleteCustomer(String id) {
         if (customerRepo.existsById(id)) {
@@ -49,12 +58,18 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * load all customers
+     */
     @Override
     public List<CustomerDTO> getAllCustomer() {
         return modelMapper.map(customerRepo.findAll(), new TypeToken<ArrayList<CustomerDTO>>() {
         }.getType());
     }
 
+    /**
+     * auto generating customer id's
+     */
     @Override
     public String generateCustomerIds() {
         String id = customerRepo.generateCustomerId();
@@ -73,6 +88,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * counting how many customers we have ?
+     */
     @Override
     public long countCustomer() {
         return customerRepo.count();

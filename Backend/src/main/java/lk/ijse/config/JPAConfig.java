@@ -22,14 +22,14 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class, AdminRepo.class, DriverRepo.class, VehicleRepo.class, BookingRepo.class,PaymentRepo.class, UserRepo.class,IncomeRepo.class})
+@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class, AdminRepo.class, DriverRepo.class, VehicleRepo.class, BookingRepo.class, PaymentRepo.class, UserRepo.class, IncomeRepo.class})
 
 @PropertySource("classpath:application.properties")
 public class JPAConfig {
     @Autowired
     private Environment environment;
 
-    /*introducing LocalContainerEntityManagerFactoryBean in the parent context */
+    /** introducing LocalContainerEntityManagerFactoryBean in the parent context */
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter va) {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();

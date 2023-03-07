@@ -17,9 +17,9 @@ import javax.persistence.*;
 @ToString
 @Entity
 
-/** this annotations can allows Jackson to ignore
+/* this annotations can allow Jackson to ignore
  the garbage created by Hibernate, so it can manage
- the lazy loading of data as referred before*/
+ the lazy loading of data as referred before */
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Vehicle {
     @Id

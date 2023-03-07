@@ -30,11 +30,17 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     BookingRepo bookingRepo;
 
+    /**
+     * load all payment details in to the table
+     */
     @Override
     public List<?> gettingAllPaymentDetails() {
         return paymentRepo.getAllPaymentDetails();
     }
 
+    /**
+     * save payment
+     */
     @Override
     public void savePayment(PaymentDTO paymentDTO) {
         if (!paymentRepo.existsById(paymentDTO.getPaymentId())) {
@@ -44,22 +50,34 @@ public class PaymentServiceImpl implements PaymentService {
         }
     }
 
+    /**
+     * delete payment
+     */
     @Override
     public void deletePayment(String id) {
 
     }
 
+    /**
+     * update payment
+     */
     @Override
     public void updatePayment(PaymentDTO paymentDTO) {
 
     }
 
+    /**
+     * search payment
+     */
     @Override
     public PaymentDTO searchPayment(String id) {
         return null;
     }
 
 
+    /**
+     * loading all payment details in to the table
+     */
     @Override
     public List<PaymentDTO> getAllPayment() {
         System.out.println(paymentRepo.findAll());
@@ -67,6 +85,9 @@ public class PaymentServiceImpl implements PaymentService {
         }.getType());
     }
 
+    /**
+     * load all booking details in to the table
+     */
     @Override
     public ArrayList<BookingDTO> loadAllBookingDetails() {
         ArrayList<BookingDTO> allIds = new ArrayList<>();

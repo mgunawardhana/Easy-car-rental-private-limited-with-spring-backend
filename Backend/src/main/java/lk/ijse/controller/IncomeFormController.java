@@ -17,18 +17,27 @@ public class IncomeFormController {
     @Autowired
     public IncomeService incomeService;
 
+    /**
+     * getting revenue by daily
+     */
     @GetMapping("/by_daily")
-    public ResponseUtil getRevenueByDate(){
+    public ResponseUtil getRevenueByDate() {
         return new ResponseUtil("OK", "Successfully Loaded ! ", incomeService.getCurrentIncomeByDate());
     }
 
+    /**
+     * getting revenue by monthly
+     */
     @GetMapping("/by_month")
-    public ResponseUtil getRevenueByMonth(){
+    public ResponseUtil getRevenueByMonth() {
         return new ResponseUtil("OK", "Successfully Loaded ! ", incomeService.getCurrentIncomeByMonth());
     }
 
+    /**
+     * getting revenue by yearly
+     */
     @GetMapping("/by_year")
-    public ResponseUtil getRevenueByYear(){
+    public ResponseUtil getRevenueByYear() {
         return new ResponseUtil("OK", "Successfully Loaded ! ", incomeService.getCurrentIncomeByYear());
     }
 

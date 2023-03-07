@@ -19,6 +19,9 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     UserRepo userRepo;
 
+    /**
+     * validating user by there name and password
+     */
     @Override
     public UserDTO loginUser(String userName, String password) {
         User byUserName = userRepo.findByUserName(userName);

@@ -29,6 +29,10 @@ public class DriverServiceImpl implements DriverService {
     @Autowired
     BookingRepo bookingRepo;
 
+
+    /**
+     * save driver
+     */
     @Override
     public void saveDriver(DriverDTO driverDTO) {
         if (driverRepo.existsById(driverDTO.getId())) {
@@ -38,6 +42,9 @@ public class DriverServiceImpl implements DriverService {
         }
     }
 
+    /**
+     * delete driver
+     */
     @Override
     public void deleteDriver(String id) {
         if (!driverRepo.existsById(id)) {
@@ -47,6 +54,9 @@ public class DriverServiceImpl implements DriverService {
         }
     }
 
+    /**
+     * update driver
+     */
     @Override
     public void updateDriver(DriverDTO driverDTO) {
         if (!driverRepo.existsById(driverDTO.getId())) {
@@ -56,17 +66,26 @@ public class DriverServiceImpl implements DriverService {
         }
     }
 
+    /**
+     * load all drivers in to the table
+     */
     @Override
     public List<DriverDTO> getAllDriver() {
         return modelMapper.map(driverRepo.findAll(), new TypeToken<ArrayList<DriverDTO>>() {
         }.getType());
     }
 
+    /**
+     * counting how many drivers if we have ?
+     */
     @Override
     public long countDrivers() {
         return driverRepo.count();
     }
 
+    /**
+     * auto generating driver id's option
+     */
     @Override
     public String generateDriverIds() {
         String id = driverRepo.generateDriverId();
@@ -86,6 +105,9 @@ public class DriverServiceImpl implements DriverService {
         }
     }
 
+    /**
+     * loading driver schedule in to the table
+     */
     @Override
     public List<?> gettingDriverSchedule() {
         return driverSheduleRepo.gettingDriverSchedule();
