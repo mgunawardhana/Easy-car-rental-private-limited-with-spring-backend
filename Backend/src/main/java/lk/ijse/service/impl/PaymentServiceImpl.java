@@ -31,7 +31,7 @@ public class PaymentServiceImpl implements PaymentService {
     BookingRepo bookingRepo;
 
     @Override
-    public List gettingAllPaymentDetails() {
+    public List<?> gettingAllPaymentDetails() {
         return paymentRepo.getAllPaymentDetails();
     }
 

@@ -88,7 +88,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public List<?> gettingDriverSchedule() {
-        return null;
+        return driverSheduleRepo.gettingDriverSchedule();
     }
 }
 

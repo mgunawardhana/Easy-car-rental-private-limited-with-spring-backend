@@ -47,4 +47,9 @@ public class DriverFormController {
         return new ResponseUtil("Ok", "", driverService.generateDriverIds());
     }
 
+    @GetMapping(value = "get_driver_schedule")
+    public ResponseUtil gettingDriversScheduleDetails(){
+        return new ResponseUtil("Ok", "", driverService.gettingDriverSchedule());
+    }
+
 }
