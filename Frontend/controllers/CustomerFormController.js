@@ -334,7 +334,7 @@ validator('#email', /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
 validator('#contactNo', /^(07([1245678])|091)(-)[0-9]{7}$/, "Your input can't be validated", '#username_label', '#userName');
 validator('#userName', /^[A-z]{3,30}$/, "Your input can't be validated", '#password_label', '#password');
 validator('#userId', /^[0-9]{12}$/, "Your input can't be validated", '#admin_nic_label', '#nic');
-validator('#password', /^[0-9]{4}$/, "Your input can't be validated", '#admin_id_label', '#drivingLicenseNo');
+validator('#password', /^[A-z]{4,30}$/, "Your input can't be validated", '#admin_id_label', '#drivingLicenseNo');
 validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#user_id_label', '#drivingLicenseNo');
 validator('#drivingLicenseNo', /^[0-9]{1,10}$/, "Your input can't be validated", '#user_id_label', '#nic');
 

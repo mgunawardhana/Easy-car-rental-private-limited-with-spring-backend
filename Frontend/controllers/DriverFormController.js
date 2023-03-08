@@ -154,5 +154,5 @@ validator('#firstName', /^[A-z]{3,30}$/, "Your input can't be validated", '#f_na
 validator('#lastName', /^[A-z]{3,30}$/, "Your input can't be validated", '#l_name_lbl', '#userName');
 validator('#userName', /^[A-z]{3,12}$/, "Your input can't be validated", '#userName_lbl', '#password');
 validator('#userId', /^[0-9]{1,4}$/, "Your input can't be validated", '#user_id_lbl', '#nic');
-validator('#password', /^[0-9]{1,5}$/, "Your input can't be validated", '#password_lbl', '#nic');
+validator('#password', /^[A-z]{4,30}$/, "Your input can't be validated", '#password_lbl', '#nic');
 validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#nic_lbl', '#nic');

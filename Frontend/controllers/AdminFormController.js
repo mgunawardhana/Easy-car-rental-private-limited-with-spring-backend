@@ -145,7 +145,7 @@ validator('#adminAddress', /^[A-z]{3,30}$/, "Your input can't be validated", '#l
 validator('#adminContact', /^(07([1245678])|091)(-)[0-9]{7}$/, "Your input can't be validated", '#address_lbl', '#adminEmail');
 validator('#adminEmail', /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, "Your input can't be validated", '#email_lbl', '#userName');
 validator('#userName', /^[A-z]{3,30}$/, "Your input can't be validated", '#contact_lbl', '#password');
-validator('#password', /^[0-9]{3,30}$/, "Your input can't be validated", '#userName_lbl', '#adminNic');
+validator('#password', /^[A-z]{3,30}$/, "Your input can't be validated", '#userName_lbl', '#adminNic');
 validator('#adminNic', /^[0-9]{12}$/, "Your input can't be validated", '#userId_lbl', '#adminId');
 validator('#adminId', /^A00-00[0-9]{1,5}$/, "Your input can't be validated", '#password_lbl', '#userId');
 validator('#userId', /^[0-9]{1,5}$/, "Your input can't be validated", '#nic_lbl', '#');
