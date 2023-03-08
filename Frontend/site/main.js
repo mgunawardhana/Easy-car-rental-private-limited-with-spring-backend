@@ -43,8 +43,8 @@ function loadingAllVehiclesForFrontendPage() {
                                             <img alt="" class="sample"  src="`+url+`" >
                                             <h3>` + brand + `</h3>
                                             <hr>
-                                            <p>Daily - ` + daily_amount + `LKR</p>
-                                            <p>Monthly - `+monthly_amount+`LKR</p>
+                                            <p>Daily - ` + daily_amount + `.00LKR</p>
+                                            <p>Monthly - `+monthly_amount+`.00LKR</p>
                                             <p>Price per extra Km -`+extraKmPrice+`LKR</p>
                                             <p>Count - 1</p>
                                             <hr>

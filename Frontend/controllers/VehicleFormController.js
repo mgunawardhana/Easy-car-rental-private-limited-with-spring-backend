@@ -18,6 +18,7 @@ function saveVehicle() {
         success: function (res) {
             alert(res.message);
             getAllVehicle();
+            clearTextFields();
             bindRowClickEventsForVehicle();
         },
         error: function (error) {
@@ -124,7 +125,7 @@ $("#updateVehicle").on('click', function () {
             alert("update method invoked");
             getAllVehicle();
             alert(res.message);
-            clearTextFields();
+          clearTextFields();
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
@@ -156,6 +157,26 @@ function bindRowClickEventsForVehicle() {
     });
 }
 
+function clearTextFields(){
+    $("#vehicleId").val("");
+    $("#numberOfPassenger").val("");
+    $("#extraKmPer").val("");
+    $("#registrationNo").val("");
+    $("#vehicleColour").val("");
+    $("#dailyRate").val("");
+    $("#monthlyRate").val("");
+    $("#vehicleAvailability").val("");
+    $("#vehicleBrand").val("");
+    $("#transmissionType").val("");
+    $("#dailyMileage").val("");
+    $("#monthlyMileage").val("");
+    $("#fuelType").val("");
+    $("#refundableDamagedFee").val("");
+    $("#vehicleType").val("");
+    $("#dailyMileage1").val("");
+    $("#lastServiceMileage").val("");
+}
+
 
 //TODO vehicle error in delete method
 
@@ -168,6 +189,7 @@ $("#deleteVehicle").on('click', function () {
             console.log($("#vehicleId").val())
             getAllVehicle();
             alert(resp.message);
+            clearTextFields();
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
