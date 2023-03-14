@@ -7,7 +7,7 @@
 .blinkAnim {
     border-radius: 10px !important;
     background: rgb(255, 255, 255) !important;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px !important;
+    box-shadow: black;
 }
 
 .barChart{
