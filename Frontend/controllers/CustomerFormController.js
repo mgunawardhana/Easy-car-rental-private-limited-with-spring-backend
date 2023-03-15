@@ -15,12 +15,46 @@ function saveCustomer() {
         dataType: "json",
         success: function (res) {
             getAllCustomers();
-            alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Saved successfully !'
+            });
             window.location.reload();
         },
         error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
-            alert(errorMessage.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'cannot be saved !'
+            });
         }
     });
     clearTextFields();
@@ -61,10 +95,29 @@ $("#updateCustomer").on('click', function () {
         success: function (res) {
             clearTextFields();
             getAllCustomers();
-            alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'updated successfully !'
+            });
         },
         error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+            // alert(JSON.parse(error.responseText).message);
+
+
         }
     });
 });
@@ -77,7 +130,24 @@ $("#deleteCustomer").on('click', function () {
         success: function (resp) {
             clearTextFields();
             getAllCustomers();
-            alert(resp.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'deleted successfully !'
+            });
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
@@ -96,16 +166,16 @@ function getAllCustomers() {
 
                 let id = c.id;
                 let firstName = c.name.firstName;
-                // let lastName = c.name.lastName;
+                let lastName = c.name.lastName;
                 let address = c.address;
                 let email = c.email;
                 let contactNo = c.contactNo;
                 let user_name = c.user.userName;
                 let nic = c.nic;
                 let drivingLicenceNo = c.drivingLicenseNo;
-                // let role = c.user.role;
-                // let user_id = c.user.userId;
-                // let password = c.user.password;
+                let role = c.user.role;
+                let user_id = c.user.userId;
+                let password = c.user.password;
 
 
                 let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_name + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
