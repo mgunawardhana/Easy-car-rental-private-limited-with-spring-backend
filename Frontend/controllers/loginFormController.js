@@ -13,7 +13,15 @@ $("#login").on('click', function () {
 
             if ('ADMIN' === $("#role").val()) {
 
-                alert("Your entering as a ADMIN");
+                Swal.fire({
+                    title: 'You are login as a Admin !',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
 
                 if ("Ok" === resp.state) {
                     window.location.href = "DashBoardForm.html";
@@ -23,9 +31,16 @@ $("#login").on('click', function () {
 
             } else if ('DRIVER' === $("#role").val()) {
 
-                alert("Your entering as a DRIVER");
+                Swal.fire({
+                    title: 'You are login as a Driver !',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
 
-                alert($("#role").val());
                 if ("Ok" === resp.state) {
                     window.location.href = "DriverShedule.html";
                 } else {
