@@ -12,10 +12,43 @@ function saveAdmin() {
     $.ajax({
         url: baseURL + "save_admin", method: "post", data: formData, dataType: "json", success: function (res) {
             getAllAdmins();
-            alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Saved in successfully'
+            });
         }, error: function (error) {
-            var errorMessage = JSON.parse(error.responseText);
-            alert(errorMessage.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'cannot be validated !'
+            });
         }
     });
 }
@@ -25,9 +58,44 @@ $("#deleteAdmin").on('click', function () {
     $.ajax({
         url: baseURL + "?code=" + $("#adminId").val(), method: "delete", dataType: "json", success: function (resp) {
             getAllAdmins();
-            alert(resp.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'deleted successfully !'
+            });
         }, error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'cannot be deleted !'
+            });
         }
     });
 });
@@ -39,16 +107,16 @@ function getAllAdmins() {
             for (let c of res.data) {
 
                 let firstName = c.adminName.firstName;
-                // let lastName = c.adminName.lastName;
+                let lastName = c.adminName.lastName;
                 let address = c.adminAddress;
                 let contact = c.adminContact;
                 let email = c.adminEmail;
                 let username = c.user.userName;
-                // let password = c.user.password;
+                let password = c.user.password;
                 let nic = c.adminNic;
                 let id = c.adminId;
-                // let role = c.user.role;
-                // let userId = c.user.userId;
+                let role = c.user.role;
+                let userId = c.user.userId;
 
                 let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>" + "<td>" + role + "</td>" + "<td>" + userId + "</td>" + "</tr>";
                 $("#adminTableBody").append(row);
