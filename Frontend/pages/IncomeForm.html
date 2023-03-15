@@ -375,10 +375,10 @@
   <!-- End Navbar -->
   <div class="container-fluid py-4">
 
-    <div class="row col-lg-12 content-center">
+    <div class="row col-lg-12 content-center" style="margin-left:120px !important;">
 
-        <div class="card col-lg-4  blinkAnim content-center" style="margin-right: 20px !important;">
-          <div class="card-header pb-0">
+        <div class="card col-lg-4  blinkAnim content-center" style="margin-right: 20px !important; background-color: rgba(189,195,199,0.59) !important;">
+          <div class="card-header pb-0" style="background-color: rgba(189,195,199,0.59) !important;">
             <h6>Revenue by Daily</h6>
           </div>
           <div class="card-body px-0 pt-0 pb-2">
@@ -409,8 +409,8 @@
           </div>
 
         </div>
-        <div class="card col-lg-4 blinkAnim content-center">
-          <div class="card-header pb-0">
+        <div class="card col-lg-4 blinkAnim content-center" style="background-color:rgba(189,195,199,0.59) !important;background-color: rgba(189,195,199,0.59) !important; ">
+          <div class="card-header pb-0" style="background-color: rgba(189,195,199,0.59) !important;" >
             <h6>Revenue by Monthly</h6>
           </div>
           <div class="card-body px-0 pt-0 pb-2">
@@ -452,15 +452,7 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6 mb-lg-0 mb-4">
             <div class="copyright text-center text-sm text-muted text-lg-start">
-<!--              ©-->
-<!--              <script>-->
-<!--                document.write(new Date().getFullYear())-->
-<!--              </script>-->
-<!--              ,-->
-<!--              made with <i class="fa fa-heart"></i> by-->
-<!--              <a class="font-weight-bold" href="" target="_blank">Creative-->
-<!--              </a>-->
-<!--              for a better web.-->
+
             </div>
           </div>
           <div class="col-lg-6">
@@ -486,7 +478,7 @@
     </footer>
   </div>
 
-  <div class="col-lg-3 justify-content-center formBackGround " style="padding: 0; width: 20rem">
+  <div class="col-lg-3 justify-content-center formBackGround " style="padding: 0; width: 20rem;margin-left: 330px !important;">
     <section class="content-box-2 p-1 blinkAnim">
 
       <div class="row m-0">
@@ -517,7 +509,237 @@
         </div>
 
       </div>
-    </section>
+      <br>
+      <button class="btn btn-instagram col-12 col-sm-auto mt-1 btnBackGround"
+              data-bs-target="#myModal" data-bs-toggle="modal" style="margin-left: 90px"
+              id="" type="button">View Invoice
+      </button>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container container-md ">
+    <div class="modal" id="myModal">
+      <div class="model" >
+
+        <div class="modal-content content-center">
+
+          <div class="modal-header" style="background: #ffa502">
+            <h5 class="modal-title" id="orderDetailLabel" style="color: white">Order Detail Form</h5>
+            <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                    type="button"></button>
+          </div>
+
+          <div class="container-fluid py-4">
+            <div class="row">
+              <div class="col-7">
+                <div class="card blinkAnim">
+                  <div class="card-body">
+
+                    <div class="row form-group">
+
+                      <div class="wrapper">
+
+
+                        <!-- Content Wrapper. Contains page content -->
+                        <div class="content-wrapper">
+                          <!-- Content Header (Page header) -->
+
+                          <div class="container-fluid">
+                            <div class="row mb-2">
+                              <div class="col-sm-6">
+                                <h1>Invoice</h1>
+                              </div>
+                            </div>
+                          </div><!-- /.container-fluid -->
+
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="callout callout-info">
+                                  <h5><i class="fas fa-info"></i> Note:</h5>
+                                  This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+                                </div>
+
+
+                                <!-- Main content -->
+                                <div class="invoice p-3 mb-3">
+                                  <!-- title row -->
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <h4>
+                                        <i class="fas fa-globe"></i> AdminLTE, Inc.
+                                        <small class="float-right">Date: 2/10/2014</small>
+                                      </h4>
+                                    </div>
+                                    <!-- /.col -->
+                                  </div>
+                                  <!-- info row -->
+                                  <div class="row invoice-info">
+                                    <div class="col-sm-4 invoice-col">
+                                      From
+                                      <address>
+                                        <strong>Admin, Inc.</strong><br>
+                                        795 Folsom Ave, Suite 600<br>
+                                        San Francisco, CA 94107<br>
+                                        Phone: (804) 123-5432<br>
+                                        Email: info@almasaeedstudio.com
+                                      </address>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-4 invoice-col">
+                                      To
+                                      <address>
+                                        <strong>John Doe</strong><br>
+                                        795 Folsom Ave, Suite 600<br>
+                                        San Francisco, CA 94107<br>
+                                        Phone: (555) 539-1037<br>
+                                        Email: john.doe@example.com
+                                      </address>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-4 invoice-col">
+                                      <b>Invoice #007612</b><br>
+                                      <br>
+                                      <b>Order ID:</b> 4F3S8J<br>
+                                      <b>Payment Due:</b> 2/22/2014<br>
+                                      <b>Account:</b> 968-34567
+                                    </div>
+                                    <!-- /.col -->
+                                  </div>
+                                  <!-- /.row -->
+
+                                  <!-- Table row -->
+                                  <div class="row">
+                                    <div class="col-12 table-responsive">
+                                      <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                          <th>Qty</th>
+                                          <th>Product</th>
+                                          <th>Serial #</th>
+                                          <th>Description</th>
+                                          <th>Subtotal</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                          <td>1</td>
+                                          <td>Call of Duty</td>
+                                          <td>455-981-221</td>
+                                          <td>El snort testosterone trophy driving gloves handsome</td>
+                                          <td>$64.50</td>
+                                        </tr>
+                                        <tr>
+                                          <td>1</td>
+                                          <td>Need for Speed IV</td>
+                                          <td>247-925-726</td>
+                                          <td>Wes Anderson umami biodiesel</td>
+                                          <td>$50.00</td>
+                                        </tr>
+                                        <tr>
+                                          <td>1</td>
+                                          <td>Monsters DVD</td>
+                                          <td>735-845-642</td>
+                                          <td>Terry Richardson helvetica tousled street art master</td>
+                                          <td>$10.70</td>
+                                        </tr>
+                                        <tr>
+                                          <td>1</td>
+                                          <td>Grown Ups Blue Ray</td>
+                                          <td>422-568-642</td>
+                                          <td>Tousled lomo letterpress</td>
+                                          <td>$25.99</td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    <!-- /.col -->
+                                  </div>
+                                  <!-- /.row -->
+
+                                  <div class="row">
+                                    <!-- accepted payments column -->
+                                    <div class="col-6">
+                                      <p class="lead">Payment Methods:</p>
+                                      <img src="../assets/img/credit/visa.png" alt="Visa">
+                                      <img src="../assets/img/credit/mastercard.png" alt="Mastercard">
+                                      <img src="../assets/img/credit/american-express.png" alt="American Express">
+                                      <img src="../assets/img/credit/paypal2.png" alt="Paypal">
+
+                                      <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
+                                        plugg
+                                        dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                                      </p>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-6">
+                                      <p class="lead">Amount Due 2/22/2014</p>
+
+                                      <div class="table-responsive">
+                                        <table class="table">
+                                          <tr>
+                                            <th style="width:50%">Subtotal:</th>
+                                            <td>$250.30</td>
+                                          </tr>
+                                          <tr>
+                                            <th>Tax (9.3%)</th>
+                                            <td>$10.34</td>
+                                          </tr>
+                                          <tr>
+                                            <th>Shipping:</th>
+                                            <td>$5.80</td>
+                                          </tr>
+                                          <tr>
+                                            <th>Total:</th>
+                                            <td>$265.24</td>
+                                          </tr>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <!-- /.col -->
+                                  </div>
+                                  <!-- /.row -->
+
+                                  <!-- this row will not appear when printing -->
+                                  <div class="row no-print">
+                                    <div class="col-12">
+                                      <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                                      <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                                        Payment
+                                      </button>
+                                      <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                        <i class="fas fa-download"></i> Generate PDF
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </main>
@@ -529,6 +751,10 @@
 <script src="../assets/js/core/bootstrap.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
 <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+</script>
 <script>
   var win = navigator.platform.indexOf('Win') > -1;
   if (win && document.querySelector('#sidenav-scrollbar')) {
