@@ -116,7 +116,24 @@ $("#updateCustomer").on('click', function () {
         },
         error: function (error) {
             // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
 
+            Toast.fire({
+                icon: 'error',
+                title: 'cannot be update !'
+            });
 
         }
     });
@@ -150,7 +167,25 @@ $("#deleteCustomer").on('click', function () {
             });
         },
         error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'delete unsuccessful !'
+            });
         }
     });
 });
