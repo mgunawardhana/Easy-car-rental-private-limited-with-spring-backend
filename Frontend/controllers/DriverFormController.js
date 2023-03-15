@@ -11,7 +11,25 @@ function saveDriver() {
     $.ajax({
         url: baseURL + "save_driver", method: "post", data: formData, dataType: "json", success: function (res) {
             getAllDrivers();
-            alert(res.message);
+            // alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Saved successfully !'
+            });
         }, error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
             alert(errorMessage.message);
@@ -27,16 +45,16 @@ function getAllDrivers() {
 
                 let id = c.id;
                 let firstname = c.name.firstName;
-                // let lastname = c.name.lastName;
+                let lastname = c.name.lastName;
                 let address = c.address;
                 let drivingLicenseNo = c.drivingLicenseNo;
                 let email = c.email;
                 let contactNo = c.contactNo;
                 let driverAvailability = c.driverAvailability;
                 let userName = c.user.userName;
-                // let user_id = c.user.userId;
+                let user_id = c.user.userId;
                 let nic = c.nic;
-                // let password = c.user.password;
+                let password = c.user.password;
 
                 let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstname + "</td>" + "<td>" + lastname + "</td>" + "<td>" + address + "</td>" + "<td>" + drivingLicenseNo + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + driverAvailability + "</td>" + "<td>" + userName + "</td>" + "<td>" + user_id + "</td>" + "<td>" + nic + "</td>" + "<td>" + password + "</td>" + "</tr>";
 
@@ -69,7 +87,25 @@ $("#deleteDriver").on('click', function () {
     $.ajax({
         url: baseURL + "?code=" + $("#id").val(), method: "delete", dataType: "json", success: function (resp) {
             getAllDrivers();
-            alert(resp.message);
+            // alert(resp.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'delete successfully !'
+            });
         }, error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
@@ -112,7 +148,25 @@ $("#updateDriver").on('click', function () {
         dataType: "json",
         success: function (res) {
             getAllDrivers();
-            alert(res.message);
+            // alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Updated successfully !'
+            });
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
