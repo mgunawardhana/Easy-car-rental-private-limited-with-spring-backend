@@ -16,7 +16,24 @@ function saveVehicle() {
         data: formData,
         dataType: "json",
         success: function (res) {
-            alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Saved successfully !'
+            });
             getAllVehicle();
             clearTextFields();
             bindRowClickEventsForVehicle();
@@ -124,7 +141,24 @@ $("#updateVehicle").on('click', function () {
         success: function (res) {
             alert("update method invoked");
             getAllVehicle();
-            alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Updated successfully !'
+            });
           clearTextFields();
         },
         error: function (error) {
@@ -188,7 +222,24 @@ $("#deleteVehicle").on('click', function () {
         success: function (resp) {
             console.log($("#vehicleId").val())
             getAllVehicle();
-            alert(resp.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Deleted successfully !'
+            });
             clearTextFields();
         },
         error: function (error) {
