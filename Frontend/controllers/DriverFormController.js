@@ -32,7 +32,25 @@ function saveDriver() {
             });
         }, error: function (error) {
             var errorMessage = JSON.parse(error.responseText);
-            alert(errorMessage.message);
+            // alert(errorMessage.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Saved Unsuccessful !'
+            });
         }
     });
 }
@@ -107,7 +125,25 @@ $("#deleteDriver").on('click', function () {
                 title: 'delete successfully !'
             });
         }, error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Delete unsuccessful !'
+            });
         }
     });
 });
@@ -169,7 +205,25 @@ $("#updateDriver").on('click', function () {
             });
         },
         error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Update unsuccessful !'
+            });
         }
     });
 });
