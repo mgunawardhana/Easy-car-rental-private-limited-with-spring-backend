@@ -46,7 +46,7 @@
 <h2>Tools</h2>
      <img src="https://skillicons.dev/icons?i=idea,git,github,vscode" />
      <br>
-  <h2> 🇱​🇦​🇳​🇬​🇺​🇦​🇬​🇪​🇸​ 🇦​🇳​🇩​ 🇫​🇷​🇦​🇲​🇪​🇼​🇴​🇷​🇰​🇸​</h2>
+  <h2> LANGUAGES AND FRAMEWORKS </h2>
  
 
 </div>
@@ -56,13 +56,13 @@
 
 <div align="center">
 
-<h3>🇫​🇷​🇴​🇳​🇹​🇪​🇳​🇩​</h3>
+<h3>FRONTEND</h3>
   <img src="https://skillicons.dev/icons?i=html,css,bootstrap,js,jquery,nodejs" />
 </div>
 
 
 <div align="center">
- <h3>🇧​🇦​🇨​🇰​🇪​🇳​🇩​</h3>
+ <h3>BACKEND</h3>
      <img src="https://skillicons.dev/icons?i=hibernate,java,mysql,spring,svelte" />
 
 </div>
